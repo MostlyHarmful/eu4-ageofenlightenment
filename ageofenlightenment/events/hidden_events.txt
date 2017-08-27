@@ -1,0 +1,101 @@
+namespace = red_turban
+
+country_event = {
+	id = red_turban.9
+	
+	title = "red_turban.9.t"
+	desc = "red_turban.9.d"
+	
+	picture = SIEGE_eventPicture
+	
+	is_triggered_only = yes
+	hidden = yes
+	
+	trigger = {
+		any_province = {
+			chinese_region_trigger = yes
+			OR	= {
+				owned_by = ROOT
+				owner = {
+					NOT = {	culture_group = chinese_group }
+				}
+			}
+			any_core_country = {
+				OR = {
+					culture_group = chinese_group
+					culture_group = zuqun
+				}
+				exists = no
+			}
+		}
+	}
+		
+	option = {
+		name = "red_turban.3a"
+		every_province = {
+			limit = {
+				chinese_region_trigger = yes
+			}
+			every_core_country = {
+				limit = {
+					OR = {
+						culture_group = chinese_group
+						culture_group = zuqun
+					}
+					exists = no
+				}
+				remove_core = PREV
+			}
+			every_core_country = {
+				limit = {
+					OR = {
+						culture_group = chinese_group
+						culture_group = zuqun
+					}
+					exists = no
+				}
+				remove_core = PREV
+			}
+			every_core_country = {
+				limit = {
+					OR = {
+						culture_group = chinese_group
+						culture_group = zuqun
+					}
+					exists = no
+				}
+				remove_core = PREV
+			}
+		}
+	}
+}
+#### Post-peace core gain ####
+country_event = {
+	id = red_turban.10
+	
+	title = "red_turban.10.t"
+	desc = "red_turban.10.d"
+	
+	picture = SIEGE_eventPicture
+	
+	is_triggered_only = yes
+	hidden = yes
+	
+	trigger = {
+		any_owned_province = {
+			chinese_region_trigger = yes
+			NOT = { is_core = ROOT }
+		}
+	}
+		
+	option = {
+		name = "red_turban.3a"
+		every_owned_province = {
+			limit = {
+				chinese_region_trigger = yes
+				NOT = { is_core = ROOT }
+			}
+			add_core = ROOT
+		}
+	}
+}

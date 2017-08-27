@@ -1,0 +1,9 @@
+#
+chinese_region_trigger = {
+	superregion = china_superregion
+	OR = {
+		region = south_china_region
+		region = xinan_region
+		region = north_china_region
+	}
+}
