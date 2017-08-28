@@ -1,0 +1,67 @@
+
+take_capital_unification = {
+	type = take_capital
+	
+	badboy_factor = 0.01
+	prestige_factor = 0.5
+	peace_cost_factor = 0.01	
+	
+	allowed_provinces = {
+		OR = {
+			is_core = ROOT
+			is_core = FROM
+		}
+	}
+	
+	po_demand_provinces = yes
+	allow_annex = yes
+	#po_annex = yes
+	
+	war_name = UNIFICATION_WAR_NAME	
+}
+
+take_capital_unification_statusquo = {
+	type = take_capital
+	
+	badboy_factor = 0.01
+	prestige_factor = 0.5
+	peace_cost_factor = 0.01	
+	
+	allowed_provinces = {
+		OR = {
+			is_core = ROOT
+			is_core = FROM
+		}
+	}
+	attacker = {
+		badboy_factor = 0.01
+		prestige_factor = 0.25
+		peace_cost_factor = 0.01
+		po_demand_provinces = yes
+	}
+	
+	defender = {
+		badboy_factor = 0
+		prestige_factor = 0
+		peace_cost_factor = 0	
+	
+		po_annex = no
+		po_demand_provinces = no
+		po_revoke_cores = no
+		po_release_vassals = no
+		po_release_annexed = no
+		po_return_cores = no
+		po_change_religion = no
+		po_form_personal_union = no
+		po_gold = yes
+		po_become_vassal = no
+		po_concede_defeat = no
+		po_annul_treaties = no
+		po_change_government = no
+		po_revoke_elector = no
+		po_trade_power = no
+		po_humiliate = yes
+	}
+	
+	war_name = UNIFICATION_WAR_NAME	
+}

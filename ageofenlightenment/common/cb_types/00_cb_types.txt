@@ -960,21 +960,26 @@ cb_humiliate_rotw = {
 # Reunification of China
 cb_chinese_unification = {
 	valid_for_subject = no
-	ai_peace_desire = -20
+	ai_peace_desire = -30
 
 	prerequisites = {
 		is_free_or_tributary_trigger = yes
 		OR = {
-			AND = {
-				culture_group = east_asian #Chinese
-			}
+			culture_group = east_asian #Chinese
+			culture = zhuang
+			culture = yi
+			culture = bai
 		}
 		
 		FROM = { #Applies against other powers in China unless they have the Mandate of Heaven
 			NOT = { is_subject_of = ROOT }
 			OR = {
 				culture_group = east_asian #Chinese
+				culture = zhuang
+				culture = yi
+				culture = bai
 			}
+			NOT = { is_emperor_of_china = yes }
 			any_owned_province = {
 				OR = {
 					region = north_china_region
@@ -995,7 +1000,8 @@ cb_chinese_unification = {
 # Take the Mandate of Heaven
 cb_take_mandate = {
 	valid_for_subject = no
-
+	ai_peace_desire = -30
+	
 	prerequisites = {
 		has_dlc = "Mandate of Heaven"
 		is_subject = no

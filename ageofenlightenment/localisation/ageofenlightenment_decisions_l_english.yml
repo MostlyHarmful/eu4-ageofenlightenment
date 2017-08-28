@@ -1,3 +1,8 @@
 ﻿l_english:
  north_german_confederation_nation_title: "North German Confederation"
  north_german_confederation_nation_desc: "After centuries of conquest and diplomacy, we have finally unified the northern half of Germany. It's time to proclaim ourselves as a federation, rather than a single kingdom. This might have a destructive impact on the Holy Roman Empire."
+ UNIFICATION_WAR_NAME:0 "$ORDER$$FIRST$-$SECOND$ war over Unification"
+ cb_unification:0 "Unify the nation"
+ cb_unification_desc:0 "We must unify our nation."
+ cb_unification_statusquo:0 "Unify the nation"
+ cb_unification_statusquo_desc:0 "We must unify our nation."
