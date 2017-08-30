@@ -973,12 +973,6 @@ cb_chinese_unification = {
 		
 		FROM = { #Applies against other powers in China unless they have the Mandate of Heaven
 			NOT = { is_subject_of = ROOT }
-			OR = {
-				culture_group = east_asian #Chinese
-				culture = zhuang
-				culture = yi
-				culture = bai
-			}
 			NOT = { is_emperor_of_china = yes }
 			any_owned_province = {
 				OR = {

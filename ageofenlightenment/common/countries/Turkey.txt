@@ -2,13 +2,11 @@
 
 graphical_culture = muslimgfx
 
-color = { 166 203 80 }
-
-preferred_religion = sunni
+color = { 169 17 1 }
 
 historical_idea_groups = {
-	maritime_ideas
 	humanist_ideas
+	trade_ideas
 	offensive_ideas
 	administrative_ideas
 	quantity_ideas

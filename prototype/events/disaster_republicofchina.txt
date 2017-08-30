@@ -1,0 +1,172 @@
+namespace = disaster_republicofchina
+
+country_event = {
+	id = disaster_republicofchina.1
+	title = "disaster_republicofchina.1.t"
+	desc = "disaster_republicofchina.1.d"
+	picture = IMPERIAL_SEAL_eventPicture
+	
+	major = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+	}
+	
+	immediate = {
+		every_owned_province = {
+			limit = {
+				OR = {
+					region = xinan_region
+					region = south_china_region
+				}
+			}
+			discover_country = CHN
+			add_core = CHN
+		}
+		release = CHN
+		CHN = {
+			change_government = constitutional_republic
+			change_religion = confucianism
+			every_owned_province = {
+				add_institution_embracement = {
+					which = "enlightenment"
+					value = 100
+				}
+			}
+			set_capital = 1821
+			define_ruler = {
+				age = 25
+				female = no
+				adm = 6
+				dip = 6
+				mil = 6
+			}
+			define_general = {
+			  shock = 6
+			  fire = 6
+			  manuever = 6
+			  siege = 6
+			}
+			set_government_rank = 3
+			set_country_flag = in_civil_war
+		}
+		set_country_flag = had_republic_of_china
+		change_primary_culture = jianghuai
+	}
+	
+	option = {
+		name = "disaster_republicofchina.1.a"
+		declare_war_with_cb = {
+			who = CHN
+			casus_belli = cb_unification
+		}
+		end_disaster = republicofchina
+		hidden_effect = {
+			all_provinces = {
+				limit = {
+					republican_china_region_trigger = yes
+				}
+				add_core = CHN
+			}
+			CHN = {
+				country_event = { id = disaster_republicofchina.3 days = 1 }
+			}
+			every_enemy_country = {
+				country_event = { id = disaster_republicofchina.5 days = 1 }
+			}
+		}
+		ai_chance = { factor = 400 }
+	}
+	option = {
+		name = "disaster_republicofchina.1.b"
+		declare_war_with_cb = {
+			who = CHN
+			casus_belli = cb_unification
+		}
+		end_disaster = republicofchina
+		hidden_effect = {
+			all_provinces = {
+				limit = {
+					republican_china_region_trigger = yes
+				}
+				add_core = CHN
+			}
+			CHN = {
+				country_event = { id = disaster_republicofchina.3 days = 1 }
+			}
+			every_enemy_country = {
+				country_event = { id = disaster_republicofchina.5 days = 1 }
+			}
+		}
+		switch_tag = CHN
+		ai_chance = { factor = 0 }
+	}
+}
+
+country_event = {
+	id = disaster_republicofchina.3
+	title = "disaster_republicofchina.3.t"
+	desc = "disaster_republicofchina.3.d"
+	picture = MILITARY_CAMP_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EXCELLENT"
+		CHN = {
+			capital_scope = {
+				build_to_forcelimit = {
+					infantry = 0.65
+					cavalry = 0.05
+					artillery = 0.4
+				}
+			}
+			random_owned_province = {
+				limit = {
+					has_port = yes
+				}
+				build_to_forcelimit = {
+					heavy_ship = 0.3
+					light_ship = 0.3
+					transport = 0.2
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = disaster_republicofchina.2
+	hidden = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+}
+
+country_event = {
+	id = disaster_republicofchina.5
+	title = "disaster_republicofchina.5.t"
+	desc = "disaster_republicofchina.5.d"
+	picture = BATTLE_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "disaster_republicofchina.5.a"
+		create_alliance = CHN
+		set_ai_attitude = {
+			who = CHN
+			attitude = attitude_friendly
+		}
+		CHN = {
+			add_opinion = {
+				who = ROOT
+				modifier = supported_independence
+			}
+		}
+	}
+	option = {
+		name = "disaster_republicofchina.5.b"
+		add_prestige = -10
+	}
+}

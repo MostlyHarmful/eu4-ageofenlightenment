@@ -6,11 +6,3 @@ cb_unification = {
 
 	war_goal = take_capital_unification
 }
-cb_unification_statusquo = {
-	valid_for_subject = no
-
-	is_triggered_only = yes
-	months = 12
-
-	war_goal = take_capital_unification_statusquo
-}

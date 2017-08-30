@@ -10,99 +10,121 @@ country_event = {
 	is_triggered_only = yes
 	fire_only_once = yes
 	
-	trigger = {
-	}
-	
 	immediate = {
-		every_owned_province = {
+		random_owned_province = { 
 			limit = {
-				OR = {
-					region = xinan_region
-					region = south_china_region
-				}
+				development = 20
 			}
-			discover_country = CHN
-			add_core = CHN
+			spawn_rebels = {
+				type = revolutionary_rebels
+				size = 4		
+				win = yes
+				unrest = 10
+			}
+			
 		}
-		release = CHN
-		CHN = {
-			change_government = constitutional_republic
-		}
-		set_country_flag = had_republic_of_china
+		add_stability = -3
+		set_country_flag = had_republican_revolution
 	}
 	
 	option = {
 		name = "disaster_republicofchina.1.a"
-		declare_war_with_cb = {
-			who = CHN
-			casus_belli = cb_unification
-		}
-		end_disaster = republicofchina
-		hidden_effect = {
-			every_owned_province = {
-				add_core = CHN
-			}
-			CHN = {
-				country_event = { id = disaster_republicofchina.3 days = 1 }
-			}
-		}
+		add_prestige = -10
+		add_mandate = -10
 		ai_chance = { factor = 400 }
-	}
-	option = {
-		name = "disaster_republicofchina.1.b"
-		declare_war_with_cb = {
-			who = CHN
-			casus_belli = cb_unification
-		}
-		end_disaster = republicofchina
-		switch_tag = CHN
-		hidden_effect = {
-			every_owned_province = {
-				add_core = CHN
-			}
-			CHN = {
-				country_event = { id = disaster_republicofchina.3 days = 1 }
-			}
-		}
-		ai_chance = { factor = 0 }
-	}
-}
-
-country_event = {
-	id = disaster_republicofchina.3
-	title = "disaster_republicofchina.3.t"
-	desc = "disaster_republicofchina.3.d"
-	picture = MILITARY_CAMP_eventPicture
-	
-	is_triggered_only = yes
-	
-	option = {
-		name = "EXCELLENT"
-		CHN = {
-			capital_scope = {
-				build_to_forcelimit = {
-					infantry = 0.65
-					cavalry = 0.05
-					artillery = 0.4
-				}
-			}
-			random_owned_province = {
-				limit = {
-					has_port = yes
-				}
-				build_to_forcelimit = {
-					heavy_ship = 0.3
-					light_ship = 0.3
-					transport = 0.2
-				}
-			}
-		}
 	}
 }
 
 country_event = {
 	id = disaster_republicofchina.2
-	hidden = yes
 	is_triggered_only = yes
 	fire_only_once = yes
+	title = "disaster_republicofchina.2.t"
+	desc = "disaster_republicofchina.2.d"
+	
+	option = {
+		name = "disaster_republicofchina.2.a"
+		add_prestige = 100
+		add_mandate = 25
+		add_absolitism = 15
+		add_meritocracy = 100
+	}
+}
+country_event = {
+	id = disaster_republicofchina.3
+	is_triggered_only = yes
+	fire_only_once = yes
+	title = "disaster_republicofchina.3.t"
+	desc = "disaster_republicofchina.3.d"
+	
+	option = {
+		name = "disaster_republicofchina.3.a"
+		random_owned_province = { revolutionary_rebels = 3 }
+		random_owned_province = { revolutionary_rebels = 3 }
+		random_owned_province = { revolutionary_rebels = 3 }
+	}
+}
+country_event = {
+	id = disaster_republicofchina.4
+	is_triggered_only = yes
+	fire_only_once = yes
+	title = "disaster_republicofchina.4.t"
+	desc = "disaster_republicofchina.4.d"
+	
+	option = {
+		name = "disaster_republicofchina.3.a"
+		capital_scope = { revolutionary_rebels = 5 }
+	}
+}
+
+country_event = {
+	id = disaster_republicofchina.10
+	title = "disaster_republicofchina.10.t"
+	desc = "disaster_republicofchina.10.d"
+	picture = REVOLUTION_eventPicture
+	
+	major = yes
+	
+	trigger = {
+		capital_scope = { 
+			controlled_by = REB
+		} 
+		num_of_cities = 10
+		NOT = { government = republic }
+	}
+	
+	
+	is_triggered_only = yes
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = "disaster_republicofchina.10.a"
+		end_disaster = republicofchina
+		disband_rebels = revolutionary_rebels
+		dismantle_empire_of_china = yes
+		add_mercantilism = 15
+		add_stability_or_adm_power = yes
+		change_government = constitutional_republic
+		change_tag = CHN
+		if = {
+			limit = {
+				NOT = { government_rank = 3 }
+			}
+			set_government_rank = 3
+		}
+		if = {
+			limit = {
+				NOT = { culture_group = east_asian }
+			}
+			change_primary_culture = jianghuai
+		}
+		add_prestige = 25
+		reinstate_parliament = yes
+		set_capital = 1821
+		end_disaster =
+		kill_ruler = yes
+	}
 }

@@ -1,10 +1,10 @@
-namespace = red_turban
-#### Post-peace core gain ####
+namespace = hidden
+###Core gain after Chinese unification wars###
 country_event = {
-	id = red_turban.10
+	id = hidden.1
 	
-	title = "red_turban.10.t"
-	desc = "red_turban.10.d"
+	title = "hidden.1.t"
+	desc = "hidden.1.d"
 	
 	picture = SIEGE_eventPicture
 	
@@ -23,7 +23,7 @@ country_event = {
 	}
 		
 	option = {
-		name = "red_turban.3a"
+		name = "hidden.1.a"
 		every_owned_province = {
 			limit = {
 				chinese_region_trigger = yes

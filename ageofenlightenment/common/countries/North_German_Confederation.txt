@@ -4,15 +4,17 @@ graphical_culture = westerngfx
 
 color = { 143  141  128 }
 
+preferred_religion = protestant
+
 historical_idea_groups = {
+	innovativeness_ideas
+	offensive_ideas
+	diplomatic_ideas
+	quality_ideas
+	economic_ideas
 	trade_ideas
 	defensive_ideas
-	economic_ideas
-	maritime_ideas
-	offensive_ideas
-	innovativeness_ideas
-	quality_ideas
-	quantity_ideas
+	administrative_ideas
 }
 
 historical_units = {

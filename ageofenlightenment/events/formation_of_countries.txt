@@ -10,7 +10,6 @@ country_event = {
 	fire_only_once = yes
 	
 	trigger = {
-		has_global_flag = terrible_at_eu4
 	}
 	
 	option = {

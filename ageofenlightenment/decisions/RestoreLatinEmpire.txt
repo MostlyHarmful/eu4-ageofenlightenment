@@ -1,0 +1,94 @@
+country_decisions = {
+
+	restore_latin_empire = {
+		major = yes
+		potential = {
+			NOT = { exists = LTE }
+			normal_or_historical_nations = yes
+			OR = {
+				ai = no
+				is_playing_custom_nation = no
+			}
+			religion = catholic
+			NOT = { government = republic }
+			NOT = { government = celestial_empire }
+			OR = {
+				owns = 379
+				AND = {
+					ai = no
+					tag = KNI
+				}
+				AND = {
+					ai = no
+					tag = CYP
+				}
+				AND = {
+					ai = no
+					tag = ATH
+				}
+				AND = {
+					ai = no
+					tag = NAX
+				}
+			}
+			OR = {
+				current_age = age_of_discovery
+				current_age = age_of_reformation
+			}
+		}
+		allow = {
+			is_at_war = no
+			thrace_area = {
+				type = all
+				owned_by = ROOT
+			}
+		}
+		effect = {
+			add_prestige = 25
+			if = {
+				limit = {
+					NOT = { tag = KNI }
+					NOT = { tag = CYP }
+				}
+				LTE = {
+					add_core = 151
+					add_core = 1764
+					add_core = 149
+				}
+				release = LTE
+				LTE = { change_primary_culture = ROOT }
+			}
+			if = {
+				limit = {
+					OR = {
+						tag = KNI
+						tag = CYP
+					}
+				}
+				change_tag = LTE
+				add_core = 151
+				add_core = 1764
+				add_core = 149
+				if = {
+					limit = { has_custom_ideas = no }
+					country_event = { id = ideagroups.1 } #Swap Ideas
+				}
+			}
+			LTE = {
+				set_capital = 151
+				change_religion = catholic
+				change_government = feudal_monarchy
+				if = {
+					limit = {
+						NOT = { government_rank = 3 }
+					}
+					set_government_rank = 3
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+}

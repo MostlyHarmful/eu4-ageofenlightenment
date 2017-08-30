@@ -1,0 +1,52 @@
+ai_manchu = {
+	potential = {
+		ai = yes
+		was_player = no
+		OR = {
+			tag = MCH
+			tag = MJZ
+			tag = QNG
+		}
+		NOT = { is_emperor_of_china = yes }
+	}
+
+	trigger = {
+		NOT = {
+			is_year = 1700
+		}
+		luck = yes
+	}
+	
+	global_tax_modifier = 0.5
+	trade_efficiency = 0.5
+	production_efficiency = 0.5
+	core_creation = -0.5
+	ae_impact = -0.25
+	land_forcelimit_modifier = 1.0
+	yearly_corruption = -5
+	discipline = 0.1
+	land_morale = 0.20
+	cavalry_power = 0.15
+	cav_to_inf_ratio = 1
+	stability_cost_modifier = -0.5
+	war_exhaustion_cost = -0.5
+	horde_unity = 10
+	
+	
+}
+ai_ming = {
+	potential = {
+		ai = yes
+		was_player = no
+		tag = MNG
+	}
+
+	trigger = {
+		is_emperor_of_china = yes
+		luck = no
+		NOT = { is_year = 1700 }
+	}
+	
+	imperial_mandate = -0.1
+	
+}

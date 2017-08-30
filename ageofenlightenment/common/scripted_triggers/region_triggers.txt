@@ -7,3 +7,32 @@ chinese_region_trigger = {
 		region = north_china_region
 	}
 }
+
+republican_china_region_trigger = {
+	NOT = { province_id = 565 }
+	NOT = { province_id = 2127 }
+	OR = {
+		region = south_china_reigon
+		region = xinan_region
+		region = north_china_region
+		region = tibet_region
+		area = inner_mongolia_area
+		area = ordos_area
+		area = shanshan_area
+		area = tarim_basin_area
+		area = zungaria_area
+		area = kashgaria_area
+		area = turpan_kumul_area
+		area = liaoning_area
+		area = eastern_mongolia
+		area = heilongjiang_area
+		area = central_heilongjiang_area
+		area = jilin_area
+		province_id = 2119
+		province_id = 714
+		province_id = 1053
+		province_id = 731
+		province_id = 2107
+		province_id = 2108
+	}
+}

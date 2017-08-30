@@ -1,0 +1,66 @@
+country_decisions = {
+
+	end_civil_war_republicanchina = {
+		major = yes
+		potential = {
+			tag = CHN
+			is_in_war = {
+				casus_belli = cb_unification
+			}
+			NOT = { has_country_flag  = imperialvictory }
+			NOT = { has_country_flag  = republicanvictory }
+		}
+		allow = {
+			is_in_war = {
+				casus_belli = cb_unification
+				war_score = 90
+			}
+		}
+		effect = {
+			QNG = {
+				all_owned_province = {
+					limit = {
+						is_core = CHN
+					}
+					cede_province = CHN
+				}
+			}
+			add_prestige = 100
+			add_republican_tradition = 25
+			dismantle_empire_of_china = yes
+			set_country_flag = republicanvictory
+			clr_country_flag = in_civil_war
+		}
+		ai_will_do = {
+			factor = 400
+		}
+		ai_importance = 400
+	}
+	
+	end_civil_war_empirechina = {
+		major = yes
+		potential = {
+			has_country_flag = had_republic_of_china
+			NOT = { has_country_flag  = imperialvictory }
+			NOT = { has_country_flag  = republicanvictory }
+			is_emperor_of_china = yes
+		}
+		allow = {
+			is_in_war = {
+				casus_belli = cb_unification
+				war_score = 90
+			}
+		}
+		effect = {
+			inherit = CHN
+			add_legitimacy = 50
+			add_prestige = 100
+			set_country_flag = imperialvictory
+		}
+		ai_will_do = {
+			factor = 400
+		}
+		ai_importance = 400
+	}
+	
+}

@@ -1,7 +1,7 @@
 republicofchina = {
 	potential = {
         NOT = {
-                has_country_flag = had_republican_revolution
+                has_country_flag = had_republic_of_china
         }
 		current_age = age_of_revolutions
 		has_dlc = "Mandate of Heaven"
@@ -18,42 +18,38 @@ republicofchina = {
 		has_any_disaster = no
 		has_institution = enlightenment
 		OR = {
-			AND = {
-				NOT = { culture_group = east_asian }
-				NOT = { imperial_mandate = 75 }
-			}
+			NOT = { culture_group = east_asian }
 			AND = { 
 				culture_group = east_asian
-				NOT = { imperial_mandate = 60 }
+				NOT = { imperial_mandate = 75 }
 			}
 		}
 	}
 	can_stop = {
 		OR = {
 			AND = {
-				imperial_mandate = 75
+				imperial_mandate = 100
 				stability = 3
 			}
 			has_any_disaster = yes
 		}
 	}
-	
-	modifier = {
-		global_unrest = 5
-		imperial_mandate = -0.1
-	}
 	progress = {
 		modifier = {
-			factor = 5
+			factor = 15
 			NOT = { imperial_mandate = 25 }
 		}
 		modifier = {
-			factor = 2.5
+			factor = 10
 			NOT = { imperial_mandate = 50 }
 		}
 		modifier = {
-			factor = 0.5
+			factor = 2.5
 			NOT = { imperial_mandate = 75 }
+		}
+		modifier = {
+			factor = 0.5
+			NOT = { imperial_mandate = 100 }
 		}
 		modifier = {
 			factor = 0.5
@@ -70,20 +66,16 @@ republicofchina = {
 			absolutism = 75
 		}
 		modifier = {
-			factor = 1
+			factor = 5
 			NOT = { culture_group = east_asian }
 		}
 		modifier = {
-			factor = -1
+			factor = -0.5
 			full_idea_group = humanist_ideas
-		}
+		}	
 	}
 	can_end = {
-		AND = {
-			imperial_mandate = 100
-			stability = 3
-			NOT = { num_of_rebel_controlled_provinces = 1 }
-		}
+		has_country_flag = terrible_at_eu4
 	}
 	
 	on_start = disaster_republicofchina.1
@@ -91,12 +83,10 @@ republicofchina = {
 	
 	on_monthly = {
 		events = {
-			disaster_republicofchina.10
 		}
 		random_events = { 
-			1000 = 0
-			100 = disaster_republicofchina.3
-			100 = disaster_republicofchina.4
+			#1000 = 0
+			# None
 		}
 	}
 }

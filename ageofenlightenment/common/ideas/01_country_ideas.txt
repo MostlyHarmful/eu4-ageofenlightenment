@@ -1,0 +1,48 @@
+LTE_ideas = {
+	start = {
+		global_missionary_strength = 0.03
+		may_perform_slave_raid = yes
+	}
+	
+	bonus = {
+		diplomatic_reputation = 2
+	}
+	
+	trigger = {
+		tag = LTE
+		religion = catholic
+	}
+	free = yes
+	
+	claim_to_rome = {
+		core_creation = -0.25
+		ae_impact = -0.15
+	}
+	
+	pope_friendly_rome = {
+		papal_influence = 2.5
+	}
+	
+	defense_against_turks = {
+		discipline = 0.075
+	}
+
+	roman_legions = {
+		infantry_power = 0.2
+	}
+	
+	crusader_state = {
+		army_tradition = 0.5
+	}
+	
+	defensive_of_mediterranean = {
+		naval_forcelimit_modifier = 0.25
+		galley_power = 0.2
+	}
+	
+	greek_influences = {
+		idea_cost = -0.1
+		technology_cost = -0.1
+	}
+	
+}

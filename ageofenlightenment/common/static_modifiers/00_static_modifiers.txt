@@ -546,6 +546,7 @@ negative_mandate = { # By default, starts at 50 mandate, 100% strength at 0 mand
 	shock_damage_received = 0.5
 	global_unrest = 10
 	war_exhaustion = 0.1
+	imperial_mandate = -0.1
 }
 
 lost_mandate_of_heaven = {

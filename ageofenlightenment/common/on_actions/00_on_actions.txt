@@ -215,8 +215,7 @@ on_peace_recipient = {
 # root = winning country, from = loser country
 on_war_won = {
 	events = {
-		red_turban.9				# Post-war core clean-up in China
-		red_turban.10				# Post-war core gain in China
+		hidden.1				# Gain cores after Chinese unification war
 	}
 	FROM = { country_event = { id = flavor_cri.6 } }
 	ROOT = { country_event = { id = tributary_events.32 } }
