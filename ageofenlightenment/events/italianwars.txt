@@ -1,0 +1,346 @@
+namespace = italian_wars
+
+country_event = {
+	id = italian_wars.1
+	title = "italian_wars.1.t"
+	desc = "italian_wars.1.d"
+	fire_only_once = yes
+	picture = BAD_WITH_MONARCH_eventPicture
+	
+	trigger = {
+		tag = ARA
+		is_lesser_in_union = no
+		NAP = {
+			is_subject_of = ROOT
+		}
+		is_year = 1450
+		NOT = { is_year = 1550 }
+	}
+	
+	mean_time_to_happen = {
+		months = 12
+	}
+	
+	option = {
+		name = "italian_wars.1.a"
+		break_union = NAP
+		set_country_flag = lost_naples
+	}
+}
+country_event = {
+	id = italian_wars.2
+	title = "italian_wars.2.t"
+	desc = "italian_wars.2.d"
+	major = yes
+	fire_only_once = yes
+	picture = BATTLE_eventPicture
+	
+	trigger = {
+		tag = FRA
+		is_year = 1480
+		NOT = { is_year = 1550 }
+		NOT = { senior_union_with = NAP }
+		exists = NAP
+		exists = MLO
+		MLO = {
+			is_part_of_hre = no
+		}
+		NAP = {
+			is_part_of_hre = no
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 30
+	}
+	
+	option = {
+		name = "italian_wars.2.a"
+		declare_war_with_cb = {
+		  who = NAP
+		  casus_belli = cb_restore_personal_union
+		}
+		declare_war_with_cb = {
+		  who = MLO
+		  casus_belli = cb_restore_personal_union
+		}
+		add_casus_belli = {
+		  target = NAP
+		  type = cb_restore_personal_union
+		  months = 36
+		}
+		add_casus_belli = {
+		  target = MLO
+		  type = cb_restore_personal_union
+		  months = 36
+		}
+		add_prestige = 10
+		ai_chance = { factor = 97 }
+		hidden_effect = {
+			every_enemy_country = {
+				limit = {
+					NOT = { tag = CAS }
+					NOT = { tag = ARA }
+					NOT = { tag = SPA }
+				}
+				country_event = { id = italian_wars.4 days = 1 }
+			}
+			CAS = {
+				country_event = { 
+					id = italian_wars.3 
+					days = 300
+				}
+			}
+			set_global_flag = italianwars
+		}
+	}
+	option = {
+		name = "italian_wars.2.b"
+		add_prestige = -10
+		ai_chance = { factor = 3 }
+	}
+}
+country_event = {
+	id = italian_wars.3
+	title = "italian_wars.3.t"
+	desc = "italian_wars.3.d"
+	fire_only_once = yes
+	is_triggered_only = yes
+	major = yes
+	picture = BATTLE_eventPicture
+	
+	option = {
+		name = "italian_wars.3.a"
+		if = {
+			limit = {
+				war_with = FRA
+			}
+			white_peace = FRA
+		}
+		declare_war_with_cb = {
+			who = FRA
+			casus_belli = cb_insult
+		}
+		if = {
+			limit = {
+				NAP = {
+					ai = yes
+					was_player = no
+				}
+			}
+			create_union = NAP
+			else = {
+				add_casus_belli = {
+				  target = NAP
+				  type = cb_restore_personal_union
+				  months = 120
+				}
+			}
+		}
+		if = {
+			limit = {
+				MLO = {
+					ai = yes
+					was_player = no
+				}
+			}
+			create_union = MLO
+			else = {
+				add_casus_belli = {
+				  target = MLO
+				  type = cb_restore_personal_union
+				  months = 120
+				}
+			}
+		}
+		set_global_flag = cas_intervened_italy
+		ai_chance = { factor = 100 }
+	}
+	option = {
+		name = "italian_wars.3.b"
+		add_prestige = -10
+		ai_chance = { factor = 0 }
+	}
+}
+country_event = {
+	id = italian_wars.4
+	title = "italian_wars.4.t"
+	desc = "italian_wars.4.d"
+	picture = BATTLE_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "italian_wars.4.a"
+		create_alliance = NAP
+		create_alliance = MLO
+		ai_chance = { factor = 99 }
+	}
+	option = {
+		name = "italian_wars.4.b"
+		add_prestige = -10
+		ai_chance = { factor = 1 }
+	}
+}
+country_event = {
+	id = italian_wars.5
+	title = "italian_wars.5.t"
+	desc = "italian_wars.5.d"
+	picture = BATTLE_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "italian_wars.5.a"
+		create_alliance = TUR
+		if = {
+			limit = {
+				NAP = {
+					war_with = FRA
+				}
+			}
+			NAP = {
+				country_event = {
+					id = italian_wars.7 
+					days = 12 
+				}
+			}
+		}
+		if = {
+			limit = {
+				MLO = {
+					war_with = FRA
+				}
+			}
+			MLO = {
+				country_event = { 
+					id = italian_wars.7
+					days = 12 
+				}
+			}
+		}
+		if = {
+			limit = {
+				CAS = {
+					war_with = FRA
+				}
+			}
+			CAS = {
+				country_event = { 
+					id = italian_wars.7 
+					days = 12 
+				}
+			}
+		}
+	}
+	option = {
+		name = "italian_wars.5.b"
+		add_prestige = 10
+		ai_chance = { factor = 1 }
+	}
+}
+country_event = {
+	id = italian_wars.6
+	title = "italian_wars.6.t"
+	desc = "italian_wars.6.d"
+	picture = BATTLE_eventPicture
+	fire_only_once = yes
+	major = yes
+	
+	trigger = {
+		tag = TUR
+		OR = {
+			NAP = {
+				war_with = FRA
+			}
+			MLO = {
+				war_with = FRA
+			}
+			CAS = {
+				war_with = FRA
+			}
+		}
+		has_global_flag = italianwars
+		has_global_flag = cas_intervened_italy
+	}
+	
+	mean_time_to_happen = {
+		months = 12
+	}
+	
+	option = {
+		name = "italian_wars.6.a"
+		FRA = {
+			country_event = { 
+				id = italian_wars.5
+				days = 12 
+			}
+		}
+		ai_chance = { factor = 99 }
+	}
+	option = {
+		name = "italian_wars.6.b"
+		add_prestige = -10
+		ai_chance = { factor = 1 }
+	}
+}
+country_event = {
+	id = italian_wars.7
+	title = "italian_wars.7.t"
+	desc = "italian_wars.7.d"
+	picture = BATTLE_eventPicture
+	is_triggered_only = yes
+	
+	option = {
+		name = "italian_wars.7.a"
+		white_peace = FRA
+		TUR = {
+			country_event = { 
+				id = italian_wars.9 
+				days = 12 
+			}
+		}
+		ai_chance = { factor = 80 }
+	}
+	option = {
+		name = "italian_wars.7.b"
+		add_prestige = 10
+		TUR = {
+			country_event = { 
+				id = italian_wars.8 
+				days = 12 
+			}
+		}
+		ai_chance = { factor = 20 }
+	}
+}
+country_event = {
+	id = italian_wars.8
+	title = "italian_wars.8.t"
+	desc = "italian_wars.8.d"
+	picture = BATTLE_eventPicture
+	is_triggered_only = yes
+	
+	option = {
+		name = "italian_wars.8.a"
+		add_prestige = 10
+		declare_war_with_cb = {
+			who = FROM
+			casus_belli = cb_insult
+		}
+		ai_chance = { factor = 100 }
+	}
+}
+country_event = {
+	id = italian_wars.9
+	title = "italian_wars.9.t"
+	desc = "italian_wars.9.d"
+	picture = BATTLE_eventPicture
+	is_triggered_only = yes
+	
+	option = {
+		name = "italian_wars.9.a"
+		add_prestige = 10
+		ai_chance = { factor = 100 }
+	}
+}

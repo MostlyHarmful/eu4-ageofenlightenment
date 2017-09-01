@@ -52,6 +52,7 @@ country_event = {
 		was_player = no
 		is_year = 1550
 		exists = MNG
+		num_of_cities = 10
 	}
 	
 	mean_time_to_happen = {

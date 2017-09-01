@@ -45,6 +45,11 @@ ai_ming = {
 		is_emperor_of_china = yes
 		luck = no
 		NOT = { is_year = 1700 }
+		OR = {
+			exists = MJZ
+			exists = QNG
+			exists = MCH
+		}
 	}
 	
 	imperial_mandate = -0.15
@@ -126,4 +131,33 @@ qing_but_ming_exists = {
 	imperial_mandate = 0.25
 	global_unrest = -15
 	
+}
+
+era_of_constitutionalism = {
+	potential = {
+		current_age = age_of_revolutions
+	}
+	trigger = {
+		OR = {
+			government = constitutional_monarchy
+			government = constitutional_republic
+		}
+	}
+	republican_tradition = 0.5
+	legitimacy = 1
+	global_unrest = -1
+	global_tax_modifier = 0.1
+	trade_efficiency = 0.1
+	production_efficiency = 0.1
+}
+
+low_mandate = {
+	potential = {
+		is_emperor_of_china = yes
+	}
+	trigger = {
+		NOT = { imperial_mandate = 10 }
+	}
+	global_unrest = 20
+	war_exhaustion = 0.2
 }

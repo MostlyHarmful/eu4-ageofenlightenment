@@ -19,6 +19,7 @@ country_event = {
 	
 	trigger = {
 		NOT = { exists = SPA }
+		
 		OR = {
 			AND = {
 				tag = CAS
@@ -29,6 +30,7 @@ country_event = {
 					was_player = no
 					is_subject = no
 					is_neighbor_of = ROOT
+					has_country_flag = lost_naples
 				}
 			}
 			AND = {
