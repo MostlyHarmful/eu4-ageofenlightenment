@@ -1644,7 +1644,7 @@ country_event = {
 		ROOT = {
 			declare_war_with_cb = {
 				who = NED
-				casus_belli = cb_unification_statusquo
+				casus_belli = cb_insult
 			}
 		}
 		hidden_effect = {

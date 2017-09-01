@@ -1,5 +1,8 @@
 # country
 on_startup = {
+	events = {
+		hidden.3
+	}
 }
 
 # country

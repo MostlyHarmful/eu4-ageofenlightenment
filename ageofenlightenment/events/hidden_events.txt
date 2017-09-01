@@ -33,3 +33,252 @@ country_event = {
 		}
 	}
 }
+country_event = {
+	id = hidden.2
+	
+	title = "hidden.1.t"
+	desc = "hidden.1.d"
+	
+	picture = SIEGE_eventPicture
+	fire_only_once = yes
+	
+	trigger = {
+		OR = {
+			tag = MCH
+			tag = MJZ
+			tag = QNG
+		}
+		ai = yes
+		was_player = no
+		is_year = 1550
+		exists = MNG
+	}
+	
+	mean_time_to_happen = {
+		months = 1
+	}
+		
+	option = {
+		name = "hidden.1.a"
+		declare_war_with_cb = {
+		  who = MNG
+		  casus_belli = cb_take_mandate
+		}
+		add_prestige = 100
+	}
+}
+country_event = {
+	id = hidden.3
+	
+	title = "hidden.1.t"
+	desc = "hidden.1.d"
+	
+	picture = SIEGE_eventPicture
+	fire_only_once = yes
+	hidden = yes
+	
+	trigger = {
+		tag = MJZ
+		ai = yes
+	}
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = "hidden.1.a"
+		manchuria_region = {
+			add_core = MJZ
+		}
+		KRC = {
+			every_owned_province = {
+				add_core = MJZ
+			}
+		}
+	}
+}
+country_event = {
+	id = hidden.4
+	
+	title = "hidden.1.t"
+	desc = "hidden.1.d"
+	
+	picture = SIEGE_eventPicture
+	
+	trigger = {
+		OR = {
+			tag = MCH
+			tag = MJZ
+			tag = QNG
+		}
+		ai = yes
+		was_player = no
+		is_emperor_of_china = yes
+		NOT = { war_with = MNG }
+		exists = MNG
+	}
+	
+	mean_time_to_happen = {
+		months = 1
+	}
+		
+	option = {
+		name = "hidden.1.a"
+		declare_war_with_cb = {
+		  who = MNG
+		  casus_belli = cb_chinese_unification
+		}
+		add_prestige = 100
+	}
+}
+country_event = {
+	id = hidden.5
+	
+	title = "hidden.1.t"
+	desc = "hidden.1.d"
+	fire_only_once = yes
+	picture = SIEGE_eventPicture
+	
+	trigger = {
+		OR = {
+			tag = MCH
+			tag = MJZ
+			tag = QNG
+		}
+		ai = yes
+		was_player = no
+		is_emperor_of_china = yes
+		NOT = { exists = MNG }
+	}
+	
+	mean_time_to_happen = {
+		months = 1
+	}
+		
+	option = {
+		every_province = {
+			limit = {
+				qing_china_region_trigger = yes
+			}
+			add_core = QNG
+		}
+		set_country_flag = cores_gained_qing
+	}
+}
+country_event = {
+	id = hidden.6
+	
+	title = "hidden.1.t"
+	desc = "hidden.1.d"
+	picture = SIEGE_eventPicture
+	fire_only_once = yes
+	
+	trigger = {
+		tag = QNG
+		ai = yes
+		was_player = no
+		is_emperor_of_china = yes
+		NOT = { exists = MNG }
+		has_country_flag = cores_gained_qing
+	}
+	
+	mean_time_to_happen = {
+		months = 1
+	}
+		
+	option = {
+		every_province = {
+			limit = {
+				is_core = QNG
+				owner = {
+					is_subject_of = QNG
+					was_player = no
+					ai = yes
+					NOT = { tag = KOR }
+				}
+			}
+			cede_province = QNG
+		}
+	}
+}
+country_event = {
+	id = hidden.7
+	
+	title = "hidden.1.t"
+	desc = "hidden.1.d"
+	picture = SIEGE_eventPicture
+	
+	trigger = {
+		tag = QNG
+		ai = yes
+		was_player = no
+		is_emperor_of_china = yes
+		NOT = { exists = MNG }
+		has_country_flag = cores_gained_qing
+	}
+	
+	mean_time_to_happen = {
+		months = 60
+	}
+		
+	option = {
+		every_province = {
+			limit = {
+				is_core = QNG
+				owner = {
+					is_subject_of = QNG
+					was_player = no
+					ai = yes
+					NOT = { tag = KOR }
+				}
+			}
+			cede_province = QNG
+		}
+	}
+}
+country_event = {
+	id = hidden.8
+	
+	title = "hidden.1.t"
+	desc = "hidden.1.d"
+	picture = SIEGE_eventPicture
+	fire_only_once = yes
+	
+	trigger = {
+		tag = QNG
+		ai = yes
+		was_player = no
+		is_emperor_of_china = yes
+		NOT = { exists = MNG }
+		has_country_flag = cores_gained_qing
+	}
+	
+	mean_time_to_happen = {
+		months = 1
+	}
+		
+	option = {
+		if = {
+			limit = {
+				exists = KOR
+				KOR = {
+					is_subject_of = QNG
+				}
+			}
+			every_province = {
+				limit = {
+					is_core = KOR
+					owned_by = QNG
+				}
+				cede_province = KOR
+			}
+		}
+		if = {
+			limit = {
+				NOT = { exists = KOR }
+			}
+			release = KOR
+			add_historical_friend = KOR
+		}
+	}
+}

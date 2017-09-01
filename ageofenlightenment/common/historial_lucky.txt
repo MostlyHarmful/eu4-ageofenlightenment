@@ -72,6 +72,10 @@ PRU = {
 	is_year = 1700
 }
 
+BRA = {
+	always = yes
+}
+
 NED = {
 	always = yes
 }
@@ -81,9 +85,7 @@ POR = {
 		is_year = 1700
 	}
 }
-BRA = {
-	always = yes
-}
+
 SWE = {
 	NOT = { 
 		is_year = 1700

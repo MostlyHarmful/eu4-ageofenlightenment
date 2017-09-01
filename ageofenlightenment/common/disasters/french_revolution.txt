@@ -25,10 +25,10 @@ french_revolution = {
 	}
 	
 	can_stop = {
+		NOT = { is_year = 1789 }
 		OR = {
 			has_any_disaster = yes
 			stability = 3
-			NOT = { is_year = 1789 }
 		}
 	}
 	
@@ -68,11 +68,13 @@ french_revolution = {
 				stability = 3
 				NOT = { num_of_rebel_controlled_provinces = 1 }
 				government = monarchy
+				NOT = { is_year = 1789 }
 			}
 			AND = {
 				government = revolutionary_republic
 				stability = 3
 				NOT = { num_of_rebel_controlled_provinces = 1 }
+				NOT = { is_year = 1789 }
 			}
 			AND = {
 				government = revolutionary_republic

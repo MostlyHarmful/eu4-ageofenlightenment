@@ -305,18 +305,18 @@ merchant_republic = {
 		1 = {
 			merchants = 1
 			caravan_power = 0.33	
-			max_absolutism = -15
+			max_absolutism = -50
 		}
 		2 = {
 			merchants = 1
 			caravan_power = 0.33	
-			max_absolutism = -10
+			max_absolutism = -50
 		}
 		3 = {	
 			merchants = 1
 			caravan_power = 0.33
 			global_autonomy = -0.025
-			max_absolutism = -5
+			max_absolutism = -50
 		}
 	}
 }
@@ -347,18 +347,19 @@ oligarchic_republic = {
 		1 = {
 			global_tax_modifier = 0.05
 			stability_cost_modifier = -0.05
-			max_absolutism = -5
+			max_absolutism = -30
 		}
 		2 = {
 			global_tax_modifier = 0.05
 			stability_cost_modifier = -0.05	
 			global_autonomy = -0.025
-			max_absolutism = -2.5
+			max_absolutism = -30
 		}
 		3 = {
 			global_tax_modifier = 0.05
 			stability_cost_modifier = -0.05
 			global_autonomy = -0.05
+			max_absolutism = -30
 		}
 	}
 }
@@ -438,19 +439,19 @@ administrative_republic = {
 			years_of_nationalism = -5
 			production_efficiency = 0.1
 			global_autonomy = -0.025
-			max_absolutism = -15
+			max_absolutism = -30
 		}
 		2 = {
 			years_of_nationalism = -5
 			production_efficiency = 0.1
 			global_autonomy = -0.05	
-			max_absolutism = -10
+			max_absolutism = -30
 		}
 		3 = {	
 			years_of_nationalism = -5
 			production_efficiency = 0.1
 			global_autonomy = -0.075
-			max_absolutism = -5
+			max_absolutism = -30
 		}
 	}
 }
@@ -557,19 +558,19 @@ constitutional_republic = {
 			production_efficiency = 0.1
 			trade_efficiency = 0.1
 			global_autonomy = -0.05
-			max_absolutism = -15
+			max_absolutism = -3015
 		}
 		2 = {
 			production_efficiency = 0.1
 			trade_efficiency = 0.1
 			global_autonomy = -0.075
-			max_absolutism = -10
+			max_absolutism = -30
 		}
 		3 = {
 			production_efficiency = 0.1
 			trade_efficiency = 0.1
 			global_autonomy = -0.10
-			max_absolutism = -5
+			max_absolutism = -30
 		}
 	}
 }

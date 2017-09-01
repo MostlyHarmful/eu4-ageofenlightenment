@@ -1,0 +1,14 @@
+absolutism = {
+	reduced_liberty_desire = -30
+	discipline = 0.2
+	republican_tradition = -0.1
+	core_decay_on_your_own = -0.5
+	global_unrest = 5
+	years_of_nationalism = 15
+	technology_cost = -0.05
+	harsh_treatment_cost = -0.3
+	prestige = 1
+	legitimacy = 0.5
+	devotion = 1
+	advisor_cost = -0.5
+}

@@ -46,7 +46,7 @@ country_event = {
 		name = "disaster_republicofchina.2.a"
 		add_prestige = 100
 		add_mandate = 25
-		add_absolitism = 15
+		add_absolutism = 15
 		add_meritocracy = 100
 	}
 }
@@ -124,7 +124,8 @@ country_event = {
 		add_prestige = 25
 		reinstate_parliament = yes
 		set_capital = 1821
-		end_disaster =
+		end_disaster = republicofchina
 		kill_ruler = yes
+		release_all_subjects = yes
 	}
 }
