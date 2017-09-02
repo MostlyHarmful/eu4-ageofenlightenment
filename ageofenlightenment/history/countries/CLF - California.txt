@@ -1,0 +1,4 @@
+government = constitutional_republic
+primary_culture = american
+religion = protestant
+technology_group = western

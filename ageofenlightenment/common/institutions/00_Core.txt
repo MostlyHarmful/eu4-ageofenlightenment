@@ -1728,12 +1728,15 @@ enlightenment = {
 		is_island = no
 		is_state = yes
 		OR = {
-			custom_trigger_tooltip = {
-				tooltip = tooltip_has_seat_in_parliament
-				AND = {
-					continent = europe
-					has_seat_in_parliament = yes
+			AND = {
+				custom_trigger_tooltip = {
+					tooltip = tooltip_has_seat_in_parliament
+					AND = {
+						
+						has_seat_in_parliament = yes
+					}
 				}
+				continent = europe
 			}
 			AND = {
 				continent = europe
@@ -1805,17 +1808,45 @@ enlightenment = {
 		}
 		modifier = {
 			factor = 5
+			has_building = university
+			NOT = { continent = europe }
+			ai = no
+		}
+		modifier = {
+			factor = 5
 			potential = {
 				owner = {
 					has_parliament = yes
 				}
 			}
-			custom_trigger_tooltip = {
-				tooltip = tooltip_has_seat_in_parliament
-				AND = {
-					has_seat_in_parliament = yes
-					continent = europe
+			AND = {
+				custom_trigger_tooltip = {
+					tooltip = tooltip_has_seat_in_parliament
+					AND = {
+						has_seat_in_parliament = yes
+						
+					}
 				}
+				continent = europe
+			}
+		}
+		modifier = {
+			factor = 5
+			potential = {
+				owner = {
+					has_parliament = yes
+				}
+			}
+			AND = {
+				custom_trigger_tooltip = {
+					tooltip = tooltip_has_seat_in_parliament
+					AND = {
+						has_seat_in_parliament = yes
+						
+					}
+				}
+				NOT = { continent = europe }
+				ai = no
 			}
 		}
 		modifier = {

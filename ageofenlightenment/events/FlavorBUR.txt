@@ -1530,8 +1530,6 @@ country_event = {
 	trigger = {
 		is_year = 1550
 		NOT = { is_year = 1650 }
-		ai = yes
-		was_player = no
 		NOT = { exists = NED }
 		NOT = { tag = FLA }
 		is_free_or_tributary_trigger = yes
@@ -1666,6 +1664,59 @@ country_event = {
 				country_event = { id = flavor_bur.20 days = 1 }
 			}
 		}
+	}
+	option = {
+		name = "flavor_bur.EVTOPTB10"
+		add_truce_with = NED
+		add_prestige = -10
+		hidden_effect = {
+			NED = {
+				country_event = { id = flavor_bur.11 days = 1 }
+			}
+			every_country = {
+				limit = {
+					NOT = { tag = ROOT }
+					NOT = { tag = NED }
+					any_owned_province = {
+						region = low_countries_region
+					}
+				}
+				country_event = { id = flavor_bur.12 days = 10 }
+			}
+			# Send messages to rivals allowing them to join
+			every_enemy_country = {
+				country_event = { id = flavor_bur.20 days = 1 }
+			}
+		}
+	}
+	option = {
+		name = "flavor_bur.EVTOPTC10"
+		ROOT = {
+			declare_war_with_cb = {
+				who = NED
+				casus_belli = cb_insult
+			}
+		}
+		hidden_effect = {
+			NED = {
+				country_event = { id = flavor_bur.11 days = 1 }
+			}
+			every_country = {
+				limit = {
+					NOT = { tag = ROOT }
+					NOT = { tag = NED }
+					any_owned_province = {
+						region = low_countries_region
+					}
+				}
+				country_event = { id = flavor_bur.12 days = 10 }
+			}
+			# Send messages to rivals allowing them to join
+			every_enemy_country = {
+				country_event = { id = flavor_bur.20 days = 1 }
+			}
+		}
+		switch_tag = NED
 	}
 }
 

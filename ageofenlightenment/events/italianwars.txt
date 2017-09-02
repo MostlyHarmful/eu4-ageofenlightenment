@@ -187,7 +187,7 @@ country_event = {
 	title = "italian_wars.5.t"
 	desc = "italian_wars.5.d"
 	picture = BATTLE_eventPicture
-	
+	major = yes
 	is_triggered_only = yes
 	
 	option = {

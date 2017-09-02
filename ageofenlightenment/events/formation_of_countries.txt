@@ -21,3 +21,443 @@ country_event = {
 		dismantle_hre = yes
 	}
 }
+country_event = {
+	id = formation_of_countries.2
+	title = "formation_of_countries.2.t"
+	desc = "formation_of_countries.2.d"
+	picture = ANGRY_MOB_eventPicture
+	
+	fire_only_once = yes
+	major = yes
+	
+	trigger = {
+		current_age = age_of_revolutions
+		is_year = 1750
+		NOT = { exists = BEL }
+		is_free_or_tributary_trigger = yes
+		num_of_cities = 6
+		any_owned_province = {
+			belgium_region_trigger = yes
+			OR = {
+				culture = flemish
+				culture = wallonian
+				is_core = BEL
+			}
+		}
+		capital_scope = {
+			NOT = { belgium_region_trigger = yes }
+		}
+		NOT = {
+			OR = {
+				primary_culture = flemish
+				primary_culture = wallonian
+			}
+		}
+		is_revolution_target = no
+	}
+	
+	mean_time_to_happen = {
+		months = 1000
+		modifier = {
+			factor = 0.05
+			is_year = 1820
+		}
+		modifier = {
+			factor = 0.75
+			NOT = { accepted_culture = wallonian }
+		}
+		modifier = {
+			factor = 0.75
+			NOT = { accepted_culture = flemish }
+		}
+		modifier = {
+			factor = 0.75
+			num_of_owned_provinces_with = {
+				value = 2
+				belgium_region_trigger = yes
+				OR = {
+					culture = wallonian
+					culture = flemish
+				}
+			}
+		}
+		modifier = {
+			factor = 0.75
+			num_of_owned_provinces_with = {
+				value = 4
+				belgium_region_trigger = yes
+				OR = {
+					culture = wallonian
+					culture = flemish
+				}
+			}
+		}
+		modifier = {
+			factor = 0.75
+			num_of_owned_provinces_with = {
+				value = 6
+				belgium_region_trigger = yes
+				OR = {
+					culture = wallonian
+					culture = flemish
+				}
+			}
+		}
+		modifier = {
+			factor = 0.75
+			num_of_owned_provinces_with = {
+				value = 8
+				belgium_region_trigger = yes
+				OR = {
+					culture = wallonian
+					culture = flemish
+				}
+			}
+		}
+	}
+	
+	immediate = {
+		hidden_effect = {
+			every_owned_province = {
+				limit = {
+					belgium_region_trigger = yes
+					OR = {
+						culture = flemish
+						culture = wallonian
+						is_core = BEL
+					}
+					is_capital = no
+				}
+				discover_country = BEL
+				add_core = BEL
+			}
+			release = BEL
+			BEL = {
+				change_government = constitutional_monarchy
+			}
+			every_province = {
+				limit = {
+					belgium_region_trigger = yes
+				}
+				add_core = BEL
+			}
+		}
+	}
+	
+	option = {
+		name = "formation_of_countries.2.a"
+		ROOT = {
+			declare_war_with_cb = {
+				who = BEL
+				casus_belli = cb_insult
+			}
+		}
+		hidden_effect = {
+			BEL = {
+				country_event = { id = formation_of_countries.3 days = 1 }
+			}
+			# Send messages to rivals allowing them to join
+			every_enemy_country = {
+				country_event = { id = formation_of_countries.4 days = 1 }
+			}
+		}
+		ai_chance = { factor = 90 }
+	}
+	option = {
+		name = "formation_of_countries.2.b"
+		add_truce_with = BEL
+		add_prestige = -10
+		hidden_effect = {
+			BEL = {
+				country_event = { id = formation_of_countries.3 days = 1 }
+			}
+			# Send messages to rivals allowing them to join
+			every_enemy_country = {
+				country_event = { id = formation_of_countries.4 days = 10 }
+			}
+		}
+		ai_chance = { factor = 10 }
+	}
+	option = {
+		name = "formation_of_countries.2.c"
+		ROOT = {
+			declare_war_with_cb = {
+				who = BEL
+				casus_belli = cb_insult
+			}
+		}
+		hidden_effect = {
+			BEL = {
+				country_event = { 
+					id = formation_of_countries.3 
+					days = 1 
+				}
+			}
+			# Send messages to rivals allowing them to join
+			every_enemy_country = {
+				country_event = { 
+					id = formation_of_countries.4 
+					days = 10 
+				}
+			}
+		}
+		switch_tag = BEL
+		ai_chance = { factor = 0 }
+	}
+}
+country_event = {
+	id = formation_of_countries.3
+	title = "formation_of_countries.3.t"
+	desc = "formation_of_countries.3.d"
+	picture = MILITARY_CAMP_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EXCELLENT"
+		BEL = {
+			capital_scope = {
+				build_to_forcelimit = {
+					infantry = 0.55
+					cavalry = 0.05
+					artillery = 0.4
+				}
+			}
+			random_owned_province = {
+				limit = {
+					has_port = yes
+				}
+				build_to_forcelimit = {
+					heavy_ship = 0.3
+					light_ship = 0.3
+					transport = 0.2
+				}
+			}
+		}
+	}
+}
+country_event = {
+	id = formation_of_countries.4
+	title = "formation_of_countries.4.t"
+	desc = "formation_of_countries.4.d"
+	picture = BATTLE_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "formation_of_countries.4.a"
+		create_alliance = BEL
+	}
+	option = {
+		name = "formation_of_countries.4.b"
+		add_prestige = -10
+	}
+}
+country_event = {
+	id = formation_of_countries.5
+	title = "formation_of_countries.5.t"
+	desc = "formation_of_countries.5.d"
+	picture = ANGRY_MOB_eventPicture
+	
+	fire_only_once = yes
+	major = yes
+	
+	trigger = {
+		current_age = age_of_revolutions
+		is_year = 1750
+		NOT = { exists = GRE }
+		is_free_or_tributary_trigger = yes
+		num_of_cities = 6
+		any_owned_province = {
+			greek_independence_region_trigger = yes
+			OR = {
+				culture = greek
+				is_core = GRE
+			}
+		}
+		capital_scope = {
+			NOT = { greek_independence_region_trigger = yes }
+		}
+		NOT = {
+			culture_group = byzantine
+		}
+		is_revolution_target = no
+	}
+	
+	mean_time_to_happen = {
+		months = 1000
+		modifier = {
+			factor = 0.001
+			is_year = 1820
+		}
+		modifier = {
+			factor = 0.75
+			NOT = { accepted_culture = greek }
+		}
+		modifier = {
+			factor = 0.75
+			num_of_owned_provinces_with = {
+				value = 2
+				greek_region_trigger = yes
+				culture = greek
+			}
+		}
+		modifier = {
+			factor = 0.75
+			num_of_owned_provinces_with = {
+				value = 4
+				greek_region_trigger = yes
+				culture = greek
+			}
+		}
+		modifier = {
+			factor = 0.75
+			num_of_owned_provinces_with = {
+				value = 6
+				greek_region_trigger = yes
+				culture = greek
+			}
+		}
+		modifier = {
+			factor = 0.75
+			num_of_owned_provinces_with = {
+				value = 8
+				greek_region_trigger = yes
+				culture = greek
+			}
+		}
+	}
+	
+	immediate = {
+		hidden_effect = {
+			every_owned_province = {
+				limit = {
+					greek_independence_region_trigger = yes
+					OR = {
+						culture = greek
+						is_core = GRE
+					}
+					is_capital = no
+				}
+				discover_country = GRE
+				add_core = GRE
+			}
+			release = GRE
+			GRE = {
+				change_government = constitutional_monarchy
+			}
+			every_province = {
+				limit = {
+					greek_region_trigger = yes
+				}
+				add_core = GRE
+			}
+		}
+	}
+	
+	option = {
+		name = "formation_of_countries.5.a"
+		ROOT = {
+			declare_war_with_cb = {
+				who = GRE
+				casus_belli = cb_insult
+			}
+		}
+		hidden_effect = {
+			GRE = {
+				country_event = { id = formation_of_countries.6 days = 1 }
+			}
+			# Send messages to rivals allowing them to join
+			every_enemy_country = {
+				country_event = { 
+					id = formation_of_countries.7 
+					days = 10 
+				}
+			}
+		}
+		ai_chance = { factor = 100 }
+	}
+	option = {
+		name = "formation_of_countries.5.b"
+		add_truce_with = GRE
+		add_prestige = -10
+		hidden_effect = {
+			GRE = {
+				country_event = { id = formation_of_countries.6 days = 1 }
+			}
+			# Send messages to rivals allowing them to join
+			every_enemy_country = {
+				country_event = { id = formation_of_countries.7 days = 10 }
+			}
+		}
+		ai_chance = { factor = 0 }
+	}
+	option = {
+		name = "formation_of_countries.5.c"
+		ROOT = {
+			declare_war_with_cb = {
+				who = GRE
+				casus_belli = cb_insult
+			}
+		}
+		hidden_effect = {
+			GRE = {
+				country_event = { id = formation_of_countries.6 days = 1 }
+			}
+			# Send messages to rivals allowing them to join
+			every_enemy_country = {
+				country_event = { id = formation_of_countries.7 days = 10 }
+			}
+		}
+		switch_tag = GRE
+		ai_chance = { factor = 0 }
+	}
+}
+country_event = {
+	id = formation_of_countries.6
+	title = "formation_of_countries.6.t"
+	desc = "formation_of_countries.6.d"
+	picture = MILITARY_CAMP_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EXCELLENT"
+		GRE = {
+			capital_scope = {
+				build_to_forcelimit = {
+					infantry = 0.55
+					cavalry = 0.05
+					artillery = 0.4
+				}
+			}
+			random_owned_province = {
+				limit = {
+					has_port = yes
+				}
+				build_to_forcelimit = {
+					heavy_ship = 0.3
+					light_ship = 0.3
+					transport = 0.2
+				}
+			}
+		}
+	}
+}
+country_event = {
+	id = formation_of_countries.7
+	title = "formation_of_countries.7.t"
+	desc = "formation_of_countries.7.d"
+	picture = BATTLE_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "formation_of_countries.7.a"
+		create_alliance = GRE
+	}
+	option = {
+		name = "formation_of_countries.7.b"
+		add_prestige = -10
+	}
+}

@@ -1,0 +1,3 @@
+government = constitutional_republic
+religion = protestant
+technology_group = western
