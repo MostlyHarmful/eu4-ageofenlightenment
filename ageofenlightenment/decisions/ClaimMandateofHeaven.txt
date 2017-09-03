@@ -1,0 +1,37 @@
+country_decisions = {
+	claim_mandate_of_heaven = {
+		major = yes
+		potential = {
+			all_country = {
+				is_emperor_of_china = no
+			}
+			is_emperor_of_china = no
+			has_dlc = "Mandate of Heaven"
+			OR = {
+				religion_group = eastern
+				religion_group = pagan
+			}
+			NOT = { government = republic }
+			NOT = { tag = CHN }
+		}
+		allow = {
+			num_of_owned_provinces_with = {
+				value = 30
+				superregion = china_superregion
+			}
+		}
+		effect = {
+			dismantle_empire_of_china = no
+			set_emperor_of_china = ROOT
+			set_mandate = 60
+			country_event = { 
+				id = misc_events.5
+				days = 1
+			}
+		}
+		ai_will_do = {
+			factor = 1000
+		}
+	}
+
+}

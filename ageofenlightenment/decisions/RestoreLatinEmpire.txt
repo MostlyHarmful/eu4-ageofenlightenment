@@ -13,7 +13,7 @@ country_decisions = {
 			NOT = { government = republic }
 			NOT = { government = celestial_empire }
 			OR = {
-				owns = 379
+				owns = 151
 				AND = {
 					ai = no
 					tag = KNI
@@ -37,6 +37,7 @@ country_decisions = {
 			}
 		}
 		allow = {
+			NOT = { exists = BYZ }
 			is_at_war = no
 			thrace_area = {
 				type = all
@@ -49,6 +50,8 @@ country_decisions = {
 				limit = {
 					NOT = { tag = KNI }
 					NOT = { tag = CYP }
+					NOT = { tag = ATH }
+					NOT = { tag = NAX }
 				}
 				LTE = {
 					add_core = 151
@@ -63,6 +66,8 @@ country_decisions = {
 					OR = {
 						tag = KNI
 						tag = CYP
+						tag = ATH
+						tag = NAX
 					}
 				}
 				change_tag = LTE
@@ -84,6 +89,12 @@ country_decisions = {
 					}
 					set_government_rank = 3
 				}
+			}
+			greece_region = {
+				add_permanent_claim = LTE
+			}
+			anatolia_region = {
+				add_permanent_claim = LTE
 			}
 		}
 		ai_will_do = {

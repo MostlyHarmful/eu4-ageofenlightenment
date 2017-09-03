@@ -94,4 +94,7 @@
  formation_of_countries.7.b:0 "This is not our war."
  flavor_bur.EVTOPTB10:0 "A war would be too risky. Let's recognize their independence."
  flavor_bur.EVTOPTC10:0 "Glory to the Netherlands!"
+ misc_events.5.t: "Mandate of Heaven Restored"
+ misc_events.5.d: "Since time immemorial, the lands of China have been united under a great leader, the Emperor. Unforunately, this order that has held China together for so long was recently disrupted. However, today, the great leaders of [From.GetName] have proclaimed their hold on the Mandate of Heaven, restoring the Empire of China!"
+ misc_events.5.a: "Glory to the Empire of China!"
  

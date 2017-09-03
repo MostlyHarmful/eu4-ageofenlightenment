@@ -14,6 +14,15 @@ ai_manchu = {
 		NOT = {
 			is_year = 1700
 		}
+		NOT = {
+			any_country = {
+				ai = no
+				war_with = ROOT
+			}
+		}
+		MNG = {
+			num_of_cities = 25
+		}
 		luck = yes
 	}
 	
@@ -31,7 +40,7 @@ ai_manchu = {
 	stability_cost_modifier = -0.5
 	war_exhaustion_cost = -0.5
 	horde_unity = 10
-	liberty_desire = -50
+	liberty_desire = -1000
 	global_unrest = -15
 }
 ai_ming = {
@@ -107,12 +116,19 @@ qing_but_ming_exists = {
 		}
 		is_emperor_of_china = yes
 		exists = MNG
+		NOT = {
+			any_country = {
+				ai = no
+				war_with = ROOT
+			}
+		}
 	}
 
 	trigger = {
 		NOT = {
 			is_year = 1700
 		}
+		
 		luck = yes
 	}
 	global_tax_modifier = 0.5

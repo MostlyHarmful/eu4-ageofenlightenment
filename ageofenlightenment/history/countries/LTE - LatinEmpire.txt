@@ -1,5 +1,5 @@
 government = feudal_monarchy
-primary_culture = umbrian
+primary_culture = francien
 religion = catholic
 technology_group = western
 capital = 151 # Constantinople

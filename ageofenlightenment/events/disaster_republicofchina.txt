@@ -86,11 +86,13 @@ country_event = {
 	major = yes
 	
 	trigger = {
-		capital_scope = { 
-			controlled_by = REB
-		} 
+		OR = {
+			capital_scope = { 
+				controlled_by = REB
+			}
+			government = republic
+		}
 		num_of_cities = 10
-		NOT = { government = republic }
 	}
 	
 	

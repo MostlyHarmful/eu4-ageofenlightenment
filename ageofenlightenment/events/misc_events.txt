@@ -169,4 +169,19 @@ country_event = {
 		}
 	}
 }
+country_event = {
+	id = misc_events.5
+	title = "misc_events.5.t"
+	desc = "misc_events.5.d"
+	picture = IMPERIAL_SEAL_eventPicture
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "misc_events.5.a"
+		add_prestige = 100
+		ai_chance = { factor = 100 }
+	}
+}
 

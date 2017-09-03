@@ -1,0 +1,103 @@
+country_decisions = {
+
+	restore_mongol_empire = {
+		major = yes
+		potential = {
+			normal_or_historical_nations = yes
+			NOT = { has_country_flag = formed_golden_horde_flag }
+			OR = {
+				ai = no
+				is_playing_custom_nation = no
+			}
+			NOT = { tag = MUG }
+			NOT = { tag = HLR }
+			NOT = { tag = ROM }
+			NOT = { tag = PAP }
+			NOT = { tag = TUR }
+			NOT = { tag = BYZ }
+			NOT = { exists = MGL }
+			culture_group = altaic
+			government = steppe_horde
+			is_colonial_nation = no
+			OR = {
+				is_former_colonial_nation = no
+				AND = {
+					is_former_colonial_nation = yes
+					ai = no
+				}
+			}
+			OR = {
+				ai = no
+				num_of_cities = 20
+			}
+		}
+		allow = {
+			NOT = { exists = MGL }
+			government = steppe_horde
+			owns_core_province = 2116
+			owns_core_province = 1816
+			owns_core_province = 454
+			owns_core_province = 466
+			owns_core_province = 428
+			owns_core_province = 416
+			owns_core_province = 412
+			owns_core_province = 476
+			owns_core_province = 677
+			owns_core_province = 730
+			owns_core_province = 735
+			owns_core_province = 699
+			owns_core_province = 679
+			owns_core_province = 688
+			owns_core_province = 700
+			owns_core_province = 1082
+			owns_core_province = 423
+			num_of_cities = 60
+			is_free_or_tributary_trigger = yes
+			is_at_war = no
+		}
+		effect = {
+			change_tag = MGL
+			if = {
+				limit = {
+					is_part_of_hre = yes
+					is_elector = no
+					is_emperor = no
+				}
+				every_owned_province = {
+					limit = {
+						is_part_of_hre = yes
+					}
+					set_in_empire = no
+				}
+			}
+			if = {
+				limit = { NOT = { government_rank = 3 } }
+				set_government_rank = 3
+			}
+			china_superregion = {
+				add_permanent_claim = MGL
+			}
+			tartary_superregion = {
+				add_permanent_claim = MGL
+			}
+			persia_superregion = {
+				add_permanent_claim = MGL
+			}
+			korea_region = {
+				add_permanent_claim = MGL
+			}
+			anatolia_region = {
+				add_permanent_claim = MGL
+			}
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			add_prestige = 50
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		ai_importance = 400
+	}
+}
