@@ -41,6 +41,7 @@ country_event = {
 	
 	picture = SIEGE_eventPicture
 	fire_only_once = yes
+	hidden = yes
 	
 	trigger = {
 		OR = {
@@ -105,6 +106,7 @@ country_event = {
 	desc = "hidden.1.d"
 	
 	picture = SIEGE_eventPicture
+	hidden = yes
 	
 	trigger = {
 		OR = {
@@ -139,6 +141,7 @@ country_event = {
 	desc = "hidden.1.d"
 	fire_only_once = yes
 	picture = SIEGE_eventPicture
+	hidden = yes
 	
 	trigger = {
 		OR = {
@@ -161,7 +164,7 @@ country_event = {
 			limit = {
 				qing_china_region_trigger = yes
 			}
-			add_core = QNG
+			add_permanent_claim = QNG
 		}
 		set_country_flag = cores_gained_qing
 	}
@@ -173,6 +176,7 @@ country_event = {
 	desc = "hidden.1.d"
 	picture = SIEGE_eventPicture
 	fire_only_once = yes
+	hidden = yes
 	
 	trigger = {
 		tag = QNG
@@ -208,6 +212,7 @@ country_event = {
 	title = "hidden.1.t"
 	desc = "hidden.1.d"
 	picture = SIEGE_eventPicture
+	hidden = yes
 	
 	trigger = {
 		tag = QNG
@@ -244,6 +249,7 @@ country_event = {
 	desc = "hidden.1.d"
 	picture = SIEGE_eventPicture
 	fire_only_once = yes
+	hidden = yes
 	
 	trigger = {
 		tag = QNG
