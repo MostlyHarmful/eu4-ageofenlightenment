@@ -54,6 +54,9 @@ country_event = {
 		is_year = 1550
 		exists = MNG
 		num_of_cities = 10
+		MNG = {
+			num_of_cities = 25
+		}
 	}
 	
 	mean_time_to_happen = {
@@ -119,6 +122,7 @@ country_event = {
 		is_emperor_of_china = yes
 		NOT = { war_with = MNG }
 		exists = MNG
+		NOT = { is_year = 1700 }
 	}
 	
 	mean_time_to_happen = {
@@ -167,79 +171,6 @@ country_event = {
 			add_permanent_claim = QNG
 		}
 		set_country_flag = cores_gained_qing
-	}
-}
-country_event = {
-	id = hidden.6
-	
-	title = "hidden.1.t"
-	desc = "hidden.1.d"
-	picture = SIEGE_eventPicture
-	fire_only_once = yes
-	hidden = yes
-	
-	trigger = {
-		tag = QNG
-		ai = yes
-		was_player = no
-		is_emperor_of_china = yes
-		NOT = { exists = MNG }
-		has_country_flag = cores_gained_qing
-	}
-	
-	mean_time_to_happen = {
-		months = 1
-	}
-		
-	option = {
-		every_province = {
-			limit = {
-				is_core = QNG
-				owner = {
-					is_subject_of = QNG
-					was_player = no
-					ai = yes
-					NOT = { tag = KOR }
-				}
-			}
-			cede_province = QNG
-		}
-	}
-}
-country_event = {
-	id = hidden.7
-	
-	title = "hidden.1.t"
-	desc = "hidden.1.d"
-	picture = SIEGE_eventPicture
-	hidden = yes
-	
-	trigger = {
-		tag = QNG
-		ai = yes
-		was_player = no
-		is_emperor_of_china = yes
-		NOT = { exists = MNG }
-		has_country_flag = cores_gained_qing
-	}
-	
-	mean_time_to_happen = {
-		months = 60
-	}
-		
-	option = {
-		every_province = {
-			limit = {
-				is_core = QNG
-				owner = {
-					is_subject_of = QNG
-					was_player = no
-					ai = yes
-					NOT = { tag = KOR }
-				}
-			}
-			cede_province = QNG
-		}
 	}
 }
 country_event = {
