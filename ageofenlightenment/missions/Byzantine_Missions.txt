@@ -689,6 +689,7 @@ the_pentarchy = { #Regardless of who owns.
 				OR = {
 					religion = protestant
 					religion = calvinist
+				}
 			}
 			country_event = { id = misc_events.2 }
 		}

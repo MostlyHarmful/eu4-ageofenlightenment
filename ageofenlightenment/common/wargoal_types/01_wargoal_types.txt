@@ -1,6 +1,5 @@
 take_capital_unification = {
 	type = take_capital
-	ai_peace_desire = -1000
 	
 	badboy_factor = 0
 	prestige_factor = 0
@@ -28,4 +27,22 @@ take_capital_unification = {
 	po_humiliate = no
 	
 	war_name = UNIFICATION_WAR_NAME	
+}
+superiority_federation = {
+	type = superiority
+	
+	attacker = {
+		badboy_factor = 0.01
+		prestige_factor = 0.25
+		peace_cost_factor = 0.01
+		
+		allowed_provinces = {
+			is_core = ROOT
+		}
+		po_annex = yes
+		po_demand_provinces = yes
+	}
+
+	
+	war_name = EXPAND_TRIBAL_FEDERATION_WAR_NAME	
 }

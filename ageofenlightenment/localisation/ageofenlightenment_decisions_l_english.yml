@@ -16,3 +16,6 @@
  restore_mongol_empire_desc: "Centuries ago our Great Father united our ancestors in their ancient homeland. He died leaving his sons to squabble and split his mighty empire into petty fiefs, small, weak and unworthy of his legacy! The disjointed remnants still sweep across the steppes instilling fear in the hearts of his enemies just like the Great Mongol army once did.\nNo more! A worthy people still carrying the banner of his legacy ride across these lands! The blood of Genghis Khan still flows through our veins! We are the Mongol Empire and we are coming for what is rightfully ours!"
  belgian_nation_title: "Form Belgian Nation"
  belgian_nation_desc: "We have recently acquired the majority of the provinces in the southern Low Countries. Many have said that we could establish a prosperous kingdom on these lands. We should proclaim the Kingdom of Belgium."
+ EXPAND_TRIBAL_FEDERATION_WAR_NAME:0 "$ORDER$$FIRST$-$SECOND$ War of Aq Expansion"
+ cb_expand_federation:0 "Expand Tribal Federation"
+ cb_expand_federation_desc:0 "We must expand our tribal federation!"

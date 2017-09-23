@@ -97,4 +97,7 @@
  misc_events.5.t: "Mandate of Heaven Restored"
  misc_events.5.d: "Since time immemorial, the lands of China have been united under a great leader, the Emperor. Unforunately, this order that has held China together for so long was recently disrupted. However, today, the great leaders of [From.GetName] have proclaimed their hold on the Mandate of Heaven, restoring the Empire of China!"
  misc_events.5.a: "Glory to the Empire of China!"
+ rise_of_mughals.1.t: "Rise of the Safavid Dynasty"
+ rise_of_mughals.1.d: "The hold of the Aq Qoyunlu's tribal federation on Persia was weak. It was inevitable that at some point, they would lose their hold on their region. In 1501, exactly this occurred. The Persians, led by Ismail I, overthrew the Aq Qoyunlu federation, and established the Safavid dynasty."
+ rise_of_mughals.1.a: "Glory to Ismail I!"
  

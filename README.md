@@ -5,6 +5,7 @@ No DLC is required, but Mandate of Heaven is recommended.
 
 # List of the most notable changes:
 **General historical/balance changes**
+
 Absolutism now grants completely new bonuses (and a few penalties):
 Benefits:
 All power costs, down to -0.05
@@ -42,6 +43,7 @@ The end date is now 1836.
 
 
 **Formable/spawnable nations**
+
 Latin Empire, complete with its own ideas. Can only be formed directly by the Knights, Cyprus, Athens, or Naxos, but can be released as an independent state by anyone Catholic with cores on the area of Thrace.
 
 North German Confederation, which, if formed, will dismantle the HRE.
@@ -52,6 +54,7 @@ The Mongol Empire can be restored by anyone with the Altaic culture group and th
 
 
 **Europe**
+
 The Italian Wars are now implemented, and will usually result in a victory for Castille.
 
 Charles V will become the heir of Spain at some point between 1485-1575, and will transfer the Low Countries from Austria to Spain upon succeeding to the Spanish throne if Austria holds provinces in the region.
@@ -70,6 +73,7 @@ In the late Age of Revolutions, the Greeks and the Belgians can fight their inde
 
 
 **China**
+
 Increased mandate now grants much greater bonuses, but decreased mandate gives much greater penalties.
 
 All nations with the Chinese culture group now have the "Unify China" casus belli along with the Emperor, just like before.
@@ -84,12 +88,14 @@ If the Empire of China is dismantled, it can now be restored by any non-republic
 
 
 **Map Tweaks**
+
 The size of the province of Ceuta is now the historical size.
 Venice now somewhat resembles the real-world Venice and not a weird box in the Adriatic.
 Luxembourg has been cut down to its real-world size.
 
 
 # Upcoming features/To-do list
+
 Add in more formable nations in general
 
 Add in the ability to form Revolutionary Coalitions against the revolution target
@@ -112,6 +118,7 @@ And a bunch of other stuff...
 
 
 # Potential features
+
 Add in the Republic of Turkey, if the Ottoman Empire becomes a republic.
 
 Optional colonial railroading.

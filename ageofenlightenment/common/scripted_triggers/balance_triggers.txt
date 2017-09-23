@@ -1,0 +1,4 @@
+balance_of_power_large_trigger = {
+	total_development = 1350
+	
+}

@@ -44,9 +44,6 @@ country_event = {
 				is_core = BEL
 			}
 		}
-		capital_scope = {
-			NOT = { belgium_region_trigger = yes }
-		}
 		NOT = {
 			OR = {
 				primary_culture = flemish
@@ -126,7 +123,6 @@ country_event = {
 						culture = wallonian
 						is_core = BEL
 					}
-					is_capital = no
 				}
 				discover_country = BEL
 				add_core = BEL

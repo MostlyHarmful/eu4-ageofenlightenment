@@ -177,3 +177,22 @@ low_mandate = {
 	global_unrest = 20
 	war_exhaustion = 0.2
 }
+
+aq_war_with_tim = {
+	potential = {
+		ai = yes
+		was_player = no
+		tag = TIM
+	}
+
+	trigger = {
+		war_with = AKK
+		AKK = {
+			has_country_modifier = AKK_expansion
+		}
+	}
+	discipline = -0.95
+	land_morale = -0.95
+	global_unrest = -20
+	
+}

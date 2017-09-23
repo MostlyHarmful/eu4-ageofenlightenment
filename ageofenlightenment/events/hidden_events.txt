@@ -220,3 +220,271 @@ country_event = {
 		}
 	}
 }
+country_event = {
+	id = hidden.10
+	
+	title = "hidden.1.t"
+	desc = "hidden.1.d"
+	
+	picture = SIEGE_eventPicture
+	fire_only_once = yes
+	hidden = yes
+	
+	trigger = {
+		tag = AKK
+	}
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = "hidden.1.a"
+		persia_region = {
+			add_core = AKK
+		}
+		QAR = {
+			every_owned_province = {
+				add_core = AKK
+			}
+		}
+	}
+}
+country_event = {
+	id = hidden.11
+	
+	title = "hidden.1.t"
+	desc = "hidden.1.d"
+	
+	picture = SIEGE_eventPicture
+	fire_only_once = yes
+	hidden = yes
+	
+	trigger = {
+		tag = AKK
+		ai = yes
+		NOT = {
+			OR = {
+				TIM = { ai = no }
+				QAR = { ai = no }
+				TIM = { was_player = yes }
+				QAR = { was_player = yes }
+			}
+		}
+	}
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = "hidden.1.a"
+		set_country_flag = AKK_47
+		add_manpower = 50
+		add_country_modifier = {
+			name = "AKK_expansion"
+			duration = -1
+			desc = "AKK_expansion_desc"
+		}
+	}
+}
+country_event = {
+	id = hidden.12
+	
+	title = "hidden.1.t"
+	desc = "hidden.1.d"
+	
+	picture = SIEGE_eventPicture
+	fire_only_once = yes
+	hidden = yes
+	
+	trigger = {
+		tag = AKK
+		has_country_flag = AKK_47
+		ai = yes
+		NOT = {
+			OR = {
+				TIM = { ai = no }
+				QAR = { ai = no }
+				TIM = { was_player = yes }
+				QAR = { was_player = yes }
+			}
+		}
+	}
+	mean_time_to_happen = {
+		months = 1
+	}
+	
+	option = {
+		name = "hidden.1.a"
+		capital_scope = {
+			build_to_forcelimit = {
+				infantry = 0.5
+				cavalry = 0.5
+			}
+		}
+		declare_war_with_cb = {
+		  who = QAR
+		  casus_belli = cb_expand_federation
+		}
+	}
+}
+country_event = {
+	id = hidden.13
+	
+	title = "hidden.1.t"
+	desc = "hidden.1.d"
+	
+	picture = SIEGE_eventPicture
+	fire_only_once = yes
+	hidden = yes
+	
+	trigger = {
+		tag = AKK
+		num_of_cities = 6
+		any_owned_province = {
+			is_core = QAR
+		}
+		ai = yes
+		NOT = {
+			OR = {
+				TIM = { ai = no }
+				QAR = { ai = no }
+				TIM = { was_player = yes }
+				QAR = { was_player = yes }
+			}
+		}
+	}
+	mean_time_to_happen = {
+		months = 1
+	}
+	
+	option = {
+		name = "hidden.1.a"
+		inherit = QAR
+		add_manpower = 50
+		declare_war_with_cb = {
+		  who = TIM
+		  casus_belli = cb_expand_federation
+		}
+	}
+}
+country_event = {
+	id = hidden.14
+	
+	title = "hidden.1.t"
+	desc = "hidden.1.d"
+	
+	picture = SIEGE_eventPicture
+	fire_only_once = yes
+	hidden = yes
+	
+	trigger = {
+		tag = AKK
+		ai = yes
+		has_country_modifier = AKK_expansion
+		any_owned_province = {
+			is_core = TIM
+		}
+	}
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = "hidden.1.a"
+		remove_country_modifier = AKK_expansion
+		add_accepted_culture = persian
+		add_country_modifier = {
+			name = "AKK_settled"
+			duration = -1
+			desc = "AKK_settled_desc"
+		}
+		clr_country_flag = AKK_47
+		set_capital = 416
+		if = {
+			limit = { NOT = { government_rank = 2 } }
+			set_government_rank = 2
+		}
+		set_country_flag = AKK_conquered_provinces
+		every_province = {
+			limit = {
+				region = persia_region
+				owned_by = TIM
+			}
+			cede_province = ROOT
+		}
+		every_province = {
+			limit = {
+				owned_by = ROOT
+			}
+			remove_core = TIM
+		}
+	}
+}
+country_event = {
+	id = hidden.15
+	
+	title = "hidden.1.t"
+	desc = "hidden.1.d"
+	
+	picture = SIEGE_eventPicture
+	hidden = yes
+	
+	trigger = {
+		tag = AKK
+		has_country_modifier = AKK_expansion
+		OR = {
+			ai = no
+			was_player = yes
+			TIM = { ai = no }
+			QAR = { ai = no }
+			TIM = { was_player = yes }
+			QAR = { was_player = yes }
+		}
+	}
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = "hidden.1.a"
+		remove_country_modifier = AKK_expansion
+	}
+}
+country_event = {
+	id = hidden.16
+	
+	title = "hidden.1.t"
+	desc = "hidden.1.d"
+	
+	picture = SIEGE_eventPicture
+	hidden = yes
+	
+	trigger = {
+		tag = AKK
+		has_country_flag = AKK_conquered_provinces
+		any_country = {
+			war_with = ROOT
+		}
+	}
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = "hidden.1.a"
+		every_country = {
+			limit = {
+				war_with = ROOT
+				NOT = { 
+					OR = {
+						tag = TUR
+						tag = MAM
+						ai = no
+						was_player = yes
+					}
+				}
+			}
+			white_peace = ROOT
+		}
+	}
+}
