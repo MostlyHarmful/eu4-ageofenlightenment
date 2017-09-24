@@ -78,6 +78,7 @@ country_event = {
 		  dip = 4
 		  mil = 5
 		}
+		kill_heir = yes
 		change_primary_culture = persian
 		change_religion = shiite
 		add_years_of_income = 2.0
@@ -197,6 +198,8 @@ country_event = {
 			add_permanent_claim = MUG
 		}
 		add_prestige = 25
+		add_manpower = 50
+		add_treasury = 1500
 		release = KHI
 		if = {
 			limit = {
@@ -211,9 +214,42 @@ country_event = {
 				limit = {
 					owned_by = ROOT
 					is_core = KHO
+					NOT = { is_core = AFG }
 				}
 				cede_province = PER
 				add_core = PER
+			}
+		}
+		if = {
+			limit = {
+				exists = SHY
+				SHY = {
+					is_neighbor_of = ROOT
+				}
+			}
+			every_province = {
+				limit = {
+					owned_by = ROOT
+					culture = uzbehk
+				}
+				cede_province = SHY
+				add_core = SHY
+			}
+		}
+		if = {
+			limit = {
+				exists = BUK
+				BUK = {
+					is_neighbor_of = ROOT
+				}
+			}
+			every_province = {
+				limit = {
+					owned_by = ROOT
+					culture = uzbehk
+				}
+				cede_province = BUK
+				add_core = BUK
 			}
 		}
 		
