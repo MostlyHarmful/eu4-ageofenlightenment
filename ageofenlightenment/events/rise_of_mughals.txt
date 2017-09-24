@@ -14,11 +14,13 @@ country_event = {
 		any_owned_province = {
 			region = persia_region
 		}
-		owns_core_province = 416
+		owns_core_province = 428
 		OR = {
-			NOT = { horde_unity = 10 }
+			NOT = { horde_unity = 20 }
 			is_year = 1485
 		}
+		is_free_or_tributary_trigger = yes
+		is_at_war = no
 	}
 	mean_time_to_happen = {
 		months = 24
@@ -72,12 +74,13 @@ country_event = {
 		  claim = 100
 		  regency = no
 		  female = no
-		  adm = 6
-		  dip = 6
-		  mil = 6
+		  adm = 5
+		  dip = 4
+		  mil = 5
 		}
 		change_primary_culture = persian
 		change_religion = shiite
+		add_years_of_income = 2.0
 		if = {
 			limit = {
 				technology_group = nomad_group
@@ -90,5 +93,145 @@ country_event = {
 			limit = { has_custom_ideas = no }
 			country_event = { id = ideagroups.1 } #Swap Ideas
 		}
+	}
+}
+country_event = {
+	id = rise_of_mughals.2
+	
+	title = "rise_of_mughals.2.t"
+	desc = "rise_of_mughals.2.d"
+	picture = REFORM_eventPicture
+	fire_only_once = yes
+	major = yes
+	
+	trigger = {
+		tag = TIM
+		ai = yes
+		was_player = no
+		NOT = { exists = MUG }
+		is_year = 1520
+		is_at_war = no
+		is_free_or_tributary_trigger = yes
+		NOT = {
+			calc_true_if = {
+				all_province = {
+					owned_by = TIM
+					region = persia_region
+				}
+				amount = 5
+			}
+		}
+	}
+	mean_time_to_happen = {
+		months = 1
+	}
+	
+	option = {
+		name = "rise_of_mughals.2.a"
+		set_country_flag = TIM_rise_of_mughals
+		every_province = {
+			limit = {
+				owner = {
+					ai = yes
+					was_player = no
+				}
+				OR = {
+					area = kabulistan_area
+					area = multan_area
+					area = lahore_area
+					area = sirhind_area
+					area = upper_doab_area
+					province_id = 578
+					province_id = 507
+					province_id = 524
+					province_id = 510
+					province_id = 522
+				}
+			}
+			cede_province = ROOT
+			add_core = ROOT
+		}
+		change_tag = MUG
+		if = {
+			limit = {
+				is_part_of_hre = yes
+				is_elector = no
+				is_emperor = no
+			}
+			every_owned_province = {
+				limit = {
+					is_part_of_hre = yes
+				}
+				set_in_empire = no
+			}
+		}
+		set_government_rank = 3
+		bengal_region = {
+			limit = {
+				NOT = { owned_by = ROOT }
+			}
+			add_permanent_claim = MUG
+		}
+		hindusthan_region = {
+			limit = {
+				NOT = { owned_by = ROOT }
+			}
+			add_permanent_claim = MUG
+		}
+		west_india_region = {
+			limit = {
+				NOT = { owned_by = ROOT }
+			}
+			add_permanent_claim = MUG
+		}
+		deccan_region = {
+			limit = {
+				NOT = { owned_by = ROOT }
+			}
+			add_permanent_claim = MUG
+		}
+		coromandel_region = {
+			limit = {
+				NOT = { owned_by = ROOT }
+			}
+			add_permanent_claim = MUG
+		}
+		add_prestige = 25
+		release = KHI
+		if = {
+			limit = {
+				NOT = { exists = KHO }
+				exists = PER
+				PER = {
+					num_of_cities = 5
+					is_neighbor_of = ROOT
+				}
+			}
+			every_province = {
+				limit = {
+					owned_by = ROOT
+					is_core = KHO
+				}
+				cede_province = PER
+				add_core = PER
+			}
+		}
+		
+		if = {
+			limit = {
+				technology_group = nomad_group
+			}
+			change_technology_group = muslim
+		}
+		if = {
+			limit = { NOT = { government = celestial_empire } }
+			change_government = iqta
+		}
+		change_unit_type = indian
+		if = {
+			limit = { has_custom_ideas = no }
+			country_event = { id = ideagroups.1 } #Swap Ideas
+		}
+		set_country_flag = formed_mughal_empire_flag
 	}
 }

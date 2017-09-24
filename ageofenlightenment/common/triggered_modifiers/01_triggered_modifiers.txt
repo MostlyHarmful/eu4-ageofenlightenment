@@ -191,8 +191,26 @@ aq_war_with_tim = {
 			has_country_modifier = AKK_expansion
 		}
 	}
-	discipline = -0.95
-	land_morale = -0.95
+	discipline = -0.5
+	land_morale = -0.5
+}
+tim_hold = {
+	potential = {
+		ai = yes
+		was_player = no
+		tag = TIM
+	}
+
+	trigger = {
+		NOT = { has_country_flag = TIM_rise_of_mughals }
+		NOT = { 
+			any_country = {
+				ai = no
+				war_with = TIM
+			}
+		}
+	}
 	global_unrest = -20
-	
+	war_exhaustion = -0.2
+	horde_unity = 10
 }

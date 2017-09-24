@@ -360,6 +360,12 @@ country_event = {
 	option = {
 		name = "hidden.1.a"
 		inherit = QAR
+		every_province = {
+			limit = {
+				is_core = QAR
+			}
+			remove_core = QAR
+		}
 		add_manpower = 50
 		declare_war_with_cb = {
 		  who = TIM
@@ -418,6 +424,9 @@ country_event = {
 			}
 			remove_core = TIM
 		}
+		TIM = {
+			country_event = { id = hidden.18 }
+		}
 	}
 }
 country_event = {
@@ -461,9 +470,21 @@ country_event = {
 	
 	trigger = {
 		tag = AKK
+		ai = yes
+		was_player = no
 		has_country_flag = AKK_conquered_provinces
 		any_country = {
 			war_with = ROOT
+		}
+		NOT = {
+			any_country = {
+				OR = {
+					ai = no
+					was_player = yes
+				}
+				alliance_with = AKK
+				is_at_war = yes
+			}
 		}
 	}
 	mean_time_to_happen = {
@@ -479,12 +500,136 @@ country_event = {
 					OR = {
 						tag = TUR
 						tag = MAM
-						ai = no
-						was_player = yes
+						capital_scope = {
+							continent = persia_region
+						}
+						AND = {
+							OR = {
+								ai = no
+								was_player = yes
+							}
+							is_in_war = {
+								defender_leader = AKK
+							}
+						}
 					}
 				}
 			}
 			white_peace = ROOT
+		}
+	}
+}
+country_event = {
+	id = hidden.17
+	
+	title = "hidden.1.t"
+	desc = "hidden.1.d"
+	
+	picture = SIEGE_eventPicture
+	hidden = yes
+	
+	trigger = {
+		tag = TIM
+		ai = yes
+		was_player = no
+		NOT = { has_country_flag = TIM_rise_of_mughals }
+		NOT = {
+			AKK = {
+				OR = {
+					ai = no
+					was_player = yes
+				}
+			}
+		}
+		any_country = {
+			war_with = ROOT
+		}
+		NOT = {
+			any_country = {
+				OR = {
+					ai = no
+					was_player = yes
+				}
+				alliance_with = TIM
+				is_at_war = yes
+			}
+		}
+	}
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = "hidden.1.a"
+		every_country = {
+			limit = {
+				war_with = ROOT
+				NOT = { 
+					OR = {
+						capital_scope = {
+							superregion = india_superregion
+						}
+						tag = AKK
+						tag = QAR
+						AND = {
+							OR = {
+								ai = no
+								was_player = yes
+							}
+							is_in_war = {
+								defender_leader = TIM
+							}
+						}
+					}
+				}
+			}
+			white_peace = ROOT
+		}
+	}
+}
+country_event = {
+	id = hidden.18
+	
+	title = "hidden.1.t"
+	desc = "hidden.1.d"
+	
+	picture = SIEGE_eventPicture
+	hidden = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = "hidden.1.a"
+		add_treasury = 1250
+		add_manpower = 50
+		if = {
+			limit = {
+				exists = BAL
+				BAL = {
+					ai = yes
+					was_player = no
+				}
+			}
+			inherit = BAL
+		}
+		if = {
+			limit = {
+				exists = SND
+				SND = {
+					ai = yes
+					was_player = no
+				}
+			}
+			inherit = SND
+		}
+		if = {
+			limit = {
+				exists = MUL
+				MUL = {
+					ai = yes
+					was_player = no
+				}
+			}
+			inherit = MUL
 		}
 	}
 }
