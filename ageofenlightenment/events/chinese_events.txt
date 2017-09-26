@@ -328,7 +328,7 @@ country_event = {
 			cede_province = ROOT
 			add_core = LFA
 		}
-		create_vassal = LFA
+		release = LFA
 		LFA = {
 			change_government = constitutional_republic
 			define_ruler = {
@@ -343,6 +343,7 @@ country_event = {
 				mil = 3
 			}
 		}
+		vassalize = LFA
 	}
 	
 }
