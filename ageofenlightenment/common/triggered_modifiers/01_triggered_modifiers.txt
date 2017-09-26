@@ -136,4 +136,7 @@ manchu_strange_behavior_fix = {
 		is_emperor_of_china = no
 	}
 	yearly_corruption = -50
+	global_tax_modifier = 0.5
+	trade_efficiency = 0.5
+	production_efficiency = 0.5
 }
