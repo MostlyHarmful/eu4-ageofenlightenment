@@ -132,7 +132,7 @@ manchu_strange_behavior_fix = {
 		ai = yes
 		was_player = no
 	}
-	allow = {
+	trigger = {
 		is_emperor_of_china = no
 	}
 	yearly_corruption = -50
