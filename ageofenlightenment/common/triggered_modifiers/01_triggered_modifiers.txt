@@ -101,6 +101,7 @@ in_civil_war = {
 	}
 	global_unrest = -20
 }
+
 manchu_lolmate = {
 	potential = {
 		OR = {
@@ -110,13 +111,13 @@ manchu_lolmate = {
 		ai = yes
 		was_player = no
 	}
-	allow = {
+	trigger = {
 		war_with = MJZ
 		MJZ = {
 			ai = yes
 			was_player = no
 		}
 	}
-	discipline = -0.95
-	land_morale = -0.95
+	discipline = -0.5
+	land_morale = -0.5
 }
