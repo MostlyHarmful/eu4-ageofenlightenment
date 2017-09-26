@@ -338,7 +338,7 @@ country_event = {
 				claim = 25
 				regency = no
 				female = no
-			`	adm = 4
+				adm = 4
 				dip = 2
 				mil = 3
 			}

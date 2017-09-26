@@ -1,25 +1,5 @@
 # Order here is the priority for taking them, if trigger is true.
 
-MJZ = {
-	NOT = {
-		exists = MCH
-		is_year = 1700
-	}
-}
-
-MCH = {
-	NOT = {
-		exists = QNG
-		is_year = 1700
-	}
-}
-
-QNG = {
-	NOT = {
-		is_year = 1700
-	}
-}
-
 CAS = {
 	NOT = { 
 		exists = SPA 

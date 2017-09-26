@@ -99,14 +99,16 @@ in_civil_war = {
 			war_with = MNG
 		}
 	}
-	global_unrest = -20
+	global_unrest = -1000
 }
 
-manchu_lolmate = {
+manchu_ferocity = {
 	potential = {
 		OR = {
 			tag = MYR
 			tag = MHX
+			tag = KRC
+			tag = KOR
 		}
 		ai = yes
 		was_player = no
@@ -120,4 +122,18 @@ manchu_lolmate = {
 	}
 	discipline = -0.5
 	land_morale = -0.5
+}
+manchu_strange_behavior_fix = {
+	potential = {
+		OR = {
+			tag = MJZ
+			tag = MCH
+		}
+		ai = yes
+		was_player = no
+	}
+	allow = {
+		is_emperor_of_china = no
+	}
+	yearly_corruption = -50
 }

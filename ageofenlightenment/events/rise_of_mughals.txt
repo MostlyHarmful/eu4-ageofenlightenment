@@ -205,6 +205,7 @@ country_event = {
 			limit = {
 				culture = turkmeni
 			}
+			remove_core = ROOT
 			cede_province = KHI
 			add_core = KHI
 		}
@@ -222,6 +223,7 @@ country_event = {
 					is_core = KHO
 					NOT = { is_core = AFG }
 				}
+				remove_core = ROOT
 				cede_province = PER
 				add_core = PER
 			}
@@ -238,6 +240,7 @@ country_event = {
 					owned_by = ROOT
 					culture = uzbehk
 				}
+				remove_core = ROOT
 				cede_province = SHY
 				add_core = SHY
 			}
@@ -254,6 +257,7 @@ country_event = {
 					owned_by = ROOT
 					culture = uzbehk
 				}
+				remove_core = ROOT
 				cede_province = BUK
 				add_core = BUK
 			}

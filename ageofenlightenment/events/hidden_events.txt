@@ -95,56 +95,26 @@ country_event = {
 				NOT = {
 					OR = {
 						primary_culture = manchu
+						tag = KRC
 						AND = {
-							OR = {
-								ai = no
-								was_player = yes
+							NOT = { tag = MNG }
+							NOT = { tag = KOR }
+							any_owned_province = {
+								OR = {
+									is_core = ROOT
+									region = manchuria_region
+								}
 							}
-							is_in_war = {
-								defender_leader = ROOT
-							}
+						}
+						OR = {
+							ai = no
+							was_player = yes
 						}
 					}
 				}
 			}
 			white_peace = ROOT
 		}
-	}
-}
-country_event = {
-	id = hidden.4
-	
-	title = "hidden.1.t"
-	desc = "hidden.1.d"
-	
-	picture = SIEGE_eventPicture
-	hidden = yes
-	
-	trigger = {
-		OR = {
-			tag = MCH
-			tag = MJZ
-			tag = QNG
-		}
-		ai = yes
-		was_player = no
-		is_emperor_of_china = yes
-		NOT = { war_with = MNG }
-		exists = MNG
-		NOT = { is_year = 1700 }
-	}
-	
-	mean_time_to_happen = {
-		months = 1
-	}
-		
-	option = {
-		name = "hidden.1.a"
-		declare_war_with_cb = {
-		  who = MNG
-		  casus_belli = cb_chinese_unification
-		}
-		add_prestige = 100
 	}
 }
 country_event = {
@@ -178,6 +148,36 @@ country_event = {
 			add_permanent_claim = QNG
 		}
 		set_country_flag = cores_gained_qing
+	}
+}
+country_event = {
+	id = hidden.6
+	
+	title = "hidden.1.t"
+	desc = "hidden.1.d"
+	
+	picture = SIEGE_eventPicture
+	fire_only_once = yes
+	hidden = yes
+	
+	trigger = {
+		tag = MJZ
+		ai = yes
+	}
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = "hidden.1.a"
+		manchuria_region = {
+			add_core = MJZ
+		}
+		KRC = {
+			every_owned_province = {
+				add_core = MJZ
+			}
+		}
 	}
 }
 country_event = {
@@ -463,14 +463,9 @@ country_event = {
 						capital_scope = {
 							continent = persia_region
 						}
-						AND = {
-							OR = {
-								ai = no
-								was_player = yes
-							}
-							is_in_war = {
-								defender_leader = AKK
-							}
+						OR = {
+							ai = no
+							was_player = yes
 						}
 					}
 				}
@@ -531,14 +526,9 @@ country_event = {
 						}
 						tag = AKK
 						tag = QAR
-						AND = {
-							OR = {
-								ai = no
-								was_player = yes
-							}
-							is_in_war = {
-								defender_leader = TIM
-							}
+						OR = {
+							ai = no
+							was_player = yes
 						}
 					}
 				}
