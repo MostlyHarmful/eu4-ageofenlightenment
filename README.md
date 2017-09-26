@@ -5,6 +5,7 @@ No DLC is required, but Mandate of Heaven is recommended.
 
 # List of the most notable changes:
 **General historical/balance changes**
+
 Absolutism now grants completely new bonuses (and a few penalties).
 
 Administrative efficiency bonuses have been returned to tech.
@@ -30,6 +31,7 @@ The end date is now 1836.
 
 
 **Formable/spawnable nations**
+
 Latin Empire, complete with its own ideas. Can only be formed directly by the Knights, Cyprus, Athens, or Naxos, but can be released as an independent state by anyone Catholic with cores on the area of Thrace.
 
 North German Confederation, which, if formed, will dismantle the HRE.
@@ -42,6 +44,7 @@ Belgium can now spawn due to an independence war in the late Age of Revolutions,
 
 
 **Europe**
+
 An Italian Wars event chain is now implemented, and will usually result in a victory for Castille.
 
 Charles V will become the heir of Spain at some point between 1485-1575, and will transfer the Low Countries from Austria to Spain upon succeeding to the Spanish throne if Austria holds provinces in the region.
@@ -64,6 +67,7 @@ The rise and fall of Aq Qoyunlu is now railroaded, as well as the rise of the Mu
 
 
 **China**
+
 Increased mandate now grants much greater bonuses, but decreased mandate gives much greater penalties.
 
 Having less than 10 mandate will increase national unrest by 10.
@@ -80,6 +84,7 @@ If the Empire of China is dismantled, it can now be restored by any non-republic
 
 
 **Map Tweaks**
+
 No new provinces are added, nor will I ever add any (which means this mod will be compatible with any mods that don't change the map), but there are some changes to existing provinces:
 
 The size of the province of Ceuta is now the historical size. 
