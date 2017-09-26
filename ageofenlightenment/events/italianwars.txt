@@ -144,6 +144,14 @@ country_event = {
 					was_player = no
 				}
 			}
+			if = {
+				limit = {
+					MLO = {
+						government = republic
+					}
+				}
+				change_government = feudal_monarchy
+			}
 			create_union = MLO
 			else = {
 				add_casus_belli = {

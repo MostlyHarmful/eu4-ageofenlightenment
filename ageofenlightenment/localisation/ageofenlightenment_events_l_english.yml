@@ -110,3 +110,6 @@
  chinese_events.2.d: "The Chinese Ming dynasty to our south has been hit with quite a bit of unrest recently. At the same time, many elements in the army of the Ming dynasty have offered us their support if we are to invade China and establish our own Chinese dynasty. Shall we take this opportunity?"
  chinese_events.2.a: "This is an opportunity too great to miss. We must take China for ourselves."
  chinese_events.2.b: "China? Who cares. We are fine on our own."
+ chinese_events.3.t: "The Lanfang Republic"
+ chinese_events.3.d: "The Lanfang Republic has just been established by Chinese immigrants to the island of Borneo. Historically, the Lanfang Republic was a Chinese state and kongsi federation in Western Borneo. It was established by a Hakka Chinese named Luo Fangbo in 1777, until it was ended by Dutch occupation in 1884. It was one of many tributary states of Qing China."
+ chinese_events.3.a: "How interesting."

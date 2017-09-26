@@ -295,3 +295,54 @@ country_event = {
 	}
 	
 }
+
+country_event = {
+	id = chinese_events.3
+	title = "chinese_events.3.t"
+	desc = "chinese_events.3.d"
+	picture = IMPERIAL_SEAL_eventPicture
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = QNG
+		is_emperor_of_china = yes
+		is_year = 1750
+		640 = {
+			OR = {
+				owner = {
+					ai = yes
+					was_player = no
+				}
+				is_empty = yes
+			}
+		}
+	}
+	mean_time_to_happen = {
+		months = 300
+	}
+	
+	option = {
+		name = "chinese_events.3.a"
+		640 = {
+			cede_province = ROOT
+			add_core = LFA
+		}
+		create_vassal = LFA
+		LFA = {
+			change_government = constitutional_republic
+			define_ruler = {
+				name = "Fangbo"
+			    dynasty = "Luo"
+				age = 38
+				claim = 25
+				regency = no
+				female = no
+			`	adm = 4
+				dip = 2
+				mil = 3
+			}
+		}
+	}
+	
+}
