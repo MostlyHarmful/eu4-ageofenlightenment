@@ -201,6 +201,13 @@ country_event = {
 		add_manpower = 50
 		add_treasury = 1500
 		release = KHI
+		every_owned_province = {
+			limit = {
+				culture = turkmeni
+			}
+			cede_province = KHI
+			add_core = KHI
+		}
 		if = {
 			limit = {
 				NOT = { exists = KHO }
@@ -210,9 +217,8 @@ country_event = {
 					is_neighbor_of = ROOT
 				}
 			}
-			every_province = {
+			every_owned_province = {
 				limit = {
-					owned_by = ROOT
 					is_core = KHO
 					NOT = { is_core = AFG }
 				}
@@ -227,7 +233,7 @@ country_event = {
 					is_neighbor_of = ROOT
 				}
 			}
-			every_province = {
+			every_owned_province = {
 				limit = {
 					owned_by = ROOT
 					culture = uzbehk

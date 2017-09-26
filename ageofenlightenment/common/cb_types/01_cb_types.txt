@@ -17,3 +17,12 @@ cb_expand_federation = {
 	war_goal = superiority_federation
 	
 }
+cb_manchu_conquest = {
+	ai_peace_desire = -1000
+	valid_for_subject = no
+
+	is_triggered_only = yes
+	months = 12
+
+	war_goal = superiority_manchu_conquest
+}

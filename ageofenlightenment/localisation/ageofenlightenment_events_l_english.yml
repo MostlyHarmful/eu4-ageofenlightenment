@@ -103,4 +103,10 @@
  rise_of_mughals.2.t: "Rise of the Mughals"
  rise_of_mughals.2.d: "India, as always, was a rich land. To the remnants of the Timurid Empire, however, it was a new world to conquer. In 1526, the conquest of the Delhi Sultanate by Babur Timurid resulted in the creation of the Mughal Empire."
  rise_of_mughals.2.a: "India is ours for the taking!"
- 
+ chinese_events.1.t: "The Revolt of Li Zicheng"
+ chinese_events.1.d: "The Shun dynasty, or Great Shun, was a short-lived dynasty created in the Ming-Qing transition from Ming to Qing rule in Chinese history. The dynasty was founded in Xi'an on 8 February 1644, the first day of the lunar year, by Li Zicheng, the leader of a large peasant rebellion. Li, however, only went by the title of King, not Emperor. The capture of Beijing by the Shun forces in April 1644 marked the end of the Ming dynasty, but Li Zicheng failed to solidify his mandate; in late May 1644, he was defeated at the Battle of Shanhai Pass by the joint forces of Ming general Wu Sangui and Manchu prince Dorgon. When he fled back to Beijing in early June, Li finally proclaimed himself Emperor of China and left the capital in a hurry. The Shun dynasty ended with Li's death in 1645. After the Shun was created, Li Zicheng ordered the soldiers to kill the Ming remnants still existing in Beijing. This resulted in strong rebellions from the forces of the Southern Ming. In addition with the Shun ministers constantly fighting for power, the dynasty effectively lasted less than a year."
+ chinese_events.1.a: "This is a disaster!"
+ chinese_events.2.t: "The Chinese Opportunity"
+ chinese_events.2.d: "The Chinese Ming dynasty to our south has been hit with quite a bit of unrest recently. At the same time, many elements in the army of the Ming dynasty have offered us their support if we are to invade China and establish our own Chinese dynasty. Shall we take this opportunity?"
+ chinese_events.2.a: "This is an opportunity too great to miss. We must take China for ourselves."
+ chinese_events.2.b: "China? Who cares. We are fine on our own."

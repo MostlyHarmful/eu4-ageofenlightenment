@@ -46,3 +46,33 @@ superiority_federation = {
 	
 	war_name = EXPAND_TRIBAL_FEDERATION_WAR_NAME	
 }
+superiority_manchu_conquest = {
+	type = take_capital
+	
+	badboy_factor = 0
+	prestige_factor = 0
+	peace_cost_factor = 0	
+	
+	allowed_provinces = {
+		always = no
+	}
+	
+	po_annex = no
+	po_demand_provinces = no
+	po_revoke_cores = no
+	po_release_vassals = no
+	po_release_annexed = no
+	po_return_cores = no
+	po_change_religion = no
+	po_form_personal_union = no
+	po_gold = yes
+	po_become_vassal = no
+	po_concede_defeat = no
+	po_annul_treaties = no
+	po_change_government = no
+	po_revoke_elector = no
+	po_trade_power = no
+	po_humiliate = no
+	
+	war_name = superiority_manchu_conquest_desc	
+}

@@ -33,5 +33,274 @@ country_decisions = {
 			factor = 1000
 		}
 	}
-
+	destruction_of_shun_QNG = {
+		major = yes
+		potential = {
+			tag = QNG
+			has_global_flag = qing_intervention_china
+			exists = CSH
+			war_with = CSH
+			NOT = { has_country_flag = destroyed_CSH_QNG }
+		}
+		allow = {
+			calc_true_if = {
+				all_province = {
+					owned_by = CSH
+					controlled_by = ROOT
+				}
+				amount = 15
+			}
+			CSH = {
+				capital_scope = {
+					controlled_by = ROOT
+				}
+			}
+		}
+		effect = {
+			if = {
+				limit = {
+					CSH = {
+						is_emperor_of_china = yes
+					}
+				}
+				dismantle_empire_of_china = no
+				set_emperor_of_china = ROOT
+				set_mandate = 75
+			}
+			white_peace = CSH
+			inherit = CSH
+			every_owned_province = {
+				remove_core = CSH
+			}
+			add_prestige = 50
+			hidden_effect = {
+				set_country_flag = destroyed_CSH_QNG
+			}
+		}
+		ai_will_do = {
+			factor = 1000
+		}
+		ai_importance = 1000
+	}
+	destruction_of_shun_MNG = {
+		major = yes
+		potential = {
+			tag = MNG
+			has_global_flag = shun_revolt_occured
+			exists = CSH
+			war_with = CSH
+			NOT = { has_country_flag = destroyed_CSH_MNG }
+		}
+		allow = {
+			calc_true_if = {
+				all_province = {
+					owned_by = CSH
+					controlled_by = ROOT
+				}
+				amount = 15
+			}
+			NOT = {
+				QNG = { 
+					war_with = ROOT
+					war_with = CSH
+				}
+			}
+			1816 = {
+				OR = {
+					owned_by = ROOT
+					controlled_by = ROOT
+				}
+			}
+			CSH = {
+				capital_scope = {
+					controlled_by = ROOT
+				}
+			}
+		}
+		effect = {
+			if = {
+				limit = {
+					CSH = {
+						is_emperor_of_china = yes
+					}
+				}
+				dismantle_empire_of_china = no
+				set_emperor_of_china = ROOT
+				set_mandate = 40
+			}
+			white_peace = CSH
+			inherit = CSH
+			add_prestige = 50
+			every_owned_province = {
+				remove_core = CSH
+			}
+			hidden_effect = {
+				set_country_flag = destroyed_CSH_MNG
+			}
+		}
+		ai_will_do = {
+			factor = 1000
+		}
+		ai_importance = 1000
+	}
+	destruction_of_ming_QNG = {
+		major = yes
+		potential = {
+			tag = QNG
+			has_global_flag = qing_intervention_china
+			exists = MNG
+			war_with = MNG
+			NOT = { has_country_flag = destroyed_MNG_QNG }
+		}
+		allow = {
+			calc_true_if = {
+				all_province = {
+					owned_by = MNG
+					controlled_by = ROOT
+				}
+				amount = 15
+			}
+			MNG = {
+				capital_scope = {
+					controlled_by = ROOT
+				}
+			}
+		}
+		effect = {
+			if = {
+				limit = {
+					MNG = {
+						is_emperor_of_china = yes
+					}
+				}
+				dismantle_empire_of_china = no
+				set_emperor_of_china = ROOT
+				set_mandate = 75
+			}
+			white_peace = MNG
+			inherit = MNG
+			add_prestige = 50
+			hidden_effect = {
+				set_country_flag = destroyed_MNG_QNG
+			}
+		}
+		ai_will_do = {
+			factor = 1000
+		}
+		ai_importance = 1000
+	}
+	destruction_of_ming_CSH = {
+		major = yes
+		potential = {
+			tag = CSH
+			has_global_flag = shun_revolt_occured
+			exists = MNG
+			war_with = MNG
+			NOT = { has_country_flag = destroyed_MNG_CSH }
+		}
+		allow = {
+			calc_true_if = {
+				all_province = {
+					owned_by = MNG
+					controlled_by = ROOT
+				}
+				amount = 15
+			}
+			NOT = {
+				QNG = { 
+					war_with = ROOT
+					war_with = CSH
+				}
+			}
+			MNG = {
+				capital_scope = {
+					controlled_by = ROOT
+				}
+			}
+		}
+		effect = {
+			if = {
+				limit = {
+					MNG = {
+						is_emperor_of_china = yes
+					}
+				}
+				dismantle_empire_of_china = no
+				set_emperor_of_china = ROOT
+				set_mandate = 50
+			}
+			white_peace = MNG
+			inherit = MNG
+			add_prestige = 50
+			hidden_effect = {
+				set_country_flag = destroyed_MNG_CSH
+			}
+		}
+		ai_will_do = {
+			factor = 1000
+		}
+		ai_importance = 1000
+	}
+	end_manchu_onslaught = {
+		major = yes
+		potential = {
+			OR = {
+				tag = CSH
+				tag = MNG
+			}
+			has_global_flag = qing_intervention_china
+			exists = QNG
+			war_with = QNG
+			NOT = { has_country_flag = ended_manchu_onslaught }
+		}
+		allow = {
+			calc_true_if = {
+				all_province = {
+					owned_by = QNG
+					controlled_by = ROOT
+				}
+				amount = 15
+			}
+			QNG = {
+				capital_scope = {
+					controlled_by = ROOT
+				}
+			}
+		}
+		effect = {
+			if = {
+				limit = {
+					QNG = {
+						is_emperor_of_china = yes
+					}
+				}
+				dismantle_empire_of_china = no
+				set_emperor_of_china = ROOT
+				set_mandate = 50
+			}
+			white_peace = QNG
+			every_province = {
+				limit = {
+					owned_by = QNG
+					superregion = china_superregion
+				}
+				cede_province = ROOT
+				add_core = ROOT
+				remove_core = QNG
+			}
+			add_prestige = 50
+			hidden_effect = {
+				QNG = {
+					remove_country_modifier = defection_to_qng
+					clr_global_flag = qing_intervention_china
+				}
+				set_country_flag = ended_manchu_onslaught
+			}
+		}
+		ai_will_do = {
+			factor = 1000
+		}
+		ai_importance = 1000
+	}
 }
+

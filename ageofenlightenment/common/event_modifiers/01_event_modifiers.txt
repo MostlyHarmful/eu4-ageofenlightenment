@@ -32,3 +32,15 @@ AKK_settled = {
 	global_missionary_strength = -1
 	global_unrest = -15
 }
+defection_to_qng = {
+	land_forcelimit_modifier = 6.0
+	land_maintenance_modifier = -3
+	discipline = 0.15
+	land_morale = 0.15
+}
+disorganized_army = {
+	land_forcelimit_modifier = -0.5
+	land_maintenance_modifier = 1
+	discipline = -0.15
+	land_morale = -0.15
+}

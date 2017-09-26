@@ -34,7 +34,7 @@ country_event = {
 	}
 }
 country_event = {
-	id = hidden.2
+	id = hidden.2 # Cleanup after Qing conquest
 	
 	title = "hidden.1.t"
 	desc = "hidden.1.d"
@@ -44,32 +44,23 @@ country_event = {
 	hidden = yes
 	
 	trigger = {
-		OR = {
-			tag = MCH
-			tag = MJZ
-			tag = QNG
-		}
-		ai = yes
-		was_player = no
-		is_year = 1550
-		exists = MNG
-		num_of_cities = 10
-		MNG = {
-			num_of_cities = 25
+		tag = QNG
+		is_emperor_of_china = yes
+		NOT = { 
+			war_with = MNG
+			war_with = CSH
 		}
 	}
 	
 	mean_time_to_happen = {
-		months = 1
+		days = 1
 	}
 		
 	option = {
 		name = "hidden.1.a"
-		declare_war_with_cb = {
-		  who = MNG
-		  casus_belli = cb_take_mandate
-		}
-		add_prestige = 100
+		remove_country_modifier = defection_to_qng
+		clr_global_flag = qing_intervention_in_china
+		set_capital = 1816
 	}
 }
 country_event = {
@@ -79,12 +70,18 @@ country_event = {
 	desc = "hidden.1.d"
 	
 	picture = SIEGE_eventPicture
-	fire_only_once = yes
 	hidden = yes
 	
 	trigger = {
-		tag = MJZ
+		OR = {
+			tag = MCH
+			tag = MJZ
+			tag = MHX
+			tag = MYR
+		}
 		ai = yes
+		was_player = no
+		NOT = { has_global_flag = qing_intervention_china }
 	}
 	mean_time_to_happen = {
 		days = 1
@@ -92,13 +89,25 @@ country_event = {
 	
 	option = {
 		name = "hidden.1.a"
-		manchuria_region = {
-			add_core = MJZ
-		}
-		KRC = {
-			every_owned_province = {
-				add_core = MJZ
+		every_country = {
+			limit = {
+				war_with = ROOT
+				NOT = {
+					OR = {
+						primary_culture = manchu
+						AND = {
+							OR = {
+								ai = no
+								was_player = yes
+							}
+							is_in_war = {
+								defender_leader = ROOT
+							}
+						}
+					}
+				}
 			}
+			white_peace = ROOT
 		}
 	}
 }
@@ -153,8 +162,6 @@ country_event = {
 			tag = MJZ
 			tag = QNG
 		}
-		ai = yes
-		was_player = no
 		is_emperor_of_china = yes
 		NOT = { exists = MNG }
 	}
@@ -171,53 +178,6 @@ country_event = {
 			add_permanent_claim = QNG
 		}
 		set_country_flag = cores_gained_qing
-	}
-}
-country_event = {
-	id = hidden.8
-	
-	title = "hidden.1.t"
-	desc = "hidden.1.d"
-	picture = SIEGE_eventPicture
-	fire_only_once = yes
-	hidden = yes
-	
-	trigger = {
-		tag = QNG
-		ai = yes
-		was_player = no
-		is_emperor_of_china = yes
-		NOT = { exists = MNG }
-		has_country_flag = cores_gained_qing
-	}
-	
-	mean_time_to_happen = {
-		months = 1
-	}
-		
-	option = {
-		if = {
-			limit = {
-				exists = KOR
-				KOR = {
-					is_subject_of = QNG
-				}
-			}
-			every_province = {
-				limit = {
-					is_core = KOR
-					owned_by = QNG
-				}
-				cede_province = KOR
-			}
-		}
-		if = {
-			limit = {
-				NOT = { exists = KOR }
-			}
-			release = KOR
-			add_historical_friend = KOR
-		}
 	}
 }
 country_event = {
