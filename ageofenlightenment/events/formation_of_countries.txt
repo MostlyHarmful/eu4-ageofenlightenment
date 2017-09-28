@@ -54,7 +54,7 @@ country_event = {
 	}
 	
 	mean_time_to_happen = {
-		months = 1000
+		months = 850
 		modifier = {
 			factor = 0.05
 			is_year = 1820

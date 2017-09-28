@@ -81,6 +81,39 @@ country_event = {
 		}
 		ai = yes
 		was_player = no
+		any_country = {
+			NOT = {
+				OR = {
+					primary_culture = manchu
+					tag = KRC
+					AND = {
+						NOT = { tag = MNG }
+						NOT = { tag = KOR }
+						any_owned_province = {
+							OR = {
+								is_core = ROOT
+								region = manchuria_region
+							}
+						}
+					}
+					OR = {
+						ai = no
+						was_player = yes
+					}
+				}
+			}
+			war_with = ROOT
+		}
+		NOT = {
+			any_country = {
+				OR = {
+					ai = no
+					was_player = yes
+				}
+				alliance_with = ROOT
+				is_at_war = yes
+			}
+		}
 		NOT = { has_global_flag = qing_intervention_china }
 	}
 	mean_time_to_happen = {
@@ -180,6 +213,148 @@ country_event = {
 		}
 	}
 }
+
+country_event = {
+	id = hidden.7
+	
+	title = "hidden.1.t"
+	desc = "hidden.1.d"
+	
+	picture = SIEGE_eventPicture
+	hidden = yes
+	
+	trigger = {
+		tag = QNG
+		is_emperor_of_china = yes
+		is_neighbor_of = RUS
+		war_with = RUS
+		RUS = {
+			ai = yes
+			was_player = no
+		}
+		NOT = {
+			any_country = {
+				OR = {
+					ai = no
+					was_player = yes
+				}
+				alliance_with = ROOT
+				war_with = RUS
+			}
+		}
+	}
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = "hidden.1.a"
+		white_peace = RUS
+	}
+}
+country_event = {
+	id = hidden.8
+	
+	title = "hidden.1.t"
+	desc = "hidden.1.d"
+	picture = SIEGE_eventPicture
+	hidden = yes
+	
+	trigger = {
+		tag = QNG
+		ai = yes
+		was_player = no
+		is_emperor_of_china = yes
+		NOT = { exists = MNG }
+	}
+	
+	mean_time_to_happen = {
+		months = 60
+	}
+		
+	option = {
+		every_province = {
+			limit = {
+				qing_china_region_trigger = yes
+				owner = {
+					is_subject_of = ROOT
+					was_player = no
+					ai = yes
+				}
+			}
+			cede_province = ROOT
+			add_core = ROOT
+		}
+	}
+}
+country_event = {
+	id = hidden.9
+	
+	title = "hidden.1.t"
+	desc = "hidden.1.d"
+	picture = SIEGE_eventPicture
+	hidden = yes
+	
+	trigger = {
+		tag = RUS
+		is_neighbor_of = QNG
+		ai = yes
+		was_player = no
+		QNG = {
+			ai = yes
+			was_player = no
+			is_emperor_of_china = yes
+		}
+		OR = {
+			any_owned_province = {
+				qing_china_region_trigger = yes
+			}
+			any_province = {
+				owned_by = QNG
+				OR = {
+					region = mongolia_region
+					region = central_asia
+					region = west_siberia_region
+					region = east_siberia_region
+					region = manchuria_region
+				}
+				NOT = { qing_china_region_trigger = yes }
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 60
+	}
+		
+	option = {
+		every_owned_province = {
+			limit = {
+				qing_china_region_trigger = yes
+			}
+			cede_province = QNG
+			add_core = QNG
+			remove_core = ROOT
+		}
+		every_province = {
+			limit = {
+				owned_by = QNG
+				OR = {
+					region = mongolia_region
+					region = central_asia
+					region = west_siberia_region
+					region = east_siberia_region
+					region = manchuria_region
+				}
+				qing_china_region_trigger = no
+			}
+			cede_province = ROOT
+			add_core = ROOT
+			remove_core = QNG
+		}
+	}
+}
+
 country_event = {
 	id = hidden.10
 	
@@ -230,6 +405,7 @@ country_event = {
 				QAR = { was_player = yes }
 			}
 		}
+
 	}
 	mean_time_to_happen = {
 		days = 1
@@ -433,9 +609,6 @@ country_event = {
 		ai = yes
 		was_player = no
 		has_country_flag = AKK_conquered_provinces
-		any_country = {
-			war_with = ROOT
-		}
 		NOT = {
 			any_country = {
 				OR = {
@@ -445,6 +618,29 @@ country_event = {
 				alliance_with = AKK
 				is_at_war = yes
 			}
+		}
+		any_country = {
+			NOT = {
+				OR = {
+					primary_culture = manchu
+					tag = KRC
+					AND = {
+						NOT = { tag = MNG }
+						NOT = { tag = KOR }
+						any_owned_province = {
+							OR = {
+								is_core = ROOT
+								region = manchuria_region
+							}
+						}
+					}
+					OR = {
+						ai = no
+						was_player = yes
+					}
+				}
+			}
+			war_with = ROOT
 		}
 	}
 	mean_time_to_happen = {
@@ -497,6 +693,26 @@ country_event = {
 			}
 		}
 		any_country = {
+			NOT = {
+				OR = {
+					primary_culture = manchu
+					tag = KRC
+					AND = {
+						NOT = { tag = MNG }
+						NOT = { tag = KOR }
+						any_owned_province = {
+							OR = {
+								is_core = ROOT
+								region = manchuria_region
+							}
+						}
+					}
+					OR = {
+						ai = no
+						was_player = yes
+					}
+				}
+			}
 			war_with = ROOT
 		}
 		NOT = {
@@ -580,6 +796,63 @@ country_event = {
 				}
 			}
 			inherit = MUL
+		}
+	}
+}
+country_event = {
+	id = hidden.19
+	
+	title = "hidden.1.t"
+	desc = "hidden.1.d"
+	
+	picture = SIEGE_eventPicture
+	hidden = yes
+	
+	trigger = {
+		tag = QNG
+		is_emperor_of_china = yes
+		ai = yes
+		was_player = no
+		any_country = {
+			NOT = {
+				any_owned_province = {
+					qing_china_region_trigger = yes
+				}
+			}
+			ai = yes
+			was_player = no
+			war_with = ROOT
+		}
+		NOT = {
+			any_country = {
+				OR = {
+					ai = no
+					was_player = yes
+				}
+				alliance_with = ROOT
+				is_at_war = yes
+			}
+		}
+		NOT = { has_global_flag = qing_intervention_china }
+	}
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = "hidden.1.a"
+		every_country = {
+			limit = {
+				NOT = {
+					any_owned_province = {
+						qing_china_region_trigger = yes
+					}
+				}
+				ai = yes
+				was_player = no
+				war_with = ROOT
+			}
+			white_peace = ROOT
 		}
 	}
 }

@@ -39,11 +39,13 @@ republican_china_region_trigger = {
 qing_china_region_trigger = {
 	NOT = { province_id = 565 }
 	NOT = { province_id = 2127 }
+	NOT = { province_id = 2102 }
 	OR = {
-		region = south_china_reigon
+		region = south_china_region
 		region = xinan_region
 		region = north_china_region
 		region = tibet_region
+		region = manchuria_region
 		area = inner_mongolia_area
 		area = ordos_area
 		area = shanshan_area
@@ -66,6 +68,8 @@ qing_china_region_trigger = {
 		province_id = 731
 		province_id = 2107
 		province_id = 2108
+		province_id = 716
+		province_id = 1066
 	}
 }
 belgium_region_trigger = {

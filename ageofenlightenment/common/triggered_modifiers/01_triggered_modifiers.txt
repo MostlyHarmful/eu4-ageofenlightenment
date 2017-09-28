@@ -16,8 +16,8 @@ lucky_qing = {
 		}
 		luck = yes
 	}
-	global_unrest = -7.5
-	imperial_mandate = 0.35
+	global_unrest = -20
+	imperial_mandate = 0.5
 	
 }
 
@@ -139,4 +139,37 @@ manchu_strange_behavior_fix = {
 	global_tax_modifier = 0.5
 	trade_efficiency = 0.5
 	production_efficiency = 0.5
+}
+ai_hre = {
+	potential = {
+		ai = yes
+		was_player = no
+		is_part_of_hre = yes
+	}
+	trigger = {
+		NOT = {
+			OR = {
+				tag = BRA
+				tag = PRU
+			}
+		}
+	}
+	ae_impact = 0.5
+	core_creation = 0.5
+}
+ai_india = {
+	potential = {
+		ai = yes
+		was_player = no
+		capital_scope = {
+			superregion = india_superregion
+		}
+	}
+	trigger = {
+		NOT = {
+			tag = MUG
+		}
+	}
+	ae_impact = 0.5
+	core_creation = 0.5
 }

@@ -231,3 +231,22 @@ country_event = {
 		}
 	}
 }
+country_event = {
+	id = misc_events.7
+	title = "misc_events.7.t"
+	desc = "misc_events.7.d"
+	major = yes
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = "misc_events.6.a" # Yes, I want colonial railroading.
+		
+	}
+	option = {
+		name = "misc_events.6.b" # Back
+		country_event = {
+			id = misc_events.7
+		}
+	}
+}
