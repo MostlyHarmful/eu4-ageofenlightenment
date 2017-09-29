@@ -878,6 +878,7 @@ country_event = {
 	
 	picture = SIEGE_eventPicture
 	hidden = yes
+	fire_only_once = yes
 	
 	trigger = {
 		tag = HAB
@@ -898,6 +899,7 @@ country_event = {
 				HUN = {
 					ai = yes
 					was_player = no
+					junior_union_with = ROOT
 				}
 			}
 			create_union = HUN
@@ -907,6 +909,9 @@ country_event = {
 				BOH = {
 					ai = yes
 					was_player = no
+					NOT = {
+						junior_union_with = ROOT
+					}
 				}
 			}
 			create_union =  BOH
@@ -916,6 +921,7 @@ country_event = {
 						OR = {
 							region = north_german_region
 							region = south_german_region
+							area = silesia_area
 						}
 						NOT = {
 							OR = {
@@ -953,6 +959,7 @@ country_event = {
 							OR = {
 								area = bohemia_area
 								area = erzgebirge_area
+								area = silesia_area
 							}
 						}
 					}
