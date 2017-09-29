@@ -219,12 +219,18 @@ country_event = {
 		set_country_flag = formed_mughal_empire_flag
 		hidden_effect = {
 			release = KHI
+			KHI = {
+				every_owned_province = {
+					remove_core = MUG
+				}
+			}
 			every_owned_province = {
 				limit = {
 					culture = turkmeni
 				}
 				cede_province = KHI
 				add_core = KHI
+				remove_core = MUG
 			}
 			if = {
 				limit = {
@@ -242,6 +248,7 @@ country_event = {
 					}
 					cede_province = PER
 					add_core = PER
+					remove_core = MUG
 				}
 			}
 			if = {
@@ -258,6 +265,7 @@ country_event = {
 					}
 					cede_province = SHY
 					add_core = SHY
+					remove_core = MUG
 				}
 			}
 			if = {
@@ -274,6 +282,7 @@ country_event = {
 					}
 					cede_province = BUK
 					add_core = BUK
+					remove_core = MUG
 				}
 			}
 			if = {
