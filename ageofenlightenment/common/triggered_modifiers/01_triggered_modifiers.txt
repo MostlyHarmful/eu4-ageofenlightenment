@@ -14,7 +14,6 @@ lucky_qing = {
 		NOT = {
 			is_year = 1700
 		}
-		luck = yes
 	}
 	global_unrest = -20
 	imperial_mandate = 0.5
@@ -144,32 +143,115 @@ ai_hre = {
 	potential = {
 		ai = yes
 		was_player = no
-		is_part_of_hre = yes
+		OR = {
+			is_part_of_hre = yes
+			num_of_owned_provinces_with = {
+				value = 5
+				is_part_of_hre = yes
+			}
+		}
+	}
+	trigger = {
+		NOT = {
+			AND = {
+				OR = {
+					tag = PRU
+					tag = BRA
+				}
+				is_year = 1650
+			}
+		}	
+	}
+	ae_impact = 1.5
+	core_creation = 1.5
+	global_unrest = 0.01
+}
+ai_regional_impact = {
+	potential = {
+		ai = yes
+		was_player = no
+		OR = {
+			capital_scope = {
+				superregion = india_superregion
+			}
+			num_of_owned_provinces_with = {
+				value = 5
+				superregion = india_superregion
+			}
+			capital_scope = {
+				continent = africa
+			}
+			capital_scope = {
+				region = italy_region
+			}
+			capital_scope = {
+				superregion = east_indies_superregion
+			}
+		}
 	}
 	trigger = {
 		NOT = {
 			OR = {
-				tag = BRA
-				tag = PRU
+				OR = {
+					tag = MUG
+					tag = TIM
+				}
+				capital_scope = {
+					continent = europe
+					NOT = {
+						region = italy_region
+					}
+				}
 			}
 		}
 	}
-	ae_impact = 0.5
-	core_creation = 0.5
+	ae_impact = 1.5
+	core_creation = 1.5
+	global_unrest = 0.01
 }
-ai_india = {
+ai_other_small_ones = {
 	potential = {
 		ai = yes
 		was_player = no
-		capital_scope = {
-			superregion = india_superregion
+	}
+	trigger = {
+		OR = {
+			tag = NED
+			tag = DAN
+			tag = SWI
+			tag = BEL
 		}
+	}
+	ae_impact = 1.5
+	core_creation = 1.5
+	global_unrest = 0.01
+}
+ming_thrive = {
+	potential = {
+		tag = MNG
+		imperial_mandate = 40
 	}
 	trigger = {
 		NOT = {
-			tag = MUG
+			is_year = 1550
 		}
 	}
-	ae_impact = 0.5
-	core_creation = 0.5
+	imperial_mandate = 0.1
+	global_unrest = -10
+}
+ai_mughals = {
+	potential = {
+		tag = MNG
+		ai = yes
+		was_player = no
+	}
+	trigger = {
+		NOT = {
+			is_year = 1700
+		}
+	}
+	global_unrest = -20
+	war_exhaustion = -0.1
+	core_creation = -0.25
+	ae_impact = -0.25
 }

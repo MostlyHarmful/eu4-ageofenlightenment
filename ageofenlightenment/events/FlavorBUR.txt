@@ -160,13 +160,13 @@ country_event = {
 					has_country_flag = bur_spain_eligible
 				}
 				random_list = {
-					70 = {
+					30 = {
 						set_country_flag = bur_marriage_inherits
 					}
-					15 = {
+					65 = {
 						set_country_flag = bur_emperor_inherits
 					}
-					15 = {
+					5 = {
 						set_country_flag = bur_spain_inherits
 					}
 				}
@@ -179,10 +179,10 @@ country_event = {
 					has_country_flag = bur_spain_eligible
 				}
 				random_list = {
-					70 = {
+					90 = {
 						set_country_flag = bur_marriage_inherits
 					}
-					30 = {
+					10 = {
 						set_country_flag = bur_spain_inherits
 					}
 				}
@@ -195,10 +195,10 @@ country_event = {
 					has_country_flag = bur_spain_eligible
 				}
 				random_list = {
-					50 = {
+					90 = {
 						set_country_flag = bur_emperor_inherits
 					}
-					50 = {
+					10 = {
 						set_country_flag = bur_spain_inherits
 					}
 				}
@@ -211,10 +211,10 @@ country_event = {
 					NOT = { has_country_flag = bur_spain_eligible }
 				}
 				random_list = {
-					70 = {
+					30 = {
 						set_country_flag = bur_marriage_inherits
 					}
-					30 = {
+					70 = {
 						set_country_flag = bur_emperor_inherits
 					}
 				}

@@ -67,6 +67,15 @@ country_event = {
 				ai = yes
 				has_regency = yes
 			}
+			AND = {
+				CAS = {
+					ai = yes
+				}
+				ARA = {
+					ai = yes
+					has_country_flag = lost_naples
+				}
+			}
 		}
 	}
 
@@ -85,6 +94,15 @@ country_event = {
 					tag = ARA
 					CAS = { 
 						has_regency = no 
+					}
+				}
+				AND = {
+					CAS = {
+						ai = yes
+					}
+					ARA = {
+						ai = yes
+						has_country_flag = lost_naples
 					}
 				}
 			}

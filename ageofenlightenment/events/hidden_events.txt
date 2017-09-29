@@ -228,6 +228,8 @@ country_event = {
 		is_emperor_of_china = yes
 		is_neighbor_of = RUS
 		war_with = RUS
+		ai = yes
+		was_player = no
 		RUS = {
 			ai = yes
 			was_player = no
@@ -813,6 +815,19 @@ country_event = {
 		is_emperor_of_china = yes
 		ai = yes
 		was_player = no
+		NOT = {
+			is_in_war = {
+				casus_belli = cb_force_tributary
+			}
+		}
+		any_country = {
+			NOT = {
+				tag = QNG
+			}
+			any_owned_province = {
+				qing_china_region_trigger = yes
+			}
+		}
 		any_country = {
 			NOT = {
 				any_owned_province = {
@@ -833,7 +848,6 @@ country_event = {
 				is_at_war = yes
 			}
 		}
-		NOT = { has_global_flag = qing_intervention_china }
 	}
 	mean_time_to_happen = {
 		days = 1
@@ -854,5 +868,151 @@ country_event = {
 			}
 			white_peace = ROOT
 		}
+	}
+}
+country_event = {
+	id = hidden.20
+	
+	title = "hidden.1.t"
+	desc = "hidden.1.d"
+	
+	picture = SIEGE_eventPicture
+	hidden = yes
+	
+	trigger = {
+		tag = HAB
+		is_year = 1500
+		ai = yes
+		was_player = no
+		exists = BOH
+		exists = HUN
+	}
+	mean_time_to_happen = {
+		months = 100
+	}
+	
+	option = {
+		name = "hidden.1.a"
+		if = {
+			limit = {
+				HUN = {
+					ai = yes
+					was_player = no
+				}
+			}
+			create_union = HUN
+		}
+		if = {
+			limit = {
+				BOH = {
+					ai = yes
+					was_player = no
+				}
+			}
+			create_union =  BOH
+			BOH = {
+				every_owned_province = {
+					limit = {
+						OR = {
+							region = north_german_region
+							region = south_german_region
+						}
+						NOT = {
+							OR = {
+								area = bohemia_area
+								area = erzgebirge_area
+							}
+						}
+					}
+					if = {
+						limit = {
+							exists = BRA
+						}
+						cede_province = BRA
+						add_core = BRA
+						remove_core = BOH
+					}
+					if = {
+						limit = {
+							exists = PRU
+							NOT = {
+								exists = BRA
+							}
+						}
+						cede_province = PRU
+						add_core = PRU
+						remove_core = BOH
+					}
+				}
+				every_owned_province = {
+					limit = {
+						OR = {
+							region = poland_region
+						}
+						NOT = {
+							OR = {
+								area = bohemia_area
+								area = erzgebirge_area
+							}
+						}
+					}
+					if = {
+						limit = {
+							exists = POL
+						}
+						cede_province = POL
+						add_core = POL
+						remove_core = BOH
+					}
+					if = {
+						limit = {
+							exists = PLC
+						}
+						cede_province = PLC
+						add_core = PLC
+						remove_core = BOH
+					}
+				}
+			}
+		}
+	}
+}
+country_event = {
+	id = hidden.21
+	
+	title = "hidden.1.t"
+	desc = "hidden.1.d"
+	
+	picture = SIEGE_eventPicture
+	hidden = yes
+	
+	trigger = {
+		tag = MUG
+		ai = yes
+		was_player = no
+		is_neighbor_of = PER
+		war_with = PER
+		PER = {
+			ai = yes
+			was_player = no
+		}
+		NOT = {
+			any_country = {
+				OR = {
+					ai = no
+					was_player = yes
+				}
+				alliance_with = ROOT
+				war_with = PER
+			}
+		}
+	}
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = "hidden.1.a"
+		white_peace = PER
 	}
 }
