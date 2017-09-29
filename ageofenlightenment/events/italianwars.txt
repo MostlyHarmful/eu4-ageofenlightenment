@@ -273,7 +273,7 @@ country_event = {
 	}
 	
 	mean_time_to_happen = {
-		months = 12
+		months = 6
 	}
 	
 	option = {
@@ -308,7 +308,7 @@ country_event = {
 				days = 12 
 			}
 		}
-		ai_chance = { factor = 80 }
+		ai_chance = { factor = 90 }
 	}
 	option = {
 		name = "italian_wars.7.b"
@@ -319,7 +319,7 @@ country_event = {
 				days = 12 
 			}
 		}
-		ai_chance = { factor = 20 }
+		ai_chance = { factor = 10 }
 	}
 }
 country_event = {

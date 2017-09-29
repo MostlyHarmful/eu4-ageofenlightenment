@@ -27,8 +27,14 @@ country_event = {
 		is_free_or_tributary_trigger = yes
 		is_emperor = no
 		government = monarchy
-		has_regency = no
-		is_female = no
+		OR = {
+			AND = {
+				has_regency = no
+				is_female = no
+			}
+			ai = yes
+			was_player = no
+		}
 		NOT = { is_year = 1500 }
 		capital_scope = {
 			continent = europe
