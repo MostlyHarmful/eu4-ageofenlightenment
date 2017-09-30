@@ -1139,16 +1139,19 @@ autonomy_decreased = {
 }
 
 revolution_target = {
-	global_manpower_modifier = 0.50
-	land_morale = 0.15
+	global_manpower_modifier = 1.5
+	land_morale = 0.25
 	war_exhaustion = -0.25
-	unjustified_demands = -0.75
-	land_maintenance_modifier = -0.75
-	naval_maintenance_modifier = -0.75
-	land_forcelimit_modifier = 0.75
-	naval_forcelimit_modifier = 0.75
+	unjustified_demands = -1
+	land_maintenance_modifier = -1
+	naval_maintenance_modifier = -1
+	land_forcelimit_modifier = 1.5
+	naval_forcelimit_modifier = 1.5
 	papal_influence = -100
 	reduced_stab_impacts = yes
+	core_creation = -0.5
+	ae_impact = 1
+	administrative_efficiency = 0.15
 }
 
 dishonoured_alliance =  {

@@ -14,13 +14,10 @@ french_revolution = {
 		current_age = age_of_revolutions
 		num_of_cities = 30
 		has_any_disaster = no
+		is_year = 1789
 		OR = {
-			NOT = { stability =	0 }
-			num_of_loans = 50
-			inflation = 10
-			war_exhaustion = 10
-			NOT = { prestige = 0 }
-			is_year = 1789
+			is_month = 4
+			is_month = 5
 		}
 	}
 	
@@ -87,8 +84,7 @@ french_revolution = {
 	
 
 	modifier = {
-		global_unrest = 10
-		stability_cost_modifier = 0.1
+		
 	}	
 	
 	

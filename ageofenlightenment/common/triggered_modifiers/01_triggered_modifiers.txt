@@ -241,7 +241,7 @@ ming_thrive = {
 }
 ai_mughals = {
 	potential = {
-		tag = MNG
+		tag = MUG
 		ai = yes
 		was_player = no
 	}
