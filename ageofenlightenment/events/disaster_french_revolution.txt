@@ -22,7 +22,8 @@ country_event = {
 
 	immediate = {
 		set_country_flag = had_revolution
-		stability = -1
+		add_stability = -1
+		set_country_flag = bastille_incoming
 	}
 
 	option = {		# Dire times are ahead of us
@@ -47,6 +48,7 @@ country_event = {
 			is_month = 5
 			is_month = 6
 		}
+		has_country_flag = bastille_incoming
 	}
 	
 	mean_time_to_happen = {
@@ -59,7 +61,8 @@ country_event = {
 
 	option = {		# Dire times are ahead of us
 		name = "french_revolution.2.a"
-		stability = -1
+		add_stability = -1
+		add_prestige = 10
 	}
 }
 #Declaration of the Rights of Man and of the Citizen
@@ -125,7 +128,7 @@ country_event = {
 		add_prestige = 10
 	}
 }
-#Fête de la Fédération
+#Fï¿½te de la Fï¿½dï¿½ration
 country_event = {
 	id = french_revolution.5
 	title = "french_revolution.5.t"
@@ -201,6 +204,7 @@ country_event = {
 		OR = {
 			is_month = 7
 			is_month = 8
+			is_month = 9
 		}
 		FRA = {
 			has_disaster = french_revolution
@@ -233,27 +237,50 @@ country_event = {
 
 	option = {
 		name = "french_revolution.7.a"
-		FRA = {
-			country_event = {
-				id = french_revolution.11
-				months = 8
-			}
-		}
 		every_country = {
 			limit = {
 				capital_scope = {
 					continent = europe
-					NOT = {
-						tag = RUS
-						tag = FRA
+				}
+				NOT = {
+					OR = {
+						tag = ROOT
 						tag = DAN
-						tag = SWE
+						tag = FRA
 					}
 				}
+				is_free_or_tributary_trigger = yes
 			}
 			country_event = {
 				id = french_revolution.8
 				days = 2
+			}
+		}
+		hidden_effect = {
+			set_country_flag = joined_first_coalition
+			add_country_modifier = {
+				name = coalition_leader
+				duration = -1
+			}
+			FRA = {
+				country_event = {
+					id = french_revolution.11
+					days = 240
+				}
+			}
+		}
+		set_ai_attitude = {
+			who = FRA
+			attitude = attitude_outraged
+		}
+		add_opinion = {
+			who = FRA
+			modifier = coalition_wars
+		}
+		FRA  = {
+			add_opinion = {
+				who = ROOT
+				modifier = coalition_wars
 			}
 		}
 	}
@@ -268,60 +295,54 @@ country_event = {
 	is_triggered_only = yes	
 
 	option = {	
-		name = french_revolution.8.a
-		set_country_flag = joined_first_coalition
-		ai_chance = { factor = 98 }
-		FROM = {
-			country_event = { 
-				id = french_revolution.9
-				days = 2
-				random = 5
-			}	
-		}		
+		name = "french_revolution.8.a"
+		ai_chance = { factor = 100 }
+		add_opinion = {
+			who = FRA
+			modifier = coalition_wars
+		}
+		set_ai_attitude = {
+			who = FRA
+			attitude = attitude_outraged
+		}
+		FRA  = {
+			add_opinion = {
+				who = ROOT
+				modifier = coalition_wars
+			}
+		}
+		hidden_effect = {
+			set_country_flag = joined_first_coalition
+		}
 	}
 	option = {	
-		name = french_revolution.8.b
-		ai_chance = { factor = 2 }
-		FROM = {
-			country_event = { 
-				id = french_revolution.10
-				days = 2
-				random = 4
-			}	
-		}	
+		name = "french_revolution.8.b"
+		add_prestige = -10
+		ai_chance = { factor = 0 }
 	}
 }
-#Joined the First Coalition
 country_event = {
 	id = french_revolution.9
-	title = french_revolution.9.t
-	desc = french_revolution.9.d
+	title = "french_revolution.9.t"
+	desc = "french_revolution.9.d"
 	picture = DIPLOMACY_eventPicture
-	
-	is_triggered_only = yes
-	
-	option = {	
-		name = french_revolution.9.a
-		FROM = {
-			form_coalition_against = FRA
-		}
-		
-	}
-}
 
-# Did not join the First Coalition
-country_event = {
-	id = french_revolution.10
-	title = french_revolution.10.t
-	desc = french_revolution.10.d
-	picture = DIPLOMACY_eventPicture
-	
-	is_triggered_only = yes
-	
+	is_triggered_only = yes	
+
 	option = {	
-		name = french_revolution.10.a
-		add_prestige = -5
-		
+		name = "french_revolution.9.a"
+		every_country = {
+			limit = {
+				NOT = {
+					war_with = ROOT
+				}
+				has_country_flag = joined_first_coalition
+			}
+			declare_war_with_cb = {
+				who = ROOT
+				casus_belli = cb_coalition_wars
+			}
+		}
 	}
 }
 #Declaration of War on the HRE
@@ -344,16 +365,297 @@ country_event = {
 		add_prestige = 10
 		add_stability = 1
 		define_general = {
-		  name = "Napoléon Bonaparte"
-		  shock = 9
-		  fire = 8
-		  manuever = 9
+		  name = "Napoleon Bonaparte"
+		  shock = 6
+		  fire = 5
+		  manuever = 6
 		  siege = 10
+		  age = 23
 		  trait = glory_seeker_personality
 		}
 		declare_war_with_cb = {
 		  who = FROM
-		  casus_belli = cb_first_coalition
+		  casus_belli = cb_coalition_wars
 		}
+		hidden_effect = {
+			FROM = {
+				country_event = {
+					id = hidden.21
+				}
+			}
+			country_event = {
+				id = french_revolution.9
+				days = 60
+			}
+		}
+		capital_scope = {
+			build_to_forcelimit = {
+				infantry = 0.55
+				cavalry = 0.05
+				artillery = 0.4
+			}
+		}
+	}
+}
+#Storming of the Tuileries
+country_event = {
+	id = french_revolution.12
+	title = "french_revolution.12.t"
+	desc = "french_revolution.12.d"
+	picture = REVOLUTION_eventPicture
+
+	is_triggered_only = yes	
+	major = yes
+	fire_only_once = yes
+	
+	trigger = {
+		is_year = 1792
+		OR = {
+			is_month = 6
+			is_month = 7
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	immediate = {
+		set_country_flag = storming_of_tuileries
+	}
+
+	option = {
+		name = "french_revolution.12.a"
+		disband_rebels = revolutionary_rebels
+		add_prestige = 10
+		change_government = revolutionary_republic
+		kill_ruler = yes
+	}
+}
+#Trial and Execution of Louis XVI
+country_event = {
+	id = french_revolution.13
+	title = "flavor_fra.EVTNAME3146"
+	desc = "flavor_fra.EVTDESC3146"
+	picture = DEATH_OF_HEIR_eventPicture
+
+	is_triggered_only = yes	
+	major = yes
+	fire_only_once = yes
+	
+	trigger = {
+		is_year = 1792
+		OR = {
+			is_month = 10
+			is_month = 11
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {		# 361 votes for and 360 against execution
+		name = "flavor_fra.EVTOPTA3146"
+		add_stability_or_adm_power = yes
+		set_country_flag = fra_executed_louis
+		every_country = {
+			limit = {
+				government = monarchy
+			}
+			add_opinion = {
+				who = ROOT
+				modifier = executed_monarch
+			}
+		}
+		ai_chance = { factor = 100 }
+	}
+	option = {		# 361 votes against and 360 for execution
+		name = "flavor_fra.EVTOPTB3146"
+		add_stability = -1
+		ai_chance = { factor = 0 }
+	}
+}
+#Committee on Public Safety and the Reign of Terror
+country_event = {
+	id = french_revolution.14
+	title = "french_revolution.14.t"
+	desc = "french_revolution.14.d"
+	picture = REVOLUTION_eventPicture
+
+	is_triggered_only = yes	
+	major = yes
+	fire_only_once = yes
+	
+	trigger = {
+		is_year = 1793
+		OR = {
+			is_month = 3
+			is_month = 4
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	immediate = {
+		set_country_flag = reign_of_terror
+	}
+	option = {
+		name = "french_revolution.14.a"
+		add_republican_tradition = -5
+		add_country_modifier = {
+			name = the_reign_of_terror
+			duration = -1
+		}
+		ai_chance = { factor = 100 }
+	}
+}
+#Execution of Robspierre - End of the Terror
+country_event = {
+	id = french_revolution.15
+	title = "french_revolution.15.t"
+	desc = "french_revolution.15.d"
+	picture = REVOLUTION_eventPicture
+
+	is_triggered_only = yes	
+	major = yes
+	fire_only_once = yes
+	
+	trigger = {
+		is_year = 1794
+		OR = {
+			is_month = 5
+			is_month = 6
+		}
+		has_country_flag = reign_of_terror
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	immediate = {
+		set_country_flag = end_of_terror
+	}
+
+	option = {
+		name = "french_revolution.15.a"
+		remove_country_modifier = reign_of_terror
+		ai_chance = { factor = 100 }
+	}
+}
+#The Directory
+country_event = {
+	id = french_revolution.16
+	title = "flavor_fra.EVTNAME3781"
+	desc = "flavor_fra.EVTDESC3781"
+	picture = REVOLUTION_eventPicture
+
+	is_triggered_only = yes	
+	major = yes
+	fire_only_once = yes
+	
+	trigger = {
+		is_year = 1795
+		OR = {
+			is_month = 7
+			is_month = 8
+		}
+		has_country_flag = end_of_terror
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = "flavor_fra.EVTOPTA3781"
+		add_stability = 2
+		ai_chance = { factor = 100 }
+	}
+}
+#Coup of 18 Brumaire
+country_event = {
+	id = french_revolution.17
+	title = "french_revolution.17.t"
+	desc = "french_revolution.17.d"
+	picture = REVOLUTION_eventPicture
+
+	is_triggered_only = yes	
+	major = yes
+	fire_only_once = yes
+	
+	trigger = {
+		is_year = 1799
+		OR = {
+			is_month = 9
+			is_month = 10
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = "french_revolution.17.a"
+		add_prestige = 10
+		add_stability = -1
+		if = {
+			limit = {
+				has_heir = yes
+			}
+			hidden_effect = {
+				kill_heir = yes
+			}
+		}
+		kill_leader = {
+			type = general
+			name = "Napoleon Bonaparte"
+		}
+		define_ruler = {
+			name = "Napoleon I"
+			dynasty = "Bonaparte" 
+			age = 30
+			claim = 75
+			regency = no
+			female = no
+			adm = 6
+			dip = 6
+			mil = 6
+		}
+		define_ruler_to_general = {
+		  shock = 8
+		  fire = 7
+		  manuever = 8
+		  siege = 10
+		  trait = glory_seeker_personality
+		}
+		if = {
+			limit = {
+				has_dlc = "Rights of Man" 
+			}
+			hidden_effect = { add_ruler_personality = inspiring_leader_personality }
+		}
+		set_ruler_flag = napoleon_flag
+		end_disaster = french_revolution
+		ai_chance = { factor = 100 }
+	}
+}
+country_event = {
+	id = french_revolution.30
+	title = "french_revolution.30.t"
+	desc = "french_revolution.30.d"
+	picture = REVOLUTION_eventPicture
+
+	is_triggered_only = yes	
+	major = yes
+	fire_only_once = yes
+
+	option = {
+		name = "french_revolution.30.a"
+		dismantle_hre = yes
+		add_prestige = -100
+		set_government_rank = 3
 	}
 }

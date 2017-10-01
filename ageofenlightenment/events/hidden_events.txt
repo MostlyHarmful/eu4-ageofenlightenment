@@ -997,11 +997,15 @@ country_event = {
 		tag = MUG
 		ai = yes
 		was_player = no
-		is_neighbor_of = PER
-		war_with = PER
-		PER = {
+		any_country = {
+			NOT = {
+				any_owned_province = {
+					superregion = india_superregion
+				}
+			}
 			ai = yes
 			was_player = no
+			war_with = ROOT
 		}
 		NOT = {
 			any_country = {
@@ -1010,7 +1014,7 @@ country_event = {
 					was_player = yes
 				}
 				alliance_with = ROOT
-				war_with = PER
+				is_at_war = yes
 			}
 		}
 	}
@@ -1020,6 +1024,47 @@ country_event = {
 	
 	option = {
 		name = "hidden.1.a"
-		white_peace = PER
+		every_country = {
+			limit = {
+				NOT = {
+					any_owned_province = {
+						superregion = india_superregion
+					}
+				}
+				ai = yes
+				was_player = no
+				war_with = ROOT
+			}
+			white_peace = ROOT
+		}
+	}
+}
+country_event = {
+	id = hidden.22
+	
+	title = "hidden.1.t"
+	desc = "hidden.1.d"
+	
+	picture = SIEGE_eventPicture
+	hidden = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = "hidden.1.a"
+		every_country = {
+			limit = {
+				has_country_flag = joined_first_coalition
+				NOT = {
+					war_with = FRA
+				}
+			}
+			if = {
+				limit = {
+					war_with = ROOT
+				}
+				white_peace = ROOT
+			}
+			create_alliance = ROOT
+		}
 	}
 }

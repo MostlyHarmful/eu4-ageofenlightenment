@@ -1,0 +1,981 @@
+country_decisions = {
+	dismantle_french_revolution = {
+		major = yes
+		potential = {
+			FRA = {
+				is_revolution_target = yes
+			}
+		}
+		allow = {
+			war_with = FRA
+			capital_scope = {
+				controlled_by = ROOT
+			}
+			NOT = {
+				any_province = {
+					de_jure_france = yes
+					controlled_by = FRA
+				}
+			}
+		}
+		effect = {
+			FRA = {
+				change_government = constitutional_monarchy
+				kill_ruler = yes
+				set_revolution_target = xxx
+				if = {
+					limit = { has_heir = yes }
+					kill_heir = yes
+				}
+				release_all_subjects = yes
+			}
+			set_global_flag = revolution_dismantled
+			white_peace = FRA
+			every_country = {
+				limit = {
+					is_in_war = {
+						casus_belli = cb_coalition_wars
+					}
+					war_with = FRA
+				}
+				white_peace = FRA
+			}
+		}
+		ai_will_do = {
+			factor = 1000
+		}
+		ai_importance = 1000
+	}
+	reclaim_france = {
+		major = yes
+		potential = {
+			tag = FRA
+			is_revolution_target = yes
+			any_province = {
+				de_jure_france = yes
+				NOT = {
+					owned_by = ROOT
+				}
+			}
+		}
+		allow = {
+			NOT = {
+				any_province = {
+					de_jure_france = yes
+					NOT = {
+						OR = {
+							controlled_by = ROOT
+							country_or_vassal_holds = ROOT
+						}
+					}
+				}
+			}
+		}
+		effect = {
+			every_province = {
+				limit = {
+					NOT = {
+						owned_by = ROOT
+					}
+					de_jure_france = yes
+				}
+				cede_province = ROOT
+				add_core = ROOT
+			}
+		}
+		ai_will_do = {
+			factor = 1000
+		}
+		ai_importance = 1000
+	}
+	annex_rhine_france = {
+		major = yes
+		potential = {
+			tag = FRA
+			is_revolution_target = yes
+			any_province = {
+				rhine_belgium_france = yes
+				NOT = {
+					owned_by = ROOT
+				}
+			}
+		}
+		allow = {
+			NOT = {
+				any_province = {
+					rhine_belgium_france = yes
+					NOT = {
+						OR = {
+							controlled_by = ROOT
+							country_or_vassal_holds = ROOT
+						}
+					}
+				}
+			}
+		}
+		effect = {
+			every_province = {
+				limit = {
+					NOT = {
+						owned_by = ROOT
+					}
+					rhine_belgium_france = yes
+				}
+				cede_province = ROOT
+				add_core = ROOT
+			}
+		}
+		ai_will_do = {
+			factor = 1000
+		}
+		ai_importance = 1000
+	}
+	annex_piedmont_france = {
+		major = yes
+		potential = {
+			tag = FRA
+			is_revolution_target = yes
+			any_province = {
+				area = piedmont_area
+				NOT = {
+					owned_by = ROOT
+				}
+			}
+		}
+		allow = {
+			NOT = {
+				any_province = {
+					area = piedmont_area
+					NOT = {
+						OR = {
+							controlled_by = ROOT
+							country_or_vassal_holds = ROOT
+						}
+					}
+				}
+			}
+		}
+		effect = {
+			every_province = {
+				limit = {
+					NOT = {
+						owned_by = ROOT
+					}
+					area = piedmont_area
+				}
+				cede_province = ROOT
+				add_core = ROOT
+			}
+		}
+		ai_will_do = {
+			factor = 1000
+		}
+		ai_importance = 1000
+	}
+	puppet_netherlands_france = {
+		major = yes
+		potential = {
+			tag = FRA
+			is_revolution_target = yes
+			any_province = {
+				netherlands_area_france = yes
+				NOT = {
+					country_or_vassal_holds = ROOT
+				}
+			}
+			NOT = {
+				NED = {
+					is_subject_of = ROOT
+				}
+			}
+		}
+		allow = {
+			OR = {
+				AND = {
+					NOT = {
+						exists = NED
+						any_province = {
+							netherlands_area_france = yes
+							NOT = {
+								OR = {
+									controlled_by = ROOT
+									country_or_vassal_holds = ROOT
+								}
+							}
+						}
+					}
+				}
+				AND = {
+					exists = NED
+					NOT = {
+						any_province = {
+							owned_by = NED
+							continent = europe
+							NOT = {
+								controlled_by = ROOT
+							}
+						}
+					}
+				}
+			}
+		}
+		effect = {
+			if = {
+				limit = {
+					exists = NED
+				}
+				white_peace = NED
+				vassalize = NED
+				NED = {
+					kill_ruler = yes
+					change_government = constitutional_republic
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						exists = NED
+					}
+				}
+				every_province = {
+					limit = {
+						is_core = NED
+					}
+					remove_core = NED
+				}
+				every_province = {
+					limit = {
+						NOT = {
+							owned_by = ROOT
+						}
+						netherlands_area_france = yes
+					}
+					cede_province = ROOT
+					add_core = NED
+				}
+				release = NED
+				vassalize = NED
+				NED = {
+					change_government = constitutional_republic
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1000
+		}
+		ai_importance = 1000
+	}
+	ligurian_republic_france = {
+		major = yes
+		potential = {
+			tag = FRA
+			is_revolution_target = yes
+			any_province = {
+				ligurian_france = yes
+				NOT = {
+					country_or_vassal_holds = ROOT
+				}
+			}
+			NOT = {
+				GEN = {
+					is_subject_of = ROOT
+				}
+			}
+		}
+		allow = {
+			OR = {
+				AND = {
+					NOT = {
+						exists = GEN
+						any_province = {
+							ligurian_france = yes
+							NOT = {
+								OR = {
+									controlled_by = ROOT
+									country_or_vassal_holds = ROOT
+								}
+							}
+						}
+					}
+				}
+				AND = {
+					exists = GEN
+					NOT = {
+						any_province = {
+							owned_by = GEN
+							continent = europe
+							NOT = {
+								controlled_by = ROOT
+							}
+						}
+					}
+				}
+			}
+		}
+		effect = {
+			if = {
+				limit = {
+					exists = GEN
+				}
+				vassalize = GEN
+				GEN = {
+					kill_ruler = yes
+					change_government = constitutional_republic
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						exists = GEN
+					}
+				}
+				every_province = {
+					limit = {
+						is_core = GEN
+					}
+					remove_core = GEN
+				}
+				every_province = {
+					limit = {
+						NOT = {
+							owned_by = ROOT
+						}
+						ligurian_france = yes
+					}
+					cede_province = ROOT
+					add_core = GEN
+				}
+				release = GEN
+				vassalize = GEN
+				GEN = {
+					change_government = constitutional_republic
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1000
+		}
+		ai_importance = 1000
+	}
+	cisalpine_republic_france = {
+		major = yes
+		potential = {
+			tag = FRA
+			is_revolution_target = yes
+			any_province = {
+				italy_france = yes
+				NOT = {
+					country_or_vassal_holds = ROOT
+				}
+			}
+			NOT = {
+				ITA = {
+					is_subject_of = ROOT
+				}
+			}
+		}
+		allow = {
+			OR = {
+				AND = {
+					NOT = {
+						exists = ITA
+						any_province = {
+							italy_france = yes
+							NOT = {
+								OR = {
+									controlled_by = ROOT
+									country_or_vassal_holds = ROOT
+								}
+							}
+						}
+					}
+				}
+				AND = {
+					exists = ITA
+					NOT = {
+						any_province = {
+							owned_by = ITA
+							continent = europe
+							NOT = {
+								controlled_by = ROOT
+							}
+						}
+					}
+				}
+			}
+		}
+		effect = {
+			if = {
+				limit = {
+					exists = ITA
+				}
+				vassalize = ITA
+				ITA = {
+					kill_ruler = yes
+					change_government = constitutional_republic
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						exists = ITA
+					}
+				}
+				every_province = {
+					limit = {
+						is_core = ITA
+					}
+					remove_core = ITA
+				}
+				every_province = {
+					limit = {
+						NOT = {
+							owned_by = ROOT
+						}
+						italy_france = yes
+					}
+					cede_province = ROOT
+					add_core = ITA
+				}
+				release = ITA
+				vassalize = ITA
+				ITA = {
+					change_government = constitutional_republic
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1000
+		}
+		ai_importance = 1000
+	}
+	naples_kindom_france = {
+		major = yes
+		potential = {
+			tag = FRA
+			is_revolution_target = yes
+			has_ruler_flag = napoleon_flag
+			any_province = {
+				naples_france = yes
+				NOT = {
+					country_or_vassal_holds = ROOT
+				}
+			}
+			NOT = {
+				NAP = {
+					is_subject_of = ROOT
+				}
+			}
+		}
+		allow = {
+			OR = {
+				AND = {
+					NOT = {
+						exists = NAP
+						any_province = {
+							naples_france = yes
+							NOT = {
+								OR = {
+									controlled_by = ROOT
+									country_or_vassal_holds = ROOT
+								}
+							}
+						}
+					}
+				}
+				AND = {
+					exists = NAP
+					NOT = {
+						any_province = {
+							owned_by = NAP
+							continent = europe
+							NOT = {
+								controlled_by = ROOT
+							}
+						}
+					}
+				}
+			}
+		}
+		effect = {
+			if = {
+				limit = {
+					exists = NAP
+				}
+				vassalize = NAP
+				NAP = {
+					kill_ruler = yes
+					change_government = constitutional_monarchy
+					define_ruler = {
+						dynasty = "Bonaparte"
+					}
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						exists = NAP
+					}
+				}
+				every_province = {
+					limit = {
+						is_core = NAP
+					}
+					remove_core = NAP
+				}
+				every_province = {
+					limit = {
+						NOT = {
+							owned_by = ROOT
+						}
+						naples_france = yes
+					}
+					cede_province = ROOT
+					add_core = NAP
+				}
+				release = NAP
+				vassalize = NAP
+				NAP = {
+					change_government = constitutional_monarchy
+					define_ruler = {
+						dynasty = "Bonaparte"
+					}
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1000
+		}
+		ai_importance = 1000
+	}
+	confederation_rhine_france = {
+		major = yes
+		potential = {
+			tag = FRA
+			is_revolution_target = yes
+			has_ruler_flag = napoleon_flag
+			any_province = {
+				conf_rhine_france = yes
+				NOT = {
+					country_or_vassal_holds = ROOT
+				}
+			}
+			NOT = {
+				RHI = {
+					is_subject_of = ROOT
+				}
+			}
+		}
+		allow = {
+			NOT = {
+				any_province = {
+					conf_rhine_france = yes
+					NOT = {
+						OR = {
+							controlled_by = ROOT
+							country_or_vassal_holds = ROOT
+						}
+					}
+				}
+			}
+		}
+		effect = {
+			every_province = {
+				limit = {
+					NOT = {
+						owned_by = ROOT
+					}
+					conf_rhine_france = yes
+				}
+				cede_province = ROOT
+				add_core = RHI
+			}
+			release = RHI
+			RHI = {
+				change_government = constitutional_monarchy
+			}
+			create_union = RHI
+			if = {
+				limit = {
+					any_country = {
+						is_emperor = yes
+					}
+				}
+				emperor = {
+					country_event = {
+						id = french_revolution.30
+					}
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1000
+		}
+		ai_importance = 1000
+	}
+	spanish_allegiance_france = {
+		major = yes
+		potential = {
+			tag = FRA
+			is_revolution_target = yes
+			has_ruler_flag = napoleon_flag
+			any_province = {
+				owned_by = SPA
+				continent = europe
+				NOT = {
+					area = macaronesia_area
+				}
+				NOT = {
+					country_or_vassal_holds = ROOT
+				}
+			}
+			NOT = {
+				SPA = {
+					is_subject_of = ROOT
+				}
+			}
+		}
+		allow = {
+			exists = SPA
+			NOT = {
+				any_province = {
+					owned_by = SPA
+					continent = europe
+					NOT = {
+						area = macaronesia_area
+					}
+					NOT = {
+						controlled_by = ROOT
+					}
+				}
+			}
+		}
+		effect = {
+			vassalize = SPA
+			SPA = {
+				kill_ruler = yes
+				change_government = constitutional_monarchy
+				define_ruler = {
+					name = "Joseph I"
+					dynasty = "Bonaparte" 
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1000
+		}
+		ai_importance = 1000
+	}
+	annex_catalonia_france = {
+		major = yes
+		potential = {
+			tag = FRA
+			is_revolution_target = yes
+			has_ruler_flag = napoleon_flag
+			any_province = {
+				catalonia_area_france = yes
+				NOT = {
+					owned_by = ROOT
+				}
+			}
+		}
+		allow = {
+			NOT = {
+				any_province = {
+					catalonia_area_france = yes
+					NOT = {
+						OR = {
+							controlled_by = ROOT
+							country_or_vassal_holds = ROOT
+						}
+					}
+				}
+			}
+		}
+		effect = {
+			every_province = {
+				limit = {
+					NOT = {
+						owned_by = ROOT
+					}
+					catalonia_area_france = yes
+				}
+				cede_province = ROOT
+				add_core = ROOT
+			}
+		}
+		ai_will_do = {
+			factor = 1000
+		}
+		ai_importance = 1000
+	}
+	annex_dalmatia_france = {
+		major = yes
+		potential = {
+			tag = FRA
+			is_revolution_target = yes
+			has_ruler_flag = napoleon_flag
+			any_province = {
+				dalmatia_france = yes
+				NOT = {
+					owned_by = ROOT
+				}
+			}
+		}
+		allow = {
+			NOT = {
+				any_province = {
+					dalmatia_france = yes
+					NOT = {
+						OR = {
+							controlled_by = ROOT
+							country_or_vassal_holds = ROOT
+						}
+					}
+				}
+			}
+		}
+		effect = {
+			every_province = {
+				limit = {
+					NOT = {
+						owned_by = ROOT
+					}
+					dalmatia_france = yes
+				}
+				cede_province = ROOT
+				add_core = ROOT
+			}
+		}
+		ai_will_do = {
+			factor = 1000
+		}
+		ai_importance = 1000
+	}
+	annex_ligurian_republic = {
+		major = yes
+		potential = {
+			tag = FRA
+			is_revolution_target = yes
+			has_ruler_flag = napoleon_flag
+		}
+		allow = {
+			GEN = {
+				is_subject_of = ROOT
+			}
+		}
+		effect = {
+			inherit = GEN
+		}
+		ai_will_do = {
+			factor = 1000
+		}
+		ai_importance = 1000
+	}
+	annex_batavian_republic = {
+		major = yes
+		potential = {
+			tag = FRA
+			is_revolution_target = yes
+			has_ruler_flag = napoleon_flag
+		}
+		allow = {
+			NED = {
+				is_subject_of = ROOT
+			}
+		}
+		effect = {
+			inherit = NED
+		}
+		ai_will_do = {
+			factor = 1000
+		}
+		ai_importance = 1000
+	}
+	annex_tuscany_france = {
+		major = yes
+		potential = {
+			tag = FRA
+			is_revolution_target = yes
+			has_ruler_flag = napoleon_flag
+			any_province = {
+				area = tuscany_area
+				NOT = {
+					owned_by = ROOT
+				}
+			}
+		}
+		allow = {
+			NOT = {
+				any_province = {
+					area = tuscany_area
+					NOT = {
+						OR = {
+							controlled_by = ROOT
+							country_or_vassal_holds = ROOT
+						}
+					}
+				}
+			}
+		}
+		effect = {
+			every_province = {
+				limit = {
+					NOT = {
+						owned_by = ROOT
+					}
+					area = tuscany_area
+				}
+				cede_province = ROOT
+				add_core = ROOT
+			}
+		}
+		ai_will_do = {
+			factor = 1000
+		}
+		ai_importance = 1000
+	}
+	duchy_warsaw_france = {
+		major = yes
+		potential = {
+			tag = FRA
+			is_revolution_target = yes
+			has_ruler_flag = napoleon_flag
+			any_province = {
+				poland_france = yes
+				NOT = {
+					country_or_vassal_holds = ROOT
+				}
+			}
+			NOT = {
+				POL = {
+					is_subject_of = ROOT
+				}
+			}
+		}
+		allow = {
+			OR = {
+				AND = {
+					NOT = {
+						exists = POL
+						any_province = {
+							poland_france = yes
+							NOT = {
+								OR = {
+									controlled_by = ROOT
+									country_or_vassal_holds = ROOT
+								}
+							}
+						}
+					}
+				}
+				AND = {
+					exists = POL
+					NOT = {
+						any_province = {
+							owned_by = POL
+							continent = europe
+							NOT = {
+								controlled_by = ROOT
+							}
+						}
+					}
+				}
+			}
+		}
+		effect = {
+			if = {
+				limit = {
+					exists = POL
+				}
+				vassalize = POL
+				POL = {
+					kill_ruler = yes
+					change_government = constitutional_monarchy
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						exists = NAP
+					}
+				}
+				every_province = {
+					limit = {
+						is_core = POL
+					}
+					remove_core = POL
+				}
+				every_province = {
+					limit = {
+						NOT = {
+							owned_by = ROOT
+						}
+						naples_france = yes
+					}
+					cede_province = ROOT
+					add_core = POL
+				}
+				release = POL
+				vassalize = POL
+				POL = {
+					change_government = constitutional_monarchy
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1000
+		}
+		ai_importance = 1000
+	}
+	create_italy_kingdom = {
+		major = yes
+		potential = {
+			tag = FRA
+			is_revolution_target = yes
+			has_ruler_flag = napoleon_flag
+			government = revolutionary_empire
+			ITA = {
+				government = republic
+			}
+		}
+		allow = {
+			ITA = {
+				is_subject_of = ROOT
+			}
+		}
+		effect = {
+			ITA = {
+				change_government = constitutional_monarchy
+			}
+			create_union = ITA
+		}
+		ai_will_do = {
+			factor = 1000
+		}
+		ai_importance = 1000
+	}
+	the_french_empire = {
+		major = yes
+		potential = {
+			tag = FRA
+			is_revolution_target = yes
+			has_ruler_flag = napoleon_flag
+			NOT = { 
+				government = revolutionary_empire
+			}
+		}
+		allow = {
+			is_year = 1804
+		}
+		effect = {
+			change_government = revolutionary_empire
+			add_prestige = 25
+			add_legitimacy = 100
+		}
+		ai_will_do = {
+			factor = 1000
+		}
+		ai_importance = 1000
+	}
+}

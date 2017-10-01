@@ -1140,6 +1140,7 @@ autonomy_decreased = {
 
 revolution_target = {
 	global_manpower_modifier = 1.5
+	manpower_recovery_speed = 10
 	land_morale = 0.25
 	war_exhaustion = -0.25
 	unjustified_demands = -1

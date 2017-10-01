@@ -117,3 +117,121 @@ greek_region_trigger = {
 		province_id = 1764
 	}
 }
+de_jure_france = {
+	OR = {
+		region = france_region
+		province_id = 197
+		province_id = 173
+		province_id = 87
+		province_id = 181
+		province_id = 102
+		province_id = 1880
+		province_id = 75
+	}
+}
+rhine_belgium_france = {
+	OR = {
+		province_id = 1761
+		area = lower_rhineland_area
+		area = luxemburg_liege_area
+		province_id = 1866
+		province_id = 91
+		province_id = 90
+		province_id = 1865
+		province_id = 92
+		province_id = 1744
+		area = north_rhine_area
+	}
+}
+catalonia_area_france = {
+	OR = {
+		province_id = 212
+		province_id = 213
+		province_id = 2987
+		province_id = 2988
+	}
+}
+netherlands_area_france = {
+	OR = {
+		province_id = 95
+		province_id = 97
+		province_id = 96
+		province_id = 98
+		province_id = 99
+		province_id = 100
+	}
+}
+ligurian_france = {
+	OR = {
+		province_id = 2992
+		province_id = 101
+	}
+}
+italy_france = {
+	OR = {
+		area = lombardy_area
+		area = emilia_romagna_area
+		area = venetia_area
+		province_id = 110
+	}
+}
+naples_france = {
+	OR = {
+		area = calabria_area
+		area = apulia_area
+		province_id = 120
+		province_id = 121
+		province_id = 2983
+	}
+}
+conf_rhine_france = {
+	OR = {
+		area = upper_bavaria_area
+		area = lower_bavaria_area
+		area = upper_swabia_area
+		area = lower_swabia_area
+		area = franconia_area
+		area = thuringia_area
+		area = south_saxony_area
+		area = northern_saxony_area
+		area = hesse_area
+		province_id = 2972
+		province_id = 82
+		province_id = 1758
+		province_id = 57
+		province_id = 53
+		province_id = 2996
+		province_id = 46
+		province_id = 72
+		province_id = 74
+		province_id = 77
+		province_id = 78
+		province_id = 73
+		province_id = 1768
+	}
+}
+dalmatia_france = {
+	OR = {
+		area = east_adriatic_coast_area
+		area = carinthia_area
+		province_id = 128
+	}
+}
+papal_france = {
+	OR = {
+		province_id = 118
+		province_id = 2976
+		province_id = 119
+	}
+}
+poland_france = {
+	OR = {
+		area = wielkopolska_area
+		area = mazovia_area
+		province_id = 2963
+		province_id = 270
+		province_id = 260
+		province_id = 259
+		province_id = 262
+	}
+}

@@ -846,6 +846,9 @@ cb_crush_the_revolution = {
 		}
 		FROM = {
 			is_revolution_target = yes
+			NOT = {
+				tag = FRA
+			}
 		}
 	}
 
@@ -857,6 +860,9 @@ cb_spread_the_revolution = {
 
 	prerequisites = {
 		is_revolution_target = yes
+		NOT = {
+			tag = FRA
+		}
 		OR = {
 			ai = no
 			capital_scope = { continent = europe }

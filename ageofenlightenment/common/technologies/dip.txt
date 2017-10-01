@@ -271,9 +271,9 @@ technology = {
 	global_colonial_growth  = 	25	
 	range					=	150
 	allow_client_states = yes	
-	diplomatic_upkeep = 100
-
 	
+
+	diplomatic_upkeep = 10
 	enable = heavy_frigate
 }
 

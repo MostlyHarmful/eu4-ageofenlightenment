@@ -1,0 +1,3 @@
+coalition_wars = {
+	opinion = -400
+}

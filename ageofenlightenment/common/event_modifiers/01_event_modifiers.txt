@@ -44,3 +44,6 @@ disorganized_army = {
 	discipline = -0.15
 	land_morale = -0.15
 }
+coalition_leader = {
+	diplomatic_upkeep = 100
+}

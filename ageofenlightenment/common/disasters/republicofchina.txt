@@ -21,10 +21,12 @@ republicofchina = {
 			AND = {
 				NOT = { culture_group = east_asian }
 				NOT = { imperial_mandate = 75 }
+				stability = -1
 			}
 			AND = { 
 				culture_group = east_asian
 				NOT = { imperial_mandate = 60 }
+				stability = -2
 			}
 		}
 	}

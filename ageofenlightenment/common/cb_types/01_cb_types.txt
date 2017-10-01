@@ -26,3 +26,12 @@ cb_manchu_conquest = {
 
 	war_goal = superiority_manchu_conquest
 }
+cb_coalition_wars = {
+	ai_peace_desire = -1000
+	valid_for_subject = no
+
+	is_triggered_only = yes
+	months = 12
+
+	war_goal = superiority_first_coalition
+}
