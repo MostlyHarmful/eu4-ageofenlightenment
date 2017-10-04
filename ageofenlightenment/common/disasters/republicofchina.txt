@@ -33,8 +33,8 @@ republicofchina = {
 	can_stop = {
 		OR = {
 			AND = {
-				imperial_mandate = 75
-				stability = 3
+				imperial_mandate = 50
+				stability = 1
 			}
 			has_any_disaster = yes
 		}

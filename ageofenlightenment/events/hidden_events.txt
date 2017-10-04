@@ -13,8 +13,10 @@ country_event = {
 	
 	trigger = {
 		OR = {
-			culture_group = east_asian
 			is_emperor_of_china = yes
+			NOT = {
+				exists = MNG
+			}
 		}
 		any_owned_province = {
 			chinese_region_trigger = yes
@@ -45,7 +47,12 @@ country_event = {
 	
 	trigger = {
 		tag = QNG
-		is_emperor_of_china = yes
+		OR = {
+			is_emperor_of_china = yes
+			NOT = {
+				exists = MNG
+			}
+		}
 		NOT = { 
 			war_with = MNG
 			war_with = CSH
@@ -165,7 +172,12 @@ country_event = {
 			tag = MJZ
 			tag = QNG
 		}
-		is_emperor_of_china = yes
+		OR = {
+			is_emperor_of_china = yes
+			NOT = {
+				exists = MNG
+			}
+		}
 		NOT = { exists = MNG }
 	}
 	
@@ -225,7 +237,12 @@ country_event = {
 	
 	trigger = {
 		tag = QNG
-		is_emperor_of_china = yes
+		OR = {
+			is_emperor_of_china = yes
+			NOT = {
+				exists = MNG
+			}
+		}
 		is_neighbor_of = RUS
 		war_with = RUS
 		ai = yes
@@ -266,7 +283,12 @@ country_event = {
 		tag = QNG
 		ai = yes
 		was_player = no
-		is_emperor_of_china = yes
+		OR = {
+			is_emperor_of_china = yes
+			NOT = {
+				exists = MNG
+			}
+		}
 		NOT = { exists = MNG }
 	}
 	
@@ -305,7 +327,12 @@ country_event = {
 		QNG = {
 			ai = yes
 			was_player = no
-			is_emperor_of_china = yes
+			OR = {
+				is_emperor_of_china = yes
+				NOT = {
+					exists = MNG
+				}
+			}
 		}
 		OR = {
 			any_owned_province = {
@@ -812,7 +839,12 @@ country_event = {
 	
 	trigger = {
 		tag = QNG
-		is_emperor_of_china = yes
+		OR = {
+			is_emperor_of_china = yes
+			NOT = {
+				exists = MNG
+			}
+		}
 		ai = yes
 		was_player = no
 		NOT = {
@@ -1054,17 +1086,63 @@ country_event = {
 		every_country = {
 			limit = {
 				has_country_flag = joined_first_coalition
-				NOT = {
-					war_with = FRA
-				}
 			}
-			if = {
-				limit = {
+			country_event = {
+				id = hidden.23
+				days = 100
+			}
+		}
+	}
+}
+country_event = {
+	id = hidden.23
+	
+	title = "hidden.1.t"
+	desc = "hidden.1.d"
+	
+	picture = SIEGE_eventPicture
+	hidden = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = "hidden.1.a"
+		every_country = {
+			limit = {
+				has_country_flag = joined_first_coalition
+			}
+			white_peace = ROOT
+			add_truce_with = ROOT
+		}
+	}
+}
+country_event = {
+	id = hidden.60
+	title = "hidden.60.t"
+	desc = "hidden.60.d"
+	picture = DIPLOMACY_eventPicture
+
+	hidden = yes
+	is_triggered_only = yes	
+
+	option = {	
+		name = "hidden.60.a"
+		every_country = {
+			limit = {
+				NOT = {
 					war_with = ROOT
 				}
-				white_peace = ROOT
+				has_country_flag = joined_first_coalition
 			}
-			create_alliance = ROOT
+			declare_war_with_cb = {
+				who = ROOT
+				casus_belli = cb_coalition_wars
+			}
+		}
+		hidden_effect = {
+			country_event = {
+				id = hidden.60
+				days = 1830
+			}
 		}
 	}
 }

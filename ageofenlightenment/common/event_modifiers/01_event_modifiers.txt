@@ -44,6 +44,9 @@ disorganized_army = {
 	discipline = -0.15
 	land_morale = -0.15
 }
-coalition_leader = {
-	diplomatic_upkeep = 100
+refused_coalition = {
+	global_unrest = 5
+	diplomatic_repution = -2
+	land_morale = -0.1
+	stability_cost_modifier = 0.25
 }

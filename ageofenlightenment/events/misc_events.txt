@@ -78,6 +78,10 @@ country_event = {
 			}
 			tag = SPA
 		}
+		HAB = {
+			ai = yes
+			was_player = no
+		}
 		is_year = 1460
 		NOT = { is_year = 1575 }
 	}

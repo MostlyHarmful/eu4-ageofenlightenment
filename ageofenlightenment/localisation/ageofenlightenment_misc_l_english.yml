@@ -18,4 +18,5 @@
  in_civil_war_desc: "We are currently fighting in a civil war."
  ming_thrive: "Great Ming"
  coalition_wars: "Coalition Wars"
- coalition_leader: "Coalition Leader"
+ refused_coalition: "Refused Revolutionary Coalition"
+ truces_formed: "WARNING: This will cause us to white peace with any other coalition members as soon as the war begins."

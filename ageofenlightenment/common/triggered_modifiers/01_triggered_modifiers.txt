@@ -162,9 +162,7 @@ ai_hre = {
 			}
 		}	
 	}
-	ae_impact = 2
 	core_creation = 1.5
-	global_unrest = 0.01
 }
 ai_regional_impact = {
 	potential = {
@@ -205,8 +203,7 @@ ai_regional_impact = {
 			}
 		}
 	}
-	core_creation = 2
-	global_unrest = 0.01
+	core_creation = 5
 }
 ai_other_small_ones = {
 	potential = {
@@ -222,7 +219,6 @@ ai_other_small_ones = {
 		}
 	}
 	core_creation = 2
-	global_unrest = 0.01
 }
 ming_thrive = {
 	potential = {
@@ -252,4 +248,16 @@ ai_mughals = {
 	war_exhaustion = -0.1
 	core_creation = -0.25
 	ae_impact = -0.25
+}
+russia_no_dlc = {
+	potential = {
+		NOT = {
+			has_dlc = "Third Rome"
+		}
+		tag = RUS
+	}
+	allow = {
+		tag = RUS
+	}
+	colonists = 2
 }

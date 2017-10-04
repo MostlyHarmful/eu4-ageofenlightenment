@@ -113,15 +113,6 @@ country_event = {
 		is_year = 1520
 		is_at_war = no
 		is_free_or_tributary_trigger = yes
-		NOT = {
-			calc_true_if = {
-				all_province = {
-					owned_by = TIM
-					region = persia_region
-				}
-				amount = 5
-			}
-		}
 	}
 	mean_time_to_happen = {
 		months = 1

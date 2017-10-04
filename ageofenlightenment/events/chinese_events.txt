@@ -13,7 +13,10 @@ country_event = {
 		tag = MNG
 		ai = yes
 		was_player = no
-		is_emperor_of_china = yes
+		OR = {
+			is_emperor_of_china = yes
+			government = celestial_empire
+		}
 		OR = {
 			exists = MJZ
 			exists = MCH

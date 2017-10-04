@@ -17,6 +17,8 @@
  MGL_ADJ: "Mongol"
  RHI: "Confederation of the Rhine"
  RHI_ADJ: "Rhenish"
+ EUR: "Europe"
+ EUR_ADJ: "European"
  LTE_ideas: "Latin Empire Ideas"
  LTE_ideas_start: "Latin Traditions"
  LTE_ideas_bonus: "Latin Ambition"

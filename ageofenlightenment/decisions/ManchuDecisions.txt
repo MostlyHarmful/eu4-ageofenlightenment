@@ -141,6 +141,12 @@ country_decisions = {
 				}
 				add_permanent_claim = QNG
 			}
+			every_province = {
+				limit = {
+					qing_china_region_trigger = yes
+				}
+				add_permanent_claim = ROOT
+			}
 			add_country_modifier = {
 				name = "centralization_modifier"
 				duration = 3650

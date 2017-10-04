@@ -1144,8 +1144,8 @@ revolution_target = {
 	land_morale = 0.25
 	war_exhaustion = -0.25
 	unjustified_demands = -1
-	land_maintenance_modifier = -1
-	naval_maintenance_modifier = -1
+	land_maintenance_modifier = -0.95
+	naval_maintenance_modifier = -0.95
 	land_forcelimit_modifier = 1.5
 	naval_forcelimit_modifier = 1.5
 	papal_influence = -100
@@ -1153,6 +1153,7 @@ revolution_target = {
 	core_creation = -0.5
 	ae_impact = 1
 	administrative_efficiency = 0.15
+	monthly_splendor = 800
 }
 
 dishonoured_alliance =  {

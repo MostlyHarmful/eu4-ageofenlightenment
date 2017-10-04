@@ -1,0 +1,7 @@
+#Country Name: Please see filename.
+
+graphical_culture = westerngfx
+
+color = { 0  51  153 }
+
+revolutionary_colors = { 15  0  16 }
