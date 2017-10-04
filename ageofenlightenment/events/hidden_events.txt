@@ -1146,3 +1146,42 @@ country_event = {
 		}
 	}
 }
+#Debug: occupy all of France to dismantle revolution
+country_event = {
+	id = hidden.100
+	title = "hidden.60.t"
+	desc = "hidden.60.d"
+	picture = DIPLOMACY_eventPicture
+
+	hidden = yes
+	is_triggered_only = yes	
+
+	option = {	
+		name = "hidden.60.a"
+		every_province = {
+			limit = {
+				de_jure_france = yes
+			}
+			change_controller = ROOT
+		}
+	}
+}
+country_event = {
+	id = hidden.101
+	title = "hidden.60.t"
+	desc = "hidden.60.d"
+	picture = DIPLOMACY_eventPicture
+
+	hidden = yes
+	is_triggered_only = yes	
+
+	option = {	
+		name = "hidden.60.a"
+		every_province = {
+			limit = {
+				continent = europe
+			}
+			change_controller = ROOT
+		}
+	}
+}

@@ -337,6 +337,7 @@ conf_vienna_prussia = {
 		province_id = 1760
 		province_id = 80
 		province_id = 1878
+		province_id = 60
 	}
 }
 conf_vienna_bavaria = {
@@ -364,8 +365,8 @@ conf_vienna_meck = {
 }
 conf_vienna_hes = {
 	OR = {
-		province_id = 46
-		province_id = 2996
+		province_id = 81
+		province_id = 1762
 	}
 }
 conf_vienna_ned = {

@@ -150,6 +150,9 @@ ai_hre = {
 				is_part_of_hre = yes
 			}
 		}
+		NOT = {
+			is_revolution_target = yes
+		}
 	}
 	trigger = {
 		NOT = {
@@ -162,7 +165,7 @@ ai_hre = {
 			}
 		}	
 	}
-	core_creation = 1.5
+	core_creation = 5
 }
 ai_regional_impact = {
 	potential = {
@@ -185,6 +188,9 @@ ai_regional_impact = {
 			capital_scope = {
 				superregion = east_indies_superregion
 			}
+		}
+		NOT = {
+			is_revolution_target = yes
 		}
 	}
 	trigger = {
@@ -209,6 +215,9 @@ ai_other_small_ones = {
 	potential = {
 		ai = yes
 		was_player = no
+		NOT = {
+			is_revolution_target = yes
+		}
 	}
 	trigger = {
 		OR = {
@@ -238,6 +247,9 @@ ai_mughals = {
 		tag = MUG
 		ai = yes
 		was_player = no
+		NOT = {
+			is_revolution_target = yes
+		}
 	}
 	trigger = {
 		NOT = {
@@ -256,8 +268,25 @@ russia_no_dlc = {
 		}
 		tag = RUS
 	}
-	allow = {
+	trigger = {
 		tag = RUS
 	}
 	colonists = 2
+}
+french_dominance = {
+	potential = {
+		tag = FRA
+		ai = yes
+	}
+	trigger = {
+		is_revolution_target = yes
+		NOT = {
+			is_year = 1812
+		}
+	}
+	land_forcelimit_modifier = 1
+	naval_forcelimit_modifier = 1
+	global_tax_modifier = 1
+	trade_efficiency = 1
+	production_efficiency = 1
 }

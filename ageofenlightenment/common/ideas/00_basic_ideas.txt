@@ -597,6 +597,26 @@ exploration_ideas = {
 				tag = KUR
 			}
 		}
+		modifier = {
+			factor = 0
+			OR = {
+				tag = MAM
+				tag = TUR
+				tag = TIM
+				tag = MUG
+				tag = MCH
+			}
+		}
+		modifier = {
+			factor = 0
+			OR = {
+				tag = MAM
+				tag = TUR
+				tag = TIM
+				tag = MUG
+				tag = MCH
+			}
+		}
 	}
 }
 
@@ -804,6 +824,25 @@ expansion_ideas = {
 				technology_group = western
 				technology_group = eastern
 				technology_group = muslim
+			}
+		}
+		modifier = {
+			factor = 0
+			OR = {
+				tag = MAM
+				tag = TUR
+				tag = TIM
+				tag = MUG
+				tag = MCH
+			}
+		}
+		modifier = {
+			factor = 1000
+			AND = {
+				tag = RUS
+				NOT = {
+					has_dlc = "Third Rome"
+				}
 			}
 		}
 	}

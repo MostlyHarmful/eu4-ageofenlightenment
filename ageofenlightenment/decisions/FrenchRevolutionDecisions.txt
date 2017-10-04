@@ -30,7 +30,6 @@ country_decisions = {
 					limit = { has_heir = yes }
 					kill_heir = yes
 				}
-				release_all_subjects = yes
 			}
 			set_global_flag = revolution_dismantled
 			white_peace = FRA
@@ -110,6 +109,7 @@ country_decisions = {
 				}
 				cede_province = ROOT
 				add_core = ROOT
+				remove_core = PAP
 			}
 		}
 		ai_will_do = {
@@ -1148,7 +1148,7 @@ country_decisions = {
 			if = {
 				limit = {
 					NOT = {
-						exists = NAP
+						exists = POL
 					}
 				}
 				every_province = {
@@ -1162,7 +1162,7 @@ country_decisions = {
 						NOT = {
 							owned_by = ROOT
 						}
-						naples_france = yes
+						poland_france = yes
 					}
 					cede_province = ROOT
 					add_core = POL
@@ -1352,13 +1352,6 @@ country_decisions = {
 							controlled_by = ROOT
 							country_or_vassal_holds = ROOT
 							owner = {
-								has_country_flag = joined_first_coalition
-								has_global_flag = here_we_go
-								NOT = {
-									war_with = FRA
-								}
-							}
-							owner = {
 								NOT = {
 									has_country_flag = joined_first_coalition
 								}
@@ -1373,11 +1366,14 @@ country_decisions = {
 				limit = {
 					NOT = {
 						OR = {
-							owned_by = ROOT
 							owner = {
-								NOT = {
-									has_country_flag = joined_first_coalition
+								OR = {
+									tag = FRA
+									is_subject_of = FRA
 								}
+							}
+							owner = {
+								has_country_flag = joined_first_coalition
 							}
 						}
 					}
@@ -1802,7 +1798,7 @@ country_decisions = {
 		}
 		ai_importance = 1000
 	}
-	scandanavian_kingdom_france = {
+	scandinavian_kingdom_france = {
 		major = yes
 		potential = {
 			tag = FRA
@@ -1917,7 +1913,8 @@ country_decisions = {
 				release = SCA
 				vassalize = SCA
 				SCA = {
-					change_government = constitutional_republic
+					change_government = constitutional_monarchy
+					set_government_rank = 2
 				}
 			}
 		}

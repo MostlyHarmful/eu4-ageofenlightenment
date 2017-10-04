@@ -31,6 +31,7 @@ country_event = {
 	major = yes
 	
 	trigger = {
+		has_global_flag = congress_of_vienna
 		current_age = age_of_revolutions
 		is_year = 1750
 		NOT = { exists = BEL }
@@ -172,7 +173,13 @@ country_event = {
 				country_event = { id = formation_of_countries.4 days = 10 }
 			}
 		}
-		ai_chance = { factor = 10 }
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 1000
+				tag = NED
+			}
+		}
 	}
 	option = {
 		name = "formation_of_countries.2.c"
@@ -259,6 +266,7 @@ country_event = {
 	major = yes
 	
 	trigger = {
+		has_global_flag = congress_of_vienna
 		current_age = age_of_revolutions
 		is_year = 1750
 		NOT = { exists = GRE }

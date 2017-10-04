@@ -521,6 +521,7 @@ technology = {
 	#Metallurgy
 	artillery_shock 	=	0.1
 	artillery_fire		=	2.0
+	siege_ability = 0.40
 	
 	enable = royal_mortar	
 }
