@@ -13,10 +13,8 @@ country_event = {
 	
 	trigger = {
 		OR = {
+			culture_group = east_asian
 			is_emperor_of_china = yes
-			NOT = {
-				exists = MNG
-			}
 		}
 		any_owned_province = {
 			chinese_region_trigger = yes
@@ -1182,6 +1180,202 @@ country_event = {
 				continent = europe
 			}
 			change_controller = ROOT
+		}
+	}
+}
+country_event = {
+	id = hidden.25
+	
+	title = "hidden.1.t"
+	desc = "hidden.1.d"
+	
+	picture = SIEGE_eventPicture
+	hidden = yes
+	fire_only_once = yes
+	
+	trigger = {
+		NOT = {
+			exists = MAM
+		}
+	}
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = "hidden.1.a"
+		every_province = {
+			limit = {
+				is_core = MAM
+			}
+			remove_core = MAM
+		}
+		every_province = {
+			limit = {
+				culture = al_misr_arabic
+			}
+			add_core = EGY
+		}
+	}
+}
+country_event = {
+	id = hidden.26
+	
+	title = "hidden.1.t"
+	desc = "hidden.1.d"
+	
+	picture = SIEGE_eventPicture
+	hidden = yes
+	
+	trigger = {
+		tag = TUR
+		CRI = {
+			is_vassal_of = ROOT
+		}
+		ai = yes
+		was_player = no
+	}
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = "hidden.1.a"
+		create_march = CRI
+	}
+}
+country_event = {
+	id = hidden.27
+	
+	title = "hidden.1.t"
+	desc = "hidden.1.d"
+	
+	picture = SIEGE_eventPicture
+	hidden = yes
+	fire_only_once = yes
+	
+	trigger = {
+		NOT = {
+			exists = PLC
+		}
+		any_province = {
+			is_core = PLC
+		}
+	}
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = "hidden.1.a"
+		every_province = {
+			limit = {
+				is_core = PLC
+			}
+			remove_core = PLC
+		}
+		every_province = {
+			limit = {
+				is_core = POL
+			}
+			remove_core = POL
+		}
+		every_province = {
+			limit = {
+				is_core = LIT
+			}
+			remove_core = LIT
+		}
+		every_province = {
+			limit = {
+				culture = polish
+			}
+			add_core = POL
+		}
+		every_province = {
+			limit = {
+				culture = lithuanian
+			}
+			add_core = LIT
+		}
+	}
+}
+country_event = {
+	id = hidden.28
+	
+	title = "hidden.1.t"
+	desc = "hidden.1.d"
+	
+	picture = SIEGE_eventPicture
+	hidden = yes
+	
+	trigger = {
+		tag = POL
+		ai = yes
+		was_player = no
+		NOT = {
+			exists = PRU
+		}
+		exists = TEU
+		NOT = {
+			is_year = 1550
+		}
+		any_owned_province = {
+			OR = {
+				province_id = 2958
+				province_id = 767
+				province_id = 42
+				province_id = 41
+				province_id = 40
+			}
+		}
+	}
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = "hidden.1.a"
+		every_province = {
+			limit = {
+				OR = {
+					province_id = 2958
+					province_id = 767
+					province_id = 42
+					province_id = 41
+					province_id = 40
+				}
+			}
+			cede_province = TEU
+		}
+	}
+}
+country_event = {
+	id = hidden.29
+	
+	title = "hidden.1.t"
+	desc = "hidden.1.d"
+	
+	picture = SIEGE_eventPicture
+	hidden = yes
+	fire_only_once = yes
+	
+	trigger = {
+		tag = TEU
+		ai = yes
+		was_player = no
+		is_religion_enabled = protestant
+	}
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = "hidden.1.a"
+		change_religion = protestant
+		add_country_modifier = {
+			name = "conversion_zeal"
+			duration = 1825
 		}
 	}
 }

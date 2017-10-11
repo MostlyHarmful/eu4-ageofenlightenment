@@ -112,6 +112,7 @@ technology = {
 	
 	allowed_idea_groups = 3
 	theocratic_government = yes
+	administrative_efficiency = 0.1
 }
 
 technology = {
@@ -152,6 +153,7 @@ technology = {
 	# Tech 15
 	year = 1596
 	
+	administrative_efficiency = 0.1
 	may_force_march = yes
 	
 }
@@ -162,7 +164,6 @@ technology = {
 	
 	
 	production_efficiency 	=	0.05
-
 
 }
 
@@ -197,8 +198,8 @@ technology = {
 	year = 1661
 	
 	republican_dictatorship = yes
-	max_states = 5
 	administrative_efficiency = 0.1
+	max_states = 5
 }
 
 technology = {
@@ -242,6 +243,9 @@ technology = {
 	
 	#Improved Farm Animals
 	production_efficiency 	=	0.05
+	enlightened_despotism = yes
+	bureaucratic_despotism = yes
+	administrative_efficiency = 0.1
 }
 
 technology = {
@@ -273,9 +277,6 @@ technology = {
 	year = 1790
 	
 	allowed_idea_groups = 8
-	enlightened_despotism = yes
-	bureaucratic_despotism = yes
-	max_absolutism = 10
 }
 
 technology = {

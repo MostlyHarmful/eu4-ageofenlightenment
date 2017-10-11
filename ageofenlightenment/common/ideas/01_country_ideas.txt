@@ -118,7 +118,6 @@ BEL_ideas = {
 	
 	the_buffer_state = {
 		hostile_attrition = 1.0
-		enemy_core_creation = 0.5
 	}
 	
 	belgian_tolerance = {

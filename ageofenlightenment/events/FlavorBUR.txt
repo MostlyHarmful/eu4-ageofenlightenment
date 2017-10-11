@@ -22,8 +22,8 @@ country_event = {
 		tag = BUR
 		ai = yes
 		was_player = no
+		war = yes
 		NOT = { has_country_flag = burgundian_succession_crisis }
-		is_at_war = yes
 		is_free_or_tributary_trigger = yes
 		is_emperor = no
 		government = monarchy
@@ -89,6 +89,10 @@ country_event = {
 		modifier = {
 			factor = 0.5
 			NOT = { war_score = -75 }
+		}
+		modifier = {
+			factor = 0.01
+			is_year = 1490
 		}
 	}
 	
@@ -1670,6 +1674,9 @@ country_event = {
 				country_event = { id = flavor_bur.20 days = 1 }
 			}
 		}
+		ai_chance = {
+			factor = 100
+		}
 	}
 	option = {
 		name = "flavor_bur.EVTOPTB10"
@@ -1693,6 +1700,9 @@ country_event = {
 			every_enemy_country = {
 				country_event = { id = flavor_bur.20 days = 1 }
 			}
+		}
+		ai_chance = {
+			factor = 0
 		}
 	}
 	option = {
@@ -1723,6 +1733,9 @@ country_event = {
 			}
 		}
 		switch_tag = NED
+		ai_chance = {
+			factor = 0
+		}
 	}
 }
 

@@ -11,8 +11,10 @@ country_decisions = {
 		}
 		allow = {
 			war_with = FRA
-			capital_scope = {
-				controlled_by = ROOT
+			FRA = {
+				capital_scope = {
+					controlled_by = ROOT
+				}
 			}
 			NOT = {
 				any_province = {
@@ -85,7 +87,12 @@ country_decisions = {
 					de_jure_france = yes
 					NOT = {
 						OR = {
-							controlled_by = ROOT
+							controller = {
+								OR = {
+									tag = FRA
+									is_subject_of = FRA
+								}
+							}
 							country_or_vassal_holds = ROOT
 							owner = {
 								has_country_flag = joined_first_coalition
@@ -135,7 +142,12 @@ country_decisions = {
 					rhine_belgium_france = yes
 					NOT = {
 						OR = {
-							controlled_by = ROOT
+							controller = {
+								OR = {
+									tag = FRA
+									is_subject_of = FRA
+								}
+							}
 							country_or_vassal_holds = ROOT
 							owner = {
 								has_country_flag = joined_first_coalition
@@ -185,7 +197,12 @@ country_decisions = {
 					piedmont_france = yes
 					NOT = {
 						OR = {
-							controlled_by = ROOT
+							controller = {
+								OR = {
+									tag = FRA
+									is_subject_of = FRA
+								}
+							}
 							country_or_vassal_holds = ROOT
 							owner = {
 								has_country_flag = joined_first_coalition
@@ -248,7 +265,12 @@ country_decisions = {
 							netherlands_area_france = yes
 							NOT = {
 								OR = {
-									controlled_by = ROOT
+									controller = {
+										OR = {
+											tag = FRA
+											is_subject_of = FRA
+										}
+									}
 									country_or_vassal_holds = ROOT
 									owner = {
 										has_country_flag = joined_first_coalition
@@ -270,7 +292,12 @@ country_decisions = {
 							continent = europe
 							NOT = {
 								OR = {
-									controlled_by = ROOT
+									controller = {
+										OR = {
+											tag = FRA
+											is_subject_of = FRA
+										}
+									}
 									owner = {
 										has_country_flag = joined_first_coalition
 										has_global_flag = here_we_go
@@ -304,6 +331,16 @@ country_decisions = {
 						modifier = coalition_wars
 					}
 					clr_country_flag = joined_first_coalition
+				}
+				every_province = {
+					limit = {
+						NOT = {
+							owned_by = NED
+						}
+						netherlands_area_france = yes
+					}
+					cede_province = NED
+					add_core = NED
 				}
 			}
 			if = {
@@ -372,7 +409,12 @@ country_decisions = {
 							ligurian_france = yes
 							NOT = {
 								OR = {
-									controlled_by = ROOT
+									controller = {
+										OR = {
+											tag = FRA
+											is_subject_of = FRA
+										}
+									}
 									country_or_vassal_holds = ROOT
 									owner = {
 										has_country_flag = joined_first_coalition
@@ -394,7 +436,12 @@ country_decisions = {
 							continent = europe
 							NOT = {
 								OR = {
-									controlled_by = ROOT
+									controller = {
+										OR = {
+											tag = FRA
+											is_subject_of = FRA
+										}
+									}
 									owner = {
 										has_country_flag = joined_first_coalition
 										has_global_flag = here_we_go
@@ -428,6 +475,16 @@ country_decisions = {
 						modifier = coalition_wars
 					}
 					clr_country_flag = joined_first_coalition
+				}
+				every_province = {
+					limit = {
+						NOT = {
+							owned_by = GEN
+						}
+						ligurian_france = yes
+					}
+					cede_province = GEN
+					add_core = GEN
 				}
 			}
 			if = {
@@ -496,7 +553,12 @@ country_decisions = {
 							italy_france = yes
 							NOT = {
 								OR = {
-									controlled_by = ROOT
+									controller = {
+										OR = {
+											tag = FRA
+											is_subject_of = FRA
+										}
+									}
 									country_or_vassal_holds = ROOT
 									owner = {
 										has_country_flag = joined_first_coalition
@@ -518,7 +580,12 @@ country_decisions = {
 							continent = europe
 							NOT = {
 								OR = {
-									controlled_by = ROOT
+									controller = {
+										OR = {
+											tag = FRA
+											is_subject_of = FRA
+										}
+									}
 									owner = {
 										has_country_flag = joined_first_coalition
 										has_global_flag = here_we_go
@@ -552,6 +619,16 @@ country_decisions = {
 						modifier = coalition_wars
 					}
 					clr_country_flag = joined_first_coalition
+				}
+				every_province = {
+					limit = {
+						NOT = {
+							owned_by = ITA
+						}
+						italy_france = yes
+					}
+					cede_province = ITA
+					add_core = ITA
 				}
 			}
 			if = {
@@ -593,7 +670,10 @@ country_decisions = {
 		potential = {
 			tag = FRA
 			is_revolution_target = yes
-			has_ruler_flag = napoleon_flag
+			OR = {
+				has_ruler_flag = napoleon_flag
+				government = revolutionary_empire
+			}
 			any_province = {
 				naples_france = yes
 				NOT = {
@@ -621,7 +701,12 @@ country_decisions = {
 							naples_france = yes
 							NOT = {
 								OR = {
-									controlled_by = ROOT
+									controller = {
+										OR = {
+											tag = FRA
+											is_subject_of = FRA
+										}
+									}
 									country_or_vassal_holds = ROOT
 									NOT = {
 										war_with = FRA
@@ -639,7 +724,12 @@ country_decisions = {
 							continent = europe
 							NOT = {
 								OR = {
-									controlled_by = ROOT
+									controller = {
+										OR = {
+											tag = FRA
+											is_subject_of = FRA
+										}
+									}
 									owner = {
 										has_country_flag = joined_first_coalition
 										has_global_flag = here_we_go
@@ -676,6 +766,16 @@ country_decisions = {
 						modifier = coalition_wars
 					}
 					clr_country_flag = joined_first_coalition
+				}
+				every_province = {
+					limit = {
+						NOT = {
+							owned_by = NAP
+						}
+						naples_france = yes
+					}
+					cede_province = NAP
+					add_core = NAP
 				}
 			}
 			if = {
@@ -720,7 +820,10 @@ country_decisions = {
 		potential = {
 			tag = FRA
 			is_revolution_target = yes
-			has_ruler_flag = napoleon_flag
+			OR = {
+				has_ruler_flag = napoleon_flag
+				government = revolutionary_empire
+			}
 			any_province = {
 				conf_rhine_france = yes
 				NOT = {
@@ -739,7 +842,12 @@ country_decisions = {
 					conf_rhine_france = yes
 					NOT = {
 						OR = {
-							controlled_by = ROOT
+							controller = {
+								OR = {
+									tag = FRA
+									is_subject_of = FRA
+								}
+							}
 							country_or_vassal_holds = ROOT
 							owner = {
 								has_country_flag = joined_first_coalition
@@ -780,6 +888,13 @@ country_decisions = {
 						id = french_revolution.30
 					}
 				}
+				else = {
+					FRA = {
+						country_event = {
+							id = french_revolution.31
+						}
+					}
+				}
 			}
 		}
 		ai_will_do = {
@@ -792,7 +907,10 @@ country_decisions = {
 		potential = {
 			tag = FRA
 			is_revolution_target = yes
-			has_ruler_flag = napoleon_flag
+			OR = {
+				has_ruler_flag = napoleon_flag
+				government = revolutionary_empire
+			}
 			any_province = {
 				owned_by = SPA
 				continent = europe
@@ -831,14 +949,10 @@ country_decisions = {
 						}
 					}
 					NOT = {
-						OR = {
-							controlled_by = ROOT
-							owner = {
-								has_country_flag = joined_first_coalition
-								has_global_flag = here_we_go
-								NOT = {
-									war_with = FRA
-								}
+						controller = {
+							OR = {
+								tag = FRA
+								is_subject_of = FRA
 							}
 						}
 					}
@@ -876,7 +990,10 @@ country_decisions = {
 		potential = {
 			tag = FRA
 			is_revolution_target = yes
-			has_ruler_flag = napoleon_flag
+			OR = {
+				has_ruler_flag = napoleon_flag
+				government = revolutionary_empire
+			}
 			any_province = {
 				catalonia_area_france = yes
 				NOT = {
@@ -890,7 +1007,12 @@ country_decisions = {
 					catalonia_area_france = yes
 					NOT = {
 						OR = {
-							controlled_by = ROOT
+							controller = {
+								OR = {
+									tag = FRA
+									is_subject_of = FRA
+								}
+							}
 							country_or_vassal_holds = ROOT
 						}
 					}
@@ -919,7 +1041,10 @@ country_decisions = {
 		potential = {
 			tag = FRA
 			is_revolution_target = yes
-			has_ruler_flag = napoleon_flag
+			OR = {
+				has_ruler_flag = napoleon_flag
+				government = revolutionary_empire
+			}
 			any_province = {
 				dalmatia_france = yes
 				NOT = {
@@ -933,7 +1058,12 @@ country_decisions = {
 					dalmatia_france = yes
 					NOT = {
 						OR = {
-							controlled_by = ROOT
+							controller = {
+								OR = {
+									tag = FRA
+									is_subject_of = FRA
+								}
+							}
 							country_or_vassal_holds = ROOT
 							owner = {
 								has_country_flag = joined_first_coalition
@@ -969,7 +1099,10 @@ country_decisions = {
 		potential = {
 			tag = FRA
 			is_revolution_target = yes
-			has_ruler_flag = napoleon_flag
+			OR = {
+				has_ruler_flag = napoleon_flag
+				government = revolutionary_empire
+			}
 		}
 		allow = {
 			GEN = {
@@ -989,7 +1122,10 @@ country_decisions = {
 		potential = {
 			tag = FRA
 			is_revolution_target = yes
-			has_ruler_flag = napoleon_flag
+			OR = {
+				has_ruler_flag = napoleon_flag
+				government = revolutionary_empire
+			}
 		}
 		allow = {
 			NED = {
@@ -1009,7 +1145,10 @@ country_decisions = {
 		potential = {
 			tag = FRA
 			is_revolution_target = yes
-			has_ruler_flag = napoleon_flag
+			OR = {
+				has_ruler_flag = napoleon_flag
+				government = revolutionary_empire
+			}
 			any_province = {
 				area = tuscany_area
 				NOT = {
@@ -1023,7 +1162,12 @@ country_decisions = {
 					area = tuscany_area
 					NOT = {
 						OR = {
-							controlled_by = ROOT
+							controller = {
+								OR = {
+									tag = FRA
+									is_subject_of = FRA
+								}
+							}
 							country_or_vassal_holds = ROOT
 							owner = {
 								has_country_flag = joined_first_coalition
@@ -1059,7 +1203,10 @@ country_decisions = {
 		potential = {
 			tag = FRA
 			is_revolution_target = yes
-			has_ruler_flag = napoleon_flag
+			OR = {
+				has_ruler_flag = napoleon_flag
+				government = revolutionary_empire
+			}
 			any_province = {
 				poland_france = yes
 				NOT = {
@@ -1077,6 +1224,7 @@ country_decisions = {
 					attacker_leader = ROOT
 				}
 			}
+			exists = RHI
 		}
 		allow = {
 			OR = {
@@ -1087,7 +1235,12 @@ country_decisions = {
 							poland_france = yes
 							NOT = {
 								OR = {
-									controlled_by = ROOT
+									controller = {
+										OR = {
+											tag = FRA
+											is_subject_of = FRA
+										}
+									}
 									country_or_vassal_holds = ROOT
 									owner = {
 										has_country_flag = joined_first_coalition
@@ -1109,7 +1262,12 @@ country_decisions = {
 							continent = europe
 							NOT = {
 								OR = {
-									controlled_by = ROOT
+									controller = {
+										OR = {
+											tag = FRA
+											is_subject_of = FRA
+										}
+									}
 									owner = {
 										has_country_flag = joined_first_coalition
 										has_global_flag = here_we_go
@@ -1143,6 +1301,16 @@ country_decisions = {
 						modifier = coalition_wars
 					}
 					clr_country_flag = joined_first_coalition
+				}
+				every_province = {
+					limit = {
+						NOT = {
+							owned_by = POL
+						}
+						poland_france = yes
+					}
+					cede_province = POL
+					add_core = POL
 				}
 			}
 			if = {
@@ -1184,7 +1352,10 @@ country_decisions = {
 		potential = {
 			tag = FRA
 			is_revolution_target = yes
-			has_ruler_flag = napoleon_flag
+			OR = {
+				has_ruler_flag = napoleon_flag
+				government = revolutionary_empire
+			}
 			government = revolutionary_empire
 			ITA = {
 				government = republic
@@ -1211,7 +1382,10 @@ country_decisions = {
 		potential = {
 			tag = FRA
 			is_revolution_target = yes
-			has_ruler_flag = napoleon_flag
+			OR = {
+				has_ruler_flag = napoleon_flag
+				government = revolutionary_empire
+			}
 			any_province = {
 				area = tuscany_area
 				NOT = {
@@ -1225,7 +1399,12 @@ country_decisions = {
 					area = tuscany_area
 					NOT = {
 						OR = {
-							controlled_by = ROOT
+							controller = {
+								OR = {
+									tag = FRA
+									is_subject_of = FRA
+								}
+							}
 							country_or_vassal_holds = ROOT
 							owner = {
 								has_country_flag = joined_first_coalition
@@ -1261,7 +1440,10 @@ country_decisions = {
 		potential = {
 			tag = FRA
 			is_revolution_target = yes
-			has_ruler_flag = napoleon_flag
+			OR = {
+				has_ruler_flag = napoleon_flag
+				government = revolutionary_empire
+			}
 			NOT = { 
 				government = revolutionary_empire
 			}
@@ -1279,12 +1461,15 @@ country_decisions = {
 		}
 		ai_importance = 1000
 	}
-	integrate_northeast_germany_france = {
+	fate_of_northeast_germany_france = {
 		major = yes
 		potential = {
 			tag = FRA
 			is_revolution_target = yes
-			has_ruler_flag = napoleon_flag
+			OR = {
+				has_ruler_flag = napoleon_flag
+				government = revolutionary_empire
+			}
 			
 			any_province = {
 				northeast_germany_france = yes
@@ -1299,7 +1484,12 @@ country_decisions = {
 					northeast_germany_france = yes
 					NOT = {
 						OR = {
-							controlled_by = ROOT
+							controller = {
+								OR = {
+									tag = FRA
+									is_subject_of = FRA
+								}
+							}
 							country_or_vassal_holds = ROOT
 							owner = {
 								has_country_flag = joined_first_coalition
@@ -1314,6 +1504,9 @@ country_decisions = {
 			}
 		}
 		effect = {
+			country_event = {
+				id = french_revolution.31
+			}
 			every_province = {
 				limit = {
 					NOT = {
@@ -1349,7 +1542,12 @@ country_decisions = {
 					continent = europe
 					NOT = {
 						OR = {
-							controlled_by = ROOT
+							controller = {
+								OR = {
+									tag = FRA
+									is_subject_of = FRA
+								}
+							}
 							country_or_vassal_holds = ROOT
 							owner = {
 								NOT = {
@@ -1404,9 +1602,15 @@ country_decisions = {
 					clr_country_flag = joined_first_coalition
 					white_peace = FRA
 				}
+				every_country = {
+					limit = {
+						has_country_flag = joined_first_coalition
+					}
+					clr_country_flag = joined_first_coalition
+				}
 			}
-			change_government = revolutionary_republic
-			add_republican_tradition = 100
+			change_government = constitutional_monarchy
+			add_legitimacy = 100
 			every_province = {
 				limit = {
 					continent = europe
@@ -1427,7 +1631,10 @@ country_decisions = {
 		potential = {
 			tag = FRA
 			is_revolution_target = yes
-			has_ruler_flag = napoleon_flag
+			OR = {
+				has_ruler_flag = napoleon_flag
+				government = revolutionary_empire
+			}
 			any_province = {
 				owned_by = RUS
 				continent = europe
@@ -1460,7 +1667,12 @@ country_decisions = {
 					continent = europe
 					NOT = {
 						OR = {
-							controlled_by = ROOT
+							controller = {
+								OR = {
+									tag = FRA
+									is_subject_of = FRA
+								}
+							}
 							owner = {
 								has_country_flag = joined_first_coalition
 								has_global_flag = here_we_go
@@ -1503,7 +1715,10 @@ country_decisions = {
 		potential = {
 			tag = FRA
 			is_revolution_target = yes
-			has_ruler_flag = napoleon_flag
+			OR = {
+				has_ruler_flag = napoleon_flag
+				government = revolutionary_empire
+			}
 			any_province = {
 				owned_by = HAB
 				continent = europe
@@ -1536,7 +1751,12 @@ country_decisions = {
 					continent = europe
 					NOT = {
 						OR = {
-							controlled_by = ROOT
+							controller = {
+								OR = {
+									tag = FRA
+									is_subject_of = FRA
+								}
+							}
 							owner = {
 								has_country_flag = joined_first_coalition
 								has_global_flag = here_we_go
@@ -1606,7 +1826,12 @@ country_decisions = {
 							swiss_france = yes
 							NOT = {
 								OR = {
-									controlled_by = ROOT
+									controller = {
+										OR = {
+											tag = FRA
+											is_subject_of = FRA
+										}
+									}
 									country_or_vassal_holds = ROOT
 									owner = {
 										has_country_flag = joined_first_coalition
@@ -1628,7 +1853,12 @@ country_decisions = {
 							continent = europe
 							NOT = {
 								OR = {
-									controlled_by = ROOT
+									controller = {
+										OR = {
+											tag = FRA
+											is_subject_of = FRA
+										}
+									}
 									owner = {
 										has_country_flag = joined_first_coalition
 										has_global_flag = here_we_go
@@ -1662,6 +1892,16 @@ country_decisions = {
 						modifier = coalition_wars
 					}
 					clr_country_flag = joined_first_coalition
+				}
+				every_province = {
+					limit = {
+						NOT = {
+							owned_by = SWI
+						}
+						swiss_france = yes
+					}
+					cede_province = SWI
+					add_core = SWI
 				}
 			}
 			if = {
@@ -1703,7 +1943,10 @@ country_decisions = {
 		potential = {
 			tag = FRA
 			is_revolution_target = yes
-			has_ruler_flag = napoleon_flag
+			OR = {
+				has_ruler_flag = napoleon_flag
+				government = revolutionary_empire
+			}
 			any_province = {
 				papal_france = yes
 				NOT = {
@@ -1717,7 +1960,12 @@ country_decisions = {
 					papal_france = yes
 					NOT = {
 						OR = {
-							controlled_by = ROOT
+							controller = {
+								OR = {
+									tag = FRA
+									is_subject_of = FRA
+								}
+							}
 							country_or_vassal_holds = ROOT
 							owner = {
 								has_country_flag = joined_first_coalition
@@ -1753,7 +2001,10 @@ country_decisions = {
 		potential = {
 			tag = FRA
 			is_revolution_target = yes
-			has_ruler_flag = napoleon_flag
+			OR = {
+				has_ruler_flag = napoleon_flag
+				government = revolutionary_empire
+			}
 			any_province = {
 				north_germany_france = yes
 				NOT = {
@@ -1767,7 +2018,12 @@ country_decisions = {
 					north_germany_france = yes
 					NOT = {
 						OR = {
-							controlled_by = ROOT
+							controller = {
+								OR = {
+									tag = FRA
+									is_subject_of = FRA
+								}
+							}
 							country_or_vassal_holds = ROOT
 							owner = {
 								has_country_flag = joined_first_coalition
@@ -1814,6 +2070,10 @@ country_decisions = {
 					is_subject_of = ROOT
 				}
 			}
+			OR = {
+				has_ruler_flag = napoleon_flag
+				government = revolutionary_empire
+			}
 			NOT = {
 				is_in_war = {
 					defender_leader = SCA
@@ -1830,7 +2090,12 @@ country_decisions = {
 							scandinavia_france = yes
 							NOT = {
 								OR = {
-									controlled_by = ROOT
+									controller = {
+										OR = {
+											tag = FRA
+											is_subject_of = FRA
+										}
+									}
 									country_or_vassal_holds = ROOT
 									owner = {
 										has_country_flag = joined_first_coalition
@@ -1852,7 +2117,12 @@ country_decisions = {
 							continent = europe
 							NOT = {
 								OR = {
-									controlled_by = ROOT
+									controller = {
+										OR = {
+											tag = FRA
+											is_subject_of = FRA
+										}
+									}
 									owner = {
 										has_country_flag = joined_first_coalition
 										has_global_flag = here_we_go
@@ -1886,6 +2156,16 @@ country_decisions = {
 						modifier = coalition_wars
 					}
 					clr_country_flag = joined_first_coalition
+				}
+				every_province = {
+					limit = {
+						NOT = {
+							owned_by = SCA
+						}
+						scandinavia_france = yes
+					}
+					cede_province = SCA
+					add_core = SCA
 				}
 			}
 			if = {

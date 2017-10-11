@@ -14,6 +14,9 @@ country_decisions = {
 			NOT = { tag = PRU }
 			OR = {
 				NOT = { exists = PRU }
+				PRU = {
+					is_subject_of = ROOT
+				}
 				ai = no
 			}
 			OR = {
@@ -23,20 +26,43 @@ country_decisions = {
 			}
 		}
 		allow = {
-			NOT = { exists = PRU }
-			adm_tech = 10
+			OR = {
+				NOT = { exists = PRU }
+				PRU = {
+					is_subject_of = ROOT
+				}
+			}
 			OR = {
 				religion = protestant
 				religion = reformed
 			}
-			owns_core_province = 41			# Königsberg
 			OR = {
-				owns_core_province = 43		# Danzig
-				owns_core_province = 2995	# Stolp
+				AND = {
+					adm_tech = 10
+					owns_core_province = 41			# Königsberg
+					OR = {
+						owns_core_province = 43		# Danzig
+						owns_core_province = 2995	# Stolp
+					}
+				}
+				AND = {
+					PRU = {
+						is_subject_of = ROOT
+					}
+					adm_tech = 14
+				}
 			}
 			is_at_war = no
 		}
 		effect = {
+			if = {
+				limit = {
+					PRU = {
+						is_subject_of = ROOT
+					}
+				}
+				inherit = PRU
+			}
 			change_tag = PRU
 			if = {
 				limit = {
@@ -153,13 +179,11 @@ country_decisions = {
 		}
 		allow = {
 			NOT = { exists = PRU }
-			adm_tech = 10
 			is_at_war = no
 			OR = {
 				religion = reformed
 				religion = protestant
 			}
-			owns_core_province = 41 # Königsberg
 		}
 		effect = {
 			change_tag = PRU

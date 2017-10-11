@@ -607,16 +607,6 @@ exploration_ideas = {
 				tag = MCH
 			}
 		}
-		modifier = {
-			factor = 0
-			OR = {
-				tag = MAM
-				tag = TUR
-				tag = TIM
-				tag = MUG
-				tag = MCH
-			}
-		}
 	}
 }
 
@@ -758,6 +748,7 @@ expansion_ideas = {
 	bonus = {
  		cb_on_overseas = yes
  		state_maintenance_modifier = -0.25
+		colonists = 1
 	}
 
 	additional_colonists = {

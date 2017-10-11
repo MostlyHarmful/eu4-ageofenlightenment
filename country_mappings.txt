@@ -1099,3 +1099,4 @@ link = { eu4 = NGC v2 = NGF }
 link = { eu4 = TRR v2 = TUR }
 link = { eu4 = CHN v2 = CHI }
 link = { eu4 = ALK v2 = COL }
+link = { eu4 = UKI v2 = ENG }

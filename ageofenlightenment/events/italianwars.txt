@@ -117,9 +117,11 @@ country_event = {
 			}
 			white_peace = FRA
 		}
-		declare_war_with_cb = {
-			who = FRA
-			casus_belli = cb_insult
+		FRA = {
+			declare_war_with_cb = {
+				who = ROOT
+				casus_belli = cb_insult
+			}
 		}
 		if = {
 			limit = {
@@ -144,12 +146,7 @@ country_event = {
 					was_player = no
 				}
 			}
-			if = {
-				limit = {
-					MLO = {
-						government = republic
-					}
-				}
+			MLO = {
 				change_government = feudal_monarchy
 			}
 			create_union = MLO

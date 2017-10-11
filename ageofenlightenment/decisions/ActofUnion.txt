@@ -1,0 +1,80 @@
+country_decisions = {
+
+	act_of_union = {
+		major = yes
+		potential = {
+			normal_or_historical_nations = yes
+			NOT = { has_country_flag = formed_united_kingdom_flag }
+			has_country_flag = irish_rebellion
+			OR = {
+				ai = no
+				is_playing_custom_nation = no
+			}
+			tag = GBR
+			NOT = { exists = UKI }
+			
+			is_colonial_nation = no
+			OR = {
+				is_former_colonial_nation = no
+				AND = {
+					is_former_colonial_nation = yes
+					ai = no
+				}
+			}
+		}
+		allow = {
+			adm_tech = 25
+			is_free_or_tributary_trigger = yes
+			is_nomad = no
+			any_owned_province = {
+				OR = {
+					area = western_ireland_area
+					area = eastern_ireland_area
+				}
+			}
+		}
+		effect = {
+			change_tag = UKI
+			if = {
+				limit = {
+					is_part_of_hre = yes
+					is_elector = no
+					is_emperor = no
+				}
+				every_owned_province = {
+					limit = {
+						is_part_of_hre = yes
+					}
+					set_in_empire = no
+				}
+			}
+			if = {
+				limit = {
+					NOT = { government_rank = 2 }
+				}
+				set_government_rank = 2
+			}
+			british_isles_region = {
+				limit = {
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = UKI
+			}
+			add_prestige = 25
+			
+			UKI = {
+				set_capital = 236
+			}
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			set_country_flag = formed_united_kingdom_flag
+		}
+		ai_will_do = {
+			factor = 1000
+		}
+		ai_importance = 400
+	}
+
+}

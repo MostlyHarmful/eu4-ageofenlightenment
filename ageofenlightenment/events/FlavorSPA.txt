@@ -68,6 +68,7 @@ country_event = {
 				has_regency = yes
 			}
 			AND = {
+				is_year = 1465
 				CAS = {
 					ai = yes
 				}
@@ -97,6 +98,7 @@ country_event = {
 					}
 				}
 				AND = {
+					is_year = 1465
 					CAS = {
 						ai = yes
 					}
