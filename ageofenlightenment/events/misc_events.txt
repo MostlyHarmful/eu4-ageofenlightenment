@@ -59,121 +59,6 @@ country_event = {
 
 }
 country_event = {
-	id = misc_events.3
-	title = "misc_events.3.t"
-	desc = "misc_events.3.d"
-	fire_only_once = yes
-	picture = BAD_WITH_MONARCH_eventPicture
-	fire_only_once = yes
-	
-	trigger = {
-		OR = {
-			AND = {
-				tag = CAS
-				senior_union_with = ARA
-			}
-			AND = {
-				tag = ARA
-				senior_union_with = CAS
-			}
-			tag = SPA
-		}
-		HAB = {
-			ai = yes
-			was_player = no
-		}
-		is_year = 1460
-		NOT = { is_year = 1575 }
-	}
-	
-	mean_time_to_happen = {
-		months = 180
-	}
-	
-	option = {
-		name = "misc_events.3.a"
-		define_heir = {
-			name = "Carlos"
-			dynasty = "von Habsburg" 
-			adm = 3
-			dip = 3
-			mil = 3
-		}
-		create_alliance = HAB
-		set_country_flag = had_carlos_habsburg
-	}
-	option = {
-		name = "misc_events.3.b"
-		add_prestige = -15
-	}
-}
-country_event = {
-	id = misc_events.4
-	title = "misc_events.4.t"
-	desc = "misc_events.4.d"
-	fire_only_once = yes
-	picture = BAD_WITH_MONARCH_eventPicture
-	fire_only_once = yes
-	major = yes
-	
-	trigger = {
-		OR = {
-			tag = CAS
-			tag = SPA
-			tag = ARA
-		}
-		has_country_flag = had_carlos_habsburg
-		has_ruler = "Carlos"
-		dynasty = "von Habsburg"
-	}
-	
-	mean_time_to_happen = {
-		days = 1
-	}
-	
-	option = {
-		name = "misc_events.4.a"
-		add_prestige = 15
-		HAB = {
-			every_core_province = {
-				limit = {
-					OR = {
-						region = low_countries_region 
-						region = france_region
-					}
-				}
-				cede_province = ROOT
-				add_core = ROOT
-				remove_core = HAB
-			}
-		}
-		if = {
-			limit = {
-				exists = HAB
-			}
-			every_core_province = {
-				limit = {
-					OR = {
-						region = north_german_region
-						region = south_german_region
-					}
-					is_part_of_hre = yes
-					
-				}
-				cede_province = HAB
-				add_core = HAB
-				remove_core = ROOT
-			}
-		}
-		every_core_province = {
-			limit = {
-				is_part_of_hre = yes 
-			}
-			set_in_empire = no
-		}
-	}
-}
-country_event = {
 	id = misc_events.5
 	title = "misc_events.5.t"
 	desc = "misc_events.5.d"
@@ -254,3 +139,5 @@ country_event = {
 		}
 	}
 }
+
+#Partitions of Poland

@@ -13,12 +13,13 @@ country_event = {
 		NAP = {
 			is_subject_of = ROOT
 		}
-		is_year = 1450
-		NOT = { is_year = 1550 }
+		NOT = {
+			has_ruler_flag = alfons_v_flag
+		}
 	}
 	
 	mean_time_to_happen = {
-		months = 12
+		days = 1
 	}
 	
 	option = {
@@ -264,6 +265,9 @@ country_event = {
 			CAS = {
 				war_with = FRA
 			}
+		}
+		NOT = {
+			war_with = FRA
 		}
 		has_global_flag = italianwars
 		has_global_flag = cas_intervened_italy

@@ -2351,6 +2351,7 @@ country_event = {
 				}
 			}
 		}
+		has_global_flag = burgundy_succeeded
 		has_heir = no
 		is_lesser_in_union = no
 		marriage_with = HAB
@@ -2365,10 +2366,6 @@ country_event = {
 		}
 		NOT = {
 			dynasty = HAB
-		}
-		FRA = {
-			is_rival = HAB
-			is_rival = ROOT
 		}
 		NOT = {
 			OR = {
@@ -2445,9 +2442,15 @@ country_event = {
 				}
 			}
 		}
-		has_heir = no
+		has_global_flag = burgundy_succeeded
+		OR = {
+			AND = {
+				marriage_with = HAB
+				has_heir = no
+			}
+			ai = yes
+		}
 		is_lesser_in_union = no
-		marriage_with = HAB
 		HAB = {
 			dynasty = "von Habsburg"
 			ai = yes
@@ -2455,10 +2458,6 @@ country_event = {
 		}
 		NOT = {
 			dynasty = HAB
-		}
-		FRA = {
-			is_rival = HAB
-			is_rival = ROOT
 		}
 		NOT = { is_rival = HAB }
 		NOT = { war_with = HAB }

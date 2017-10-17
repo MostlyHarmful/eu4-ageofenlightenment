@@ -131,6 +131,7 @@ technology = {
 	administrative_monarchy	= yes 
 	administrative_republic	= yes
 	max_states = 3
+	allowed_idea_groups	= 4
 }
 
 technology = {
@@ -146,7 +147,6 @@ technology = {
 	year = 1583
 	
 	plantations = yes
-	allowed_idea_groups	= 4
 }
 
 technology = {
@@ -155,6 +155,7 @@ technology = {
 	
 	administrative_efficiency = 0.1
 	may_force_march = yes
+	allowed_idea_groups	= 5
 	
 }
 
@@ -182,7 +183,7 @@ technology = {
 	# Tech 18
 	year = 1635
 	
-	allowed_idea_groups	= 5
+	allowed_idea_groups	= 6
 }
 
 technology = {
@@ -200,6 +201,7 @@ technology = {
 	republican_dictatorship = yes
 	administrative_efficiency = 0.1
 	max_states = 5
+	allowed_idea_groups	= 7
 }
 
 technology = {
@@ -214,7 +216,7 @@ technology = {
 	# Tech 22
 	year = 1687
 	
-	allowed_idea_groups = 6
+	
 	constitutional_monarchy = yes
 	constitutional_republic = yes  
 
@@ -225,6 +227,7 @@ technology = {
 	# Tech 23
 	year = 1700
 	
+	allowed_idea_groups = 8
 	administrative_efficiency = 0.1
 	development_efficiency = 0.1
 }
@@ -252,7 +255,7 @@ technology = {
 	# Tech 26
 	year = 1745
 	
-	allowed_idea_groups 	= 	7
+	allowed_idea_groups 	= 	9
 }
 
 technology = {
@@ -276,7 +279,7 @@ technology = {
 	# Tech 29
 	year = 1790
 	
-	allowed_idea_groups = 8
+	allowed_idea_groups = 10
 }
 
 technology = {

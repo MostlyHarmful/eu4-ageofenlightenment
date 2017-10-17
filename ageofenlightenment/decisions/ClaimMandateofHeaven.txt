@@ -16,7 +16,7 @@ country_decisions = {
 		}
 		allow = {
 			num_of_owned_provinces_with = {
-				value = 30
+				value = 45
 				superregion = china_superregion
 			}
 		}

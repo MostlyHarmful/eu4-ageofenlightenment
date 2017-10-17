@@ -49,6 +49,7 @@ technology = {
 	range					= 	100
 	trade_efficiency 		= 	0.05
 	global_colonial_growth	= 	15
+	allow_client_states = yes	
 	
 	enable = early_carrack
 
@@ -272,8 +273,7 @@ technology = {
 	year = 1700
 	
 	global_colonial_growth  = 	25	
-	range					=	150
-	allow_client_states = yes		
+	range					=	150	
 	diplomatic_upkeep = 2
 
 	

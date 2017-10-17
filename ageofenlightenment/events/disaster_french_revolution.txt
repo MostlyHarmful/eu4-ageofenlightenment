@@ -664,8 +664,7 @@ country_event = {
 	title = "french_revolution.18.ae.t"
 	desc = "french_revolution.18.ae.d"
 	picture = REVOLUTION_eventPicture
-
-	is_triggered_only = yes	
+	
 	major = yes
 	fire_only_once = yes
 	

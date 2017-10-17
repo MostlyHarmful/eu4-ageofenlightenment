@@ -1377,64 +1377,6 @@ country_decisions = {
 		}
 		ai_importance = 1000
 	}
-	annex_tuscany_france = {
-		major = yes
-		potential = {
-			tag = FRA
-			is_revolution_target = yes
-			OR = {
-				has_ruler_flag = napoleon_flag
-				government = revolutionary_empire
-			}
-			any_province = {
-				area = tuscany_area
-				NOT = {
-					owned_by = ROOT
-				}
-			}
-		}
-		allow = {
-			NOT = {
-				any_province = {
-					area = tuscany_area
-					NOT = {
-						OR = {
-							controller = {
-								OR = {
-									tag = FRA
-									is_subject_of = FRA
-								}
-							}
-							country_or_vassal_holds = ROOT
-							owner = {
-								has_country_flag = joined_first_coalition
-								has_global_flag = here_we_go
-								NOT = {
-									war_with = FRA
-								}
-							}
-						}
-					}
-				}
-			}
-		}
-		effect = {
-			every_province = {
-				limit = {
-					NOT = {
-						owned_by = ROOT
-					}
-					area = tuscany_area
-				}
-				cede_province = ROOT
-				add_core = ROOT
-			}
-		}
-		ai_will_do = {
-			factor = 1000
-		}
-		ai_importance = 1000
-	}
 	the_french_empire = {
 		major = yes
 		potential = {
@@ -1560,28 +1502,6 @@ country_decisions = {
 			}
 		}
 		effect = {
-			every_province = {
-				limit = {
-					NOT = {
-						OR = {
-							owner = {
-								OR = {
-									tag = FRA
-									is_subject_of = FRA
-								}
-							}
-							owner = {
-								has_country_flag = joined_first_coalition
-							}
-						}
-					}
-					continent = europe
-				}
-				cede_province = ROOT
-				add_core = ROOT
-			}
-			add_prestige = 200
-			change_tag = EUR
 			hidden_effect = {
 				set_revolution_target = xxx
 				every_country = {
@@ -1609,6 +1529,48 @@ country_decisions = {
 					clr_country_flag = joined_first_coalition
 				}
 			}
+			every_province = {
+				limit = {
+					owner = {
+						OR = {
+							AND = {
+								capital_scope = {
+									continent = europe
+								}
+								has_country_flag = joined_first_coalition
+							}
+							overlord = {
+								capital_scope = {
+									continent = europe
+								}
+								has_country_flag = joined_first_coalition
+							}
+						}
+					}
+				}
+				cede_province = ROOT
+				add_core = ROOT
+			}
+			every_province = {
+				limit = {
+					OR = {
+						owner = {
+							OR = {
+								tag = FRA
+								is_subject_of = FRA
+							}
+						}
+						owner = {
+							has_country_flag = joined_first_coalition
+						}
+					}
+					continent = europe
+				}
+				cede_province = ROOT
+				add_core = ROOT
+			}
+			add_prestige = 200
+			change_tag = EUR
 			change_government = constitutional_monarchy
 			add_legitimacy = 100
 			every_province = {
@@ -1686,7 +1648,7 @@ country_decisions = {
 			}
 		}
 		effect = {
-			white_peace = HAB
+			white_peace = RUS
 			vassalize = RUS
 			RUS = {
 				kill_ruler = yes

@@ -1338,6 +1338,7 @@ country_event = {
 		name = "hidden.1.a"
 		every_province = {
 			limit = {
+				owned_by = POL
 				OR = {
 					province_id = 2958
 					province_id = 767

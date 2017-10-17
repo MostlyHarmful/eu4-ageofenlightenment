@@ -22,10 +22,9 @@ country_event = {
 			exists = MCH
 			exists = QNG
 		}
-		is_year = 1550
 	}
 	mean_time_to_happen = {
-		months = 1000
+		months = 2400
 		modifier = {
 			factor = 0.8
 			NOT = { imperial_mandate = 90 }
@@ -61,6 +60,10 @@ country_event = {
 		modifier = {
 			factor = 0.01
 			NOT = { imperial_mandate = 10 }
+		}
+		modifier = {
+			factor = 0.0001
+			is_year = 1645
 		}
 	}
 	
@@ -383,6 +386,62 @@ country_event = {
 			}
 		}
 		vassalize = LFA
+	}
+	
+}
+country_event = {
+	id = chinese_events.4
+	title = "chinese_events.4.t"
+	desc = "chinese_events.4.d"
+	picture = IMPERIAL_SEAL_eventPicture
+	
+	fire_only_once = yes
+	
+	trigger = {
+		is_emperor_of_china = yes
+		NOT = {
+			any_country = {
+				NOT = {
+					tag = ROOT
+				}
+				num_of_owned_provinces_with = {
+					value = 50
+					superregion = chinese_superregion
+				}
+			}
+		}
+		num_of_owned_provinces_with = {
+			value = 50
+			superregion = chinese_superregion
+		}
+		any_country = {
+			capital_scope = {
+				superregion = chinese_superregion
+			}
+			any_owned_province = {
+				superregion = chinese_superregion
+			}
+		}
+	}
+	mean_time_to_happen = {
+		months = 12
+	}
+	
+	option = {
+		name = "chinese_events.4.a"
+		every_province = {
+			limit = {
+				superregion = chinese_superregion
+				owner = {
+					capital_scope = {
+						superregion = chinese_superregion
+					}
+				}
+			}
+			cede_province = ROOT
+			add_core = ROOT
+		}
+	
 	}
 	
 }

@@ -22,7 +22,10 @@ country_event = {
 		tag = BUR
 		ai = yes
 		was_player = no
-		war = yes
+		OR = {
+			is_at_war = yes
+			is_year = 1490
+		}
 		NOT = { has_country_flag = burgundian_succession_crisis }
 		is_free_or_tributary_trigger = yes
 		is_emperor = no
@@ -91,7 +94,7 @@ country_event = {
 			NOT = { war_score = -75 }
 		}
 		modifier = {
-			factor = 0.01
+			factor = 0.001
 			is_year = 1490
 		}
 	}
@@ -423,6 +426,7 @@ country_event = {
 	
 	immediate = {
 		hidden_effect = {
+			set_global_flag = burgundy_succeeded
 			set_country_flag = burgundian_succession_crisis
 			add_ruler_modifier = {
 				name = burgundian_succession_crisis
