@@ -209,7 +209,7 @@ country_event = {
 			limit = {
 				has_province_flag = particularist_rebels
 			}
-			particularist_rebels = 2
+			particularist_rebels = 1
 		}
 	}
 	option = {

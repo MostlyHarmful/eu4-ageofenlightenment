@@ -418,7 +418,7 @@ economic_ideas = {
 		inflation_reduction = 0.1
 	}
 	debt_and_loans = {
-		interest = -1
+		interest = -0.5
 	}
 	centralization = {
 		global_autonomy = -0.05
@@ -510,9 +510,7 @@ exploration_ideas = {
 			NOT = { 
 				any_owned_province = { 
 					is_in_capital_area = yes
-					any_owned_province = {
-						has_empty_adjacent_province = yes
-					}
+					has_empty_adjacent_province = yes
 				} 
 			}
 		}
@@ -522,9 +520,7 @@ exploration_ideas = {
 			NOT = { 
 				any_owned_province = { 
 					is_in_capital_area = yes
-					any_owned_province = {
-						has_empty_adjacent_province = yes
-					}
+					has_empty_adjacent_province = yes
 				}
 			}
 		}
@@ -595,16 +591,6 @@ exploration_ideas = {
 				tag = ENG
 				tag = FRA
 				tag = KUR
-			}
-		}
-		modifier = {
-			factor = 0
-			OR = {
-				tag = MAM
-				tag = TUR
-				tag = TIM
-				tag = MUG
-				tag = MCH
 			}
 		}
 	}
@@ -748,7 +734,6 @@ expansion_ideas = {
 	bonus = {
  		cb_on_overseas = yes
  		state_maintenance_modifier = -0.25
-		colonists = 1
 	}
 
 	additional_colonists = {
@@ -817,25 +802,6 @@ expansion_ideas = {
 				technology_group = muslim
 			}
 		}
-		modifier = {
-			factor = 0
-			OR = {
-				tag = MAM
-				tag = TUR
-				tag = TIM
-				tag = MUG
-				tag = MCH
-			}
-		}
-		modifier = {
-			factor = 1000
-			AND = {
-				tag = RUS
-				NOT = {
-					has_dlc = "Third Rome"
-				}
-			}
-		}
 	}
 }
 
@@ -857,7 +823,7 @@ administrative_ideas = {
 		merc_maintenance_modifier = -0.25
 	}
 	bookkeeping = {
-		interest = -1
+		interest = -0.5
 	}
 	organised_mercenary_recruitment = {
 		possible_mercenaries = 0.25

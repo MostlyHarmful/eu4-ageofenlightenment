@@ -45,6 +45,7 @@ country_decisions = {
 			}
 		}
 		effect = {
+			remove_non_electors_emperors_from_empire_effect = yes
 			add_prestige = 25
 			if = {
 				limit = {
@@ -80,7 +81,9 @@ country_decisions = {
 				}
 			}
 			LTE = {
-				set_capital = 151
+				151 = {
+					move_capital_effect = yes
+				}
 				change_religion = catholic
 				change_government = feudal_monarchy
 				if = {

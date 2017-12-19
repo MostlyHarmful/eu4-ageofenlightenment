@@ -64,19 +64,7 @@ country_decisions = {
 				inherit = PRU
 			}
 			change_tag = PRU
-			if = {
-				limit = {
-					is_part_of_hre = yes
-					is_elector = no
-					is_emperor = no
-				}
-				every_owned_province = {
-					limit = {
-						is_part_of_hre = yes
-					}
-					set_in_empire = no
-				}
-			}
+			remove_non_electors_emperors_from_empire_effect = yes
 			if = {
 				limit = {
 					NOT = { government_rank = 2 }
@@ -186,6 +174,9 @@ country_decisions = {
 			}
 		}
 		effect = {
+			41 = {
+				move_capital_effect = yes
+			}
 			change_tag = PRU
 			pomerelia_area = {
 				limit = {
@@ -218,7 +209,6 @@ country_decisions = {
 				limit = { government = monarchy }
 				add_opinion = { who = ROOT modifier = secularized_monastic_order }
 			}
-			set_capital = 41		# Ostpreussen
 			if = {
 				limit = {
 					has_custom_ideas = no
@@ -286,19 +276,7 @@ country_decisions = {
 		}
 		effect = {
 			change_tag = PRU
-			if = {
-				limit = {
-					is_part_of_hre = yes
-					is_elector = no
-					is_emperor = no
-				}
-				every_owned_province = {
-					limit = {
-						is_part_of_hre = yes
-					}
-					set_in_empire = no
-				}
-			}
+			remove_non_electors_emperors_from_empire_effect = yes
 			if = {
 				limit = {
 					NOT = { government_rank = 2 }

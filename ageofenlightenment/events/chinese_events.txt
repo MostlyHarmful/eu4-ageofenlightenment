@@ -13,6 +13,7 @@ country_event = {
 		tag = MNG
 		ai = yes
 		was_player = no
+		is_year = 1550
 		OR = {
 			is_emperor_of_china = yes
 			government = celestial_empire
@@ -24,7 +25,7 @@ country_event = {
 		}
 	}
 	mean_time_to_happen = {
-		months = 2400
+		months = 1200
 		modifier = {
 			factor = 0.8
 			NOT = { imperial_mandate = 90 }

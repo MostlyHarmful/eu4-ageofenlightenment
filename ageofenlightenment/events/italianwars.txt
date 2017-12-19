@@ -49,6 +49,7 @@ country_event = {
 		NAP = {
 			is_part_of_hre = no
 		}
+		is_subject = no
 	}
 	
 	mean_time_to_happen = {

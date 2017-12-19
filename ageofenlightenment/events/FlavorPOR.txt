@@ -449,6 +449,7 @@ country_event = {
 		define_advisor = {
 			type = statesman
 			name = "Dom Luís de Meneses"
+			culture = portugese
 			discount = yes
 			skill = 2
 		}
@@ -597,7 +598,7 @@ country_event = {
 
 	
 	option = {		# Expel him
-		name = "flavor_por.EVTOPTA3280"
+		name = "flavor_por.EVTOPTA3281"
 		ai_chance = { factor = 75 }
 		add_ruler_modifier = {
 			name = reactionary_policies
@@ -605,7 +606,7 @@ country_event = {
 		}
 	}
 	option = {		# Let the 'Great Marquês' rule
-		name = "flavor_por.EVTOPTB3280"
+		name = "flavor_por.EVTOPTB3281"
 		ai_chance = { factor = 25 }
 		every_owned_province = {
 			limit = {
@@ -707,7 +708,7 @@ country_event = {
 		set_global_flag = columbus_happened
 		add_years_of_income = -0.10
 		define_explorer = {
-			name = "Cristóbal Colón"
+			name = "Cristóvão Colombo"
 			fire = 2
 			shock = 2
 			manuever = 6

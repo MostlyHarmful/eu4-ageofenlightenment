@@ -104,7 +104,7 @@ country_decisions = {
 			set_country_flag = formed_germany_flag
 		}
 		ai_will_do = {
-			factor = 400
+			factor = 1
 		}
 	}
 

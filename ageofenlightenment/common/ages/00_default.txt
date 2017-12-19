@@ -161,6 +161,10 @@ age_of_discovery = {
 			}
 			ai_will_do = {
 				factor = 10
+				modifier = {
+					factor = 0
+					NOT = { num_of_colonists = 1 }
+				}
 			}
 		}
 		
@@ -519,7 +523,7 @@ age_of_absolutism = {
 				rival_change_cost = -0.5
 			}
 			ai_will_do = {
-				factor = 10
+				factor = 0
 			}
 		}
 
@@ -667,7 +671,7 @@ age_of_revolutions = {
 				value = 0.25
 				extra_shortcut = yes
 			}
-		}	
+		}
 		obj_huge_capital = {
 			capital_scope = {
 				development = 50

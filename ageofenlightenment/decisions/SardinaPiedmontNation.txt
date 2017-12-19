@@ -45,7 +45,11 @@ country_decisions = {
 			owns_core_province = 1875		# Cuneo	
 		}
 		effect = {
+			103 = {
+				move_capital_effect = yes
+			}
 			change_tag = SPI
+			remove_non_electors_emperors_from_empire_effect = yes
 			if = {
 				limit = {
 					NOT = {
@@ -54,7 +58,6 @@ country_decisions = {
 				}
 				set_government_rank = 2
 			}
-			set_capital = 103		# Piedmont
 			set_country_flag = formed_sardinia_piedmont_flag
 			add_prestige = 10
 		}
@@ -121,6 +124,9 @@ country_decisions = {
 			}
 		}
 		effect = {
+			103 = {
+				move_capital_effect = yes
+			}
 			if = {
 				limit = {
 					tag = SAV
@@ -133,18 +139,7 @@ country_decisions = {
 				}
 				inherit = SAV
 			}
-			if = {
-				limit = {
-					is_part_of_hre = yes
-					is_elector = no
-				}
-				every_owned_province = {
-					limit = {
-						is_part_of_hre = yes
-					}
-					set_in_empire = no
-				}
-			}
+			remove_non_electors_emperors_from_empire_effect = yes
 			if = {
 				limit = {
 					NOT = {
@@ -155,7 +150,6 @@ country_decisions = {
 			}
 			change_tag = SPI
 			set_country_flag = formed_sardinia_piedmont_flag
-			set_capital = 103	# Piedmont
 			add_prestige = 25
 		}
 		ai_will_do = {

@@ -213,7 +213,6 @@ technology = {
 	
 	#Reiter
 	maneuver_value 		= 	0.25
-	siege_ability = 0.05
 
 	enable = hungarian_hussar
 	enable = ottoman_spahi		
@@ -329,7 +328,6 @@ technology = {
 	#Maurician Infantry
 	land_morale 		=	1.0
 	military_tactics	=	0.25
-	siege_ability = 0.05
 	
 
 	
@@ -368,7 +366,6 @@ technology = {
 	
 	cavalry_shock		=	1.0
 	supply_limit		= 	0.5	
-	siege_ability = 0.05
 	
 	enable = maharathan_cavalry		
 	enable = manchu_banner		
@@ -432,7 +429,6 @@ technology = {
 	#Killing Grounds
 	
 	infantry_fire		= 	0.5
-	siege_ability = 0.05
 		
 	enable = swivel_cannon		
 
@@ -479,7 +475,6 @@ technology = {
 	cavalry_shock		=	1.0
 	military_tactics 	= 	0.25
 	maneuver_value 		= 	0.5
-	siege_ability = 0.1
 
 	enable = swedish_arme_blanche	
 	enable = french_dragoon		
@@ -526,7 +521,6 @@ technology = {
 	#Metallurgy
 	artillery_shock 	=	0.1
 	artillery_fire		=	2.0
-	siege_ability = 0.1
 	
 	enable = royal_mortar	
 }
@@ -577,8 +571,7 @@ technology = {
 	
 	#Bayonet
 	supply_limit		=	0.5
-	infantry_fire		= 	0.5
-	siege_ability = 0.1	
+	infantry_fire		= 	0.5	
 }
 
 technology = {
@@ -662,5 +655,4 @@ technology = {
 	military_tactics	=	0.25
 	artillery_shock		=	0.1
 	artillery_fire		=	2.0	
-	siege_ability = 0.25
 }

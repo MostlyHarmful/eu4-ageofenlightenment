@@ -2172,8 +2172,9 @@ country_event = {
 					}
 				}
 				define_ruler = {
-					name = "Mary"
+					name = "Marie"
 					dynasty = "de Bourgogne"
+					culture = burgundian
 					age = 20
 					claim = 95
 					female = yes

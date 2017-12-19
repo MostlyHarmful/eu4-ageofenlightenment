@@ -169,7 +169,7 @@ country_event = {
 			}
 			spawn_rebels = {
 				type = noble_rebels
-				size = 3
+				size = 2
 			}
 		}
 	}
@@ -461,6 +461,8 @@ country_event = {
 		add_papal_influence = 25
 		define_advisor = {
 			type = theologian 
+			culture = basque
+			religion = catholic
 			name = "Ignacio de Loyola"
 			discount = yes
 			skill = 2
@@ -979,6 +981,7 @@ country_event = {
 		define_advisor = {
 			type = statesman
 			name = "Conde-Duque Olivares"
+			culture = umbrian
 			discount = yes
 			skill = 3
 		}
@@ -1263,6 +1266,8 @@ country_event = {
 		add_dip_power = 100
 		define_advisor = {
 			type = statesman
+			culture = romagnan
+			religion = catholic
 			name = "Giulio Alberoni"
 			discount = yes
 			skill = 2
@@ -1296,6 +1301,7 @@ country_event = {
 		define_advisor = {
 			type = statesman
 			name = "José Monino"
+			culture = andalucian
 			discount = yes
 			skill = 3
 		}
@@ -1747,6 +1753,7 @@ country_event = {
 						province_id = 217
 					}
 					has_seat_in_parliament = no
+					has_estate = yes
 				}
 				set_seat_in_parliament = yes #Has to placate all the local Cortes from now on.
 			}
@@ -2367,6 +2374,10 @@ country_event = {
 		NOT = {
 			dynasty = HAB
 		}
+		FRA = {
+			is_rival = HAB
+			is_rival = ROOT
+		}
 		NOT = {
 			OR = {
 				is_rival = HAB
@@ -2507,7 +2518,7 @@ country_event = {
 	}
 
 	option = {
-		name = flavor_spa.15.a
+		name = flavor_spa.15.b
 		ai_chance = {
 			factor = 15
 		}

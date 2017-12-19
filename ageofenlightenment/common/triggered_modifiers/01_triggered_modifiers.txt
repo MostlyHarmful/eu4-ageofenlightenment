@@ -1,24 +1,24 @@
-lucky_qing = {
-	potential = {
-		ai = yes
-		was_player = no
-		OR = {
-			tag = MCH
-			tag = MJZ
-			tag = QNG
-		}
-		is_emperor_of_china = yes
-	}
-
-	trigger = {
-		NOT = {
-			is_year = 1700
-		}
-	}
-	global_unrest = -20
-	imperial_mandate = 0.5
-	
-}
+#lucky_qing = {
+#	potential = {
+#		ai = yes
+#		was_player = no
+#		OR = {
+#			tag = MCH
+#			tag = MJZ
+#			tag = QNG
+#		}
+#		is_emperor_of_china = yes
+#	}
+#
+#	trigger = {
+#		NOT = {
+#			is_year = 1700
+#		}
+#	}
+#	global_unrest = -20
+#	imperial_mandate = 0.5
+#	
+#}
 
 era_of_constitutionalism = {
 	potential = {
@@ -55,42 +55,42 @@ low_mandate = {
 	war_exhaustion = 0.2
 }
 
-aq_war_with_tim = {
-	potential = {
-		ai = yes
-		was_player = no
-		tag = TIM
-	}
-
-	trigger = {
-		war_with = AKK
-		AKK = {
-			has_country_modifier = AKK_expansion
-		}
-	}
-	discipline = -0.5
-	land_morale = -0.5
-}
-tim_hold = {
-	potential = {
-		ai = yes
-		was_player = no
-		tag = TIM
-	}
-
-	trigger = {
-		NOT = { has_country_flag = TIM_rise_of_mughals }
-		NOT = { 
-			any_country = {
-				ai = no
-				war_with = TIM
-			}
-		}
-	}
-	global_unrest = -20
-	war_exhaustion = -0.2
-	horde_unity = 10
-}
+#aq_war_with_tim = {
+#	potential = {
+#		ai = yes
+#		was_player = no
+#		tag = TIM
+#	}
+#
+#	trigger = {
+#		war_with = AKK
+#		AKK = {
+#			has_country_modifier = AKK_expansion
+#		}
+#	}
+#	discipline = -0.5
+#	land_morale = -0.5
+#}
+#tim_hold = {
+#	potential = {
+#		ai = yes
+#		was_player = no
+#		tag = TIM
+#	}
+#
+#	trigger = {
+#		NOT = { has_country_flag = TIM_rise_of_mughals }
+#		NOT = { 
+#			any_country = {
+#				ai = no
+#				war_with = TIM
+#			}
+#		}
+#	}
+#	global_unrest = -20
+#	war_exhaustion = -0.2
+#	horde_unity = 10
+#}
 in_civil_war = {
 	potential = {
 		OR = {
@@ -107,162 +107,162 @@ in_civil_war = {
 	global_unrest = -1000
 }
 
-manchu_ferocity = {
-	potential = {
-		OR = {
-			tag = MYR
-			tag = MHX
-			tag = KRC
-			tag = KOR
-		}
-		ai = yes
-		was_player = no
-	}
-	trigger = {
-		war_with = MJZ
-		MJZ = {
-			ai = yes
-			was_player = no
-		}
-	}
-	discipline = -0.5
-	land_morale = -0.5
-}
-manchu_strange_behavior_fix = {
-	potential = {
-		OR = {
-			tag = MJZ
-			tag = MCH
-		}
-		ai = yes
-		was_player = no
-	}
-	trigger = {
-		is_emperor_of_china = no
-	}
-	yearly_corruption = -50
-	global_tax_modifier = 0.5
-	trade_efficiency = 0.5
-	production_efficiency = 0.5
-}
-ai_hre = {
-	potential = {
-		ai = yes
-		was_player = no
-		OR = {
-			is_part_of_hre = yes
-		}
-		NOT = {
-			is_revolution_target = yes
-		}
-	}
-	trigger = {
-		NOT = {
-			AND = {
-				OR = {
-					tag = PRU
-					tag = BRA
-				}
-				is_year = 1650
-			}
-		}	
-	}
-	core_creation = 10
-}
-ai_regional_impact = {
-	potential = {
-		ai = yes
-		was_player = no
-		OR = {
-			capital_scope = {
-				superregion = india_superregion
-			}
-			num_of_owned_provinces_with = {
-				value = 5
-				superregion = india_superregion
-			}
-			capital_scope = {
-				continent = africa
-			}
-			capital_scope = {
-				region = italy_region
-			}
-			capital_scope = {
-				superregion = east_indies_superregion
-			}
-		}
-		NOT = {
-			is_revolution_target = yes
-		}
-	}
-	trigger = {
-		NOT = {
-			OR = {
-				OR = {
-					tag = MUG
-					tag = TIM
-				}
-				capital_scope = {
-					continent = europe
-					NOT = {
-						region = italy_region
-					}
-				}
-			}
-		}
-	}
-	core_creation = 10
-}
-ai_other_small_ones = {
-	potential = {
-		ai = yes
-		was_player = no
-		NOT = {
-			is_revolution_target = yes
-		}
-	}
-	trigger = {
-		OR = {
-			tag = NED
-			tag = DAN
-			tag = SWI
-			tag = BEL
-		}
-	}
-	core_creation = 2
-}
-ming_thrive = {
-	potential = {
-		tag = MNG
-		imperial_mandate = 40
-	}
-	trigger = {
-		NOT = {
-			is_year = 1550
-		}
-	}
-	imperial_mandate = 0.15
-	global_unrest = -15
-}
-ai_mughals = {
-	potential = {
-		tag = MUG
-		ai = yes
-		was_player = no
-		NOT = {
-			is_revolution_target = yes
-		}
-	}
-	trigger = {
-		NOT = {
-			is_year = 1700
-		}
-	}
-	global_unrest = -20
-	war_exhaustion = -0.1
-	core_creation = -0.25
-	ae_impact = -0.25
-}
+#manchu_ferocity = {
+#	potential = {
+#		OR = {
+#			tag = MYR
+#			tag = MHX
+#			tag = KRC
+#			tag = KOR
+#		}
+#		ai = yes
+#		was_player = no
+#	}
+#	trigger = {
+#		war_with = MJZ
+#		MJZ = {
+#			ai = yes
+#			was_player = no
+#		}
+#	}
+#	discipline = -0.5
+#	land_morale = -0.5
+#}
+#manchu_strange_behavior_fix = {
+#	potential = {
+#		OR = {
+#			tag = MJZ
+#			tag = MCH
+#		}
+#		ai = yes
+#		was_player = no
+#	}
+#	trigger = {
+#		is_emperor_of_china = no
+#	}
+#	yearly_corruption = -50
+#	global_tax_modifier = 0.5
+#	trade_efficiency = 0.5
+#	production_efficiency = 0.5
+#}
+#ai_hre = {
+#	potential = {
+#		ai = yes
+#		was_player = no
+#		OR = {
+#			is_part_of_hre = yes
+#		}
+#		NOT = {
+#			is_revolution_target = yes
+#		}
+#	}
+#	trigger = {
+#		NOT = {
+#			AND = {
+#				OR = {
+#					tag = PRU
+#					tag = BRA
+#				}
+#				is_year = 1650
+#			}
+#		}	
+#	}
+#	core_creation = 10
+#}
+#ai_regional_impact = {
+#	potential = {
+#		ai = yes
+#		was_player = no
+#		OR = {
+#			capital_scope = {
+#				superregion = india_superregion
+#			}
+#			num_of_owned_provinces_with = {
+#				value = 5
+#				superregion = india_superregion
+#			}
+#			capital_scope = {
+#				continent = africa
+#			}
+#			capital_scope = {
+#				region = italy_region
+#			}
+#			capital_scope = {
+#				superregion = east_indies_superregion
+#			}
+#		}
+#		NOT = {
+#			is_revolution_target = yes
+#		}
+#	}
+#	trigger = {
+#		NOT = {
+#			OR = {
+#				OR = {
+#					tag = MUG
+#					tag = TIM
+#				}
+#				capital_scope = {
+#					continent = europe
+#					NOT = {
+#						region = italy_region
+#					}
+#				}
+#			}
+#		}
+#	}
+#	core_creation = 10
+#}
+#ai_other_small_ones = {
+#	potential = {
+#		ai = yes
+#		was_player = no
+#		NOT = {
+#			is_revolution_target = yes
+#		}
+#	}
+#	trigger = {
+#		OR = {
+#			tag = NED
+#			tag = DAN
+#			tag = SWI
+#			tag = BEL
+#		}
+#	}
+#	core_creation = 2
+#}
+#ming_thrive = {
+#	potential = {
+#		tag = MNG
+#		imperial_mandate = 40
+#	}
+#	trigger = {
+#		NOT = {
+#			is_year = 1550
+#		}
+#	}
+#	imperial_mandate = 0.15
+#	global_unrest = -15
+#}
+#ai_mughals = {
+#	potential = {
+#		tag = MUG
+#		ai = yes
+#		was_player = no
+#		NOT = {
+#			is_revolution_target = yes
+#		}
+#	}
+#	trigger = {
+#		NOT = {
+#			is_year = 1700
+#		}
+#	}
+#	global_unrest = -20
+#	war_exhaustion = -0.1
+#	core_creation = -0.25
+#	ae_impact = -0.25
+#}
 russia_no_dlc = {
 	potential = {
 		NOT = {
@@ -303,24 +303,18 @@ levee_en_masse_ai = {
 	global_manpower_modifier = 3
 	manpower_recovery_speed = 3
 }
-defense_of_persia = {
-	potential = {
-		tag = PER
-		defensive_war_with = TUR
-		TUR = {
-			any_owned_province = {
-				superregion = persia_superregion
-			}
-		}
-	}
-	trigger = {
-		defensive_war_with = TUR
-	}
-	land_morale = 0.15
-}
-ai_more_colonists = {
-	potential = {
-		ai = yes
-		was_player = no
-	}
-}
+#defense_of_persia = {
+#	potential = {
+#		tag = PER
+#		defensive_war_with = TUR
+#		TUR = {
+#			any_owned_province = {
+#				superregion = persia_superregion
+#			}
+#		}
+#	}
+#	trigger = {
+#		defensive_war_with = TUR
+#	}
+#	land_morale = 0.15
+#}

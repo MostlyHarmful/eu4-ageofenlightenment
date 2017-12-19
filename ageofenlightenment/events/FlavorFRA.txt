@@ -28,7 +28,7 @@ country_event = {
 	
 	option = {		# Issue it
 		name = "flavor_fra.EVTOPTA9100"
-		183 = {
+		capital_scope = {
 			add_base_tax = 1
 			add_province_modifier = {
 				name = permanent_tax_system
@@ -346,6 +346,7 @@ country_event = {
 		add_mil_power = 50
 		define_advisor = {
 			type = army_reformer
+			culture = cosmopolitan_french
 			name = "Le Tellier"
 			discount = yes
 			skill = 2
@@ -358,6 +359,7 @@ country_event = {
 		define_advisor = {
 			type = army_reformer
 			name = "Louvois"
+			culture = cosmopolitan_french
 			discount = yes
 			skill = 2
 		}
@@ -483,7 +485,7 @@ country_event = {
 			}
 			spawn_rebels = {
 				type = noble_rebels
-				size = 4
+				size = 3
 			}
 		}
 	}
@@ -517,7 +519,7 @@ country_event = {
 		176 = {
 			spawn_rebels = {
 				type = protestant_rebels
-				size = 3
+				size = 2
 			}
 		}
 	}
@@ -552,7 +554,9 @@ country_event = {
 		add_dip_power = 100
 		define_advisor = {
 			type = statesman
-			name = "Cardinal Richelieu"
+			name = "Armand Jean Richelieu"
+			culture = cosmopolitan_french
+			religion = catholic
 			discount = yes
 			skill = 3
 		}
@@ -593,7 +597,7 @@ country_event = {
 			}
 			spawn_rebels = {
 				type = noble_rebels
-				size = 3
+				size = 2
 			}
 		}
 	}
@@ -683,7 +687,8 @@ country_event = {
 		add_mil_power = 25
 		define_advisor = {
 			type = treasurer
-			name = "Colbert"
+			name = "Jean-Baptiste Colbert"
+			culture = cosmopolitan_french
 			discount = yes
 			skill = 3
 		}
@@ -1144,7 +1149,8 @@ country_event = {
 		add_adm_power = 50
 		define_advisor = {
 			type = statesman
-			name = "de Broglie"
+			name = "Charles François de Broglie"
+			culture = gascon
 			discount = yes
 			skill = 2
 		}
@@ -1174,7 +1180,9 @@ country_event = {
 		add_adm_power = 50
 		define_advisor = {
 			type = statesman
-			name = "de Fleury"
+			name = "André Hercule de Fleury"
+			culture = occitan
+			religion = catholic
 			discount = yes
 			skill = 2
 		}
@@ -1601,11 +1609,16 @@ country_event = {
 	
 	trigger = {
 		tag = ENG
+		exists = FRA
+		NOT = { alliance_with = FRA }
 		NOT = { war_with = FRA }
 		NOT = { is_year = 1450 }
 		NOT = { truce_with = FRA }
 		177 = {
 			owned_by = ENG
+		}
+		FRA = {
+			is_subject = no
 		}
 	}
 	

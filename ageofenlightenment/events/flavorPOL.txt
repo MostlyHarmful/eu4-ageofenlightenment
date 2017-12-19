@@ -1102,6 +1102,7 @@ country_event = {
 		define_advisor = {
 			type = natural_scientist
 			name = "Jan Brozek"
+			culture = polish
 			discount = yes
 			skill = 2
 		}
@@ -1144,6 +1145,7 @@ country_event = {
 		define_advisor = {
 			type = philosopher
 			name = "Michal Sedziwój"
+			culture = polish
 			discount = yes
 			skill = 3
 		}
@@ -1748,7 +1750,8 @@ country_event = {
 			DIP = 4
 			ADM = 4
 			MIL = 4
-			claim = 60
+			claim = 100
+			culture = polish
 		}
 		LIT = {
 			add_opinion = {

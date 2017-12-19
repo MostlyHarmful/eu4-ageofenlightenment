@@ -36,19 +36,11 @@ country_decisions = {
 			owns_core_province = 238		# East Anglia
 		}
 		effect = {
-			change_tag = ENG
-			if = {
-				limit = {
-					is_part_of_hre = yes
-					is_elector = no
-				}
-				every_owned_province = {
-					limit = {
-						is_part_of_hre = yes
-					}
-					set_in_empire = no
-				}
+			236 = { #London
+				move_capital_effect = yes
 			}
+			change_tag = ENG
+			remove_non_electors_emperors_from_empire_effect = yes
 			if = {
 				limit = {
 					NOT = { government_rank = 2 }
@@ -90,9 +82,6 @@ country_decisions = {
 				duration = 7300
 			}
 			add_prestige = 25
-			ENG = {
-				set_capital = 236
-			}
 			set_country_flag = formed_england_flag
 		}
 		ai_will_do = {
