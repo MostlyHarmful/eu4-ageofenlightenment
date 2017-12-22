@@ -255,6 +255,12 @@ country_event = {
 				cede_province = ROOT
 				add_core = ROOT
 			}
+			every_province = {
+				limit = {
+					qing_china_region_trigger = yes
+				}
+				add_permanent_claim = QNG
+			}
 			add_country_modifier = {
 				name = "centralization_modifier"
 				duration = 3650
