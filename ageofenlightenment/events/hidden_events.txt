@@ -68,162 +68,162 @@ country_event = {
 		set_capital = 1816
 	}
 }
-#country_event = {
-#	id = hidden.3
-#	
-#	title = "hidden.1.t"
-#	desc = "hidden.1.d"
-#	
-#	picture = SIEGE_eventPicture
-#	hidden = yes
-#	
-#	trigger = {
-#		OR = {
-#			tag = MCH
-#			tag = MJZ
-#			tag = MHX
-#			tag = MYR
-#		}
-#		ai = yes
-#		was_player = no
-#		any_country = {
-#			NOT = {
-#				OR = {
-#					primary_culture = manchu
-#					tag = KRC
-#					AND = {
-#						NOT = { tag = MNG }
-#						NOT = { tag = KOR }
-#						any_owned_province = {
-#							OR = {
-#								is_core = ROOT
-#								region = manchuria_region
-#							}
-#						}
-#					}
-#					OR = {
-#						ai = no
-#						was_player = yes
-#					}
-#				}
-#			}
-#			war_with = ROOT
-#		}
-#		NOT = {
-#			any_country = {
-#				OR = {
-#					ai = no
-#					was_player = yes
-#				}
-#				alliance_with = ROOT
-#				is_at_war = yes
-#			}
-#		}
-#		NOT = { has_global_flag = qing_intervention_china }
-#	}
-#	mean_time_to_happen = {
-#		days = 1
-#	}
-#	
-#	option = {
-#		name = "hidden.1.a"
-#		every_country = {
-#			limit = {
-#				war_with = ROOT
-#				NOT = {
-#					OR = {
-#						primary_culture = manchu
-#						tag = KRC
-#						AND = {
-#							NOT = { tag = MNG }
-#							NOT = { tag = KOR }
-#							any_owned_province = {
-#								OR = {
-#									is_core = ROOT
-#									region = manchuria_region
-#								}
-#							}
-#						}
-#						OR = {
-#							ai = no
-#							was_player = yes
-#						}
-#					}
-#				}
-#			}
-#			white_peace = ROOT
-#		}
-#	}
-#}
-#country_event = {
-#	id = hidden.5
-#	
-#	title = "hidden.1.t"
-#	desc = "hidden.1.d"
-#	fire_only_once = yes
-#	picture = SIEGE_eventPicture
-#	hidden = yes
-#	
-#	trigger = {
-#		OR = {
-#			tag = MCH
-#			tag = MJZ
-#			tag = QNG
-#		}
-#		OR = {
-#			is_emperor_of_china = yes
-#			NOT = {
-#				exists = MNG
-#			}
-#		}
-#		NOT = { exists = MNG }
-#	}
-#	
-#	mean_time_to_happen = {
-#		months = 1
-#	}
-#		
-#	option = {
-#		every_province = {
-#			limit = {
-#				qing_china_region_trigger = yes
-#			}
-#			add_permanent_claim = QNG
-#		}
-#		set_country_flag = cores_gained_qing
-#	}
-#}
-#country_event = {
-#	id = hidden.6
-#	
-#	title = "hidden.1.t"
-#	desc = "hidden.1.d"
-#	
-#	picture = SIEGE_eventPicture
-#	fire_only_once = yes
-#	hidden = yes
-#	
-#	trigger = {
-#		tag = MJZ
-#		ai = yes
-#	}
-#	mean_time_to_happen = {
-#		days = 1
-#	}
-#	
-#	option = {
-#		name = "hidden.1.a"
-#		manchuria_region = {
-#			add_core = MJZ
-#		}
-#		KRC = {
-#			every_owned_province = {
-#				add_core = MJZ
-#			}
-#		}
-#	}
-#}
-#
+country_event = {
+	id = hidden.3
+	
+	title = "hidden.1.t"
+	desc = "hidden.1.d"
+	
+	picture = SIEGE_eventPicture
+	hidden = yes
+	
+	trigger = {
+		OR = {
+			tag = MCH
+			tag = MJZ
+			tag = MHX
+			tag = MYR
+		}
+		ai = yes
+		was_player = no
+		any_country = {
+			NOT = {
+				OR = {
+					primary_culture = manchu
+					tag = KRC
+					AND = {
+						NOT = { tag = MNG }
+						NOT = { tag = KOR }
+						any_owned_province = {
+							OR = {
+								is_core = ROOT
+								region = manchuria_region
+							}
+						}
+					}
+					OR = {
+						ai = no
+						was_player = yes
+					}
+				}
+			}
+			war_with = ROOT
+		}
+		NOT = {
+			any_country = {
+				OR = {
+					ai = no
+					was_player = yes
+				}
+				alliance_with = ROOT
+				is_at_war = yes
+			}
+		}
+		NOT = { has_global_flag = qing_intervention_china }
+	}
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = "hidden.1.a"
+		every_country = {
+			limit = {
+				war_with = ROOT
+				NOT = {
+					OR = {
+						primary_culture = manchu
+						tag = KRC
+						AND = {
+							NOT = { tag = MNG }
+							NOT = { tag = KOR }
+							any_owned_province = {
+								OR = {
+									is_core = ROOT
+									region = manchuria_region
+								}
+							}
+						}
+						OR = {
+							ai = no
+							was_player = yes
+						}
+					}
+				}
+			}
+			white_peace = ROOT
+		}
+	}
+}
+country_event = {
+	id = hidden.5
+	
+	title = "hidden.1.t"
+	desc = "hidden.1.d"
+	fire_only_once = yes
+	picture = SIEGE_eventPicture
+	hidden = yes
+	
+	trigger = {
+		OR = {
+			tag = MCH
+			tag = MJZ
+			tag = QNG
+		}
+		OR = {
+			is_emperor_of_china = yes
+			NOT = {
+				exists = MNG
+			}
+		}
+		NOT = { exists = MNG }
+	}
+	
+	mean_time_to_happen = {
+		months = 1
+	}
+		
+	option = {
+		every_province = {
+			limit = {
+				qing_china_region_trigger = yes
+			}
+			add_permanent_claim = QNG
+		}
+		set_country_flag = cores_gained_qing
+	}
+}
+country_event = {
+	id = hidden.6
+	
+	title = "hidden.1.t"
+	desc = "hidden.1.d"
+	
+	picture = SIEGE_eventPicture
+	fire_only_once = yes
+	hidden = yes
+	
+	trigger = {
+		tag = MJZ
+		ai = yes
+	}
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = "hidden.1.a"
+		manchuria_region = {
+			add_core = MJZ
+		}
+		KRC = {
+			every_owned_province = {
+				add_core = MJZ
+			}
+		}
+	}
+}
+
 #country_event = {
 #	id = hidden.7
 #	
@@ -381,7 +381,7 @@ country_event = {
 #		}
 #	}
 #}
-#
+
 #country_event = {
 #	id = hidden.10
 #	
@@ -1218,33 +1218,33 @@ country_event = {
 		}
 	}
 }
-country_event = {
-	id = hidden.26
-	
-	title = "hidden.1.t"
-	desc = "hidden.1.d"
-	
-	picture = SIEGE_eventPicture
-	hidden = yes
-	
-	trigger = {
-		tag = TUR
-		CRI = {
-			is_vassal_of = ROOT
-		}
-		ai = yes
-		was_player = no
-	}
-	mean_time_to_happen = {
-		days = 1
-	}
-	
-	option = {
-		name = "hidden.1.a"
-		create_march = CRI
-		add_stability = 1
-	}
-}
+#country_event = {
+#	id = hidden.26
+#	
+#	title = "hidden.1.t"
+#	desc = "hidden.1.d"
+#	
+#	picture = SIEGE_eventPicture
+#	hidden = yes
+#	
+#	trigger = {
+#		tag = TUR
+#		CRI = {
+#			is_vassal_of = ROOT
+#		}
+#		ai = yes
+#		was_player = no
+#	}
+#	mean_time_to_happen = {
+#		days = 1
+#	}
+#	
+#	option = {
+#		name = "hidden.1.a"
+#		create_march = CRI
+#		add_stability = 1
+#	}
+#}
 country_event = {
 	id = hidden.27
 	
